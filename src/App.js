@@ -9,9 +9,6 @@ function App() {
     <div>
       
       <BrowserRouter>
-        <Link to="/Chat">
-          <button>김돈하</button>
-        </Link>
         <Route exact path="/Chat" component={Chat} />
       </BrowserRouter>
     </div>
