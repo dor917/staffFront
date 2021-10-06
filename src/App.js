@@ -7,8 +7,8 @@ import Chat from "./pages/Chat.js";
 function App() {
   return (
     <div>
-      
       <BrowserRouter>
+      <Route exact path="/" component={} />
         <Route exact path="/Chat" component={Chat} />
       </BrowserRouter>
     </div>
