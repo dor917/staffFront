@@ -23,16 +23,22 @@ function Chat() {
         top: "0px",
          height: "2px"
       }
+      const chatBox = {
+          position: "fixed",
+          bottom: 0,
+          width: "100%"
+          
+      }
+      const chatTextarea= {
+        resize: "none"
+      }
     return (
         <div className="page-content page-container" id="page-content">
    
               <div className="card card-bordered">
-                <div className="card-header">
-                  <h4 className="card-title"><strong>Chat</strong></h4>
-          
-                </div>
                 
                 <div className="ps-container ps-theme-default ps-active-y" id="chat-content" style={container}>
+
                   <div className="media media-chat"> 
                     <img className="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="..."/>
                     <div className="media-body">
@@ -99,15 +105,17 @@ function Chat() {
                               <div className="ps-scrollbar-y" tabindex="0" style={scrollbar_y}></div>
                           </div>
                       </div>
-                      <div className="publisher bt-1 border-light">
-                    
-                            <input className="publisher-input" type="text" placeholder="Write something"/> 
-                            <span className="publisher-btn file-group"> 
-                              <i className="fa fa-paperclip file-browser"></i> 
-                              <input type="file"/> 
-                            </span> 
+
+                        <div style={chatBox}>
+                            <div className="publisher bt-1 border-light" > 
+                                <textarea className="publisher-input" type="text" placeholder="Write something" style={chatTextarea}/> 
+                                <span className="publisher-btn file-group"> 
+                                <i className="fa fa-paperclip file-browser"></i> 
+                                <input type="file"/> 
+                                </span> 
                           
-                        </div>  
+                            </div>
+                        </div> 
 
                         
         </div>
