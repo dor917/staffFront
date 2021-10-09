@@ -1,0 +1,15 @@
+.list-group-fileList {
+    margin: 30px;
+}
+.list-group-item-header {
+    background-color: #f1f1f1;
+    
+}
+.list-group-item-header-id {
+    font-weight: bold;
+}
+.list-group-item-header-commit {
+    font-size: 12px;
+    margin-left: 10px;
+   
+}
