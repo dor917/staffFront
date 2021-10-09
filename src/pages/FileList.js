@@ -23,16 +23,16 @@ function FileList() {
             </li>
             <li className="list-group-item d-flex justify-content-between align-items-center">
                 
-                <span className="list-group-item-name"><FontAwesomeIcon icon={["far", "coffee"]} />📂src</span>
+                <span className="list-group-item-name"><FontAwesomeIcon icon={["far", "coffee"]} />src</span>
                 <span className="badge">3일 전</span>
             </li>
             <li className="list-group-item d-flex justify-content-between align-items-center">
-                <span className="list-group-item-name"><i className="far fa-file"></i>📂App.js</span>
+                <span className="list-group-item-name"><i className="far fa-file"></i>App.js</span>
                 <span className="badge">3일 전</span>
             </li>
             <li className="list-group-item d-flex justify-content-between align-items-center">
                 
-                <span className="list-group-item-name"><i className="far fa-file"></i>📂monononono.css</span>
+                <span className="list-group-item-name"><i className="far fa-file"></i>monononono.css</span>
                 <span className="badge">3일 전</span>
             </li>
           </ul>
