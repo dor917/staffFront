@@ -5,7 +5,8 @@ import '../css/chat.css'
 function Header() {
     const Header = {
         backgroundColor: "#0f4c81" ,
-        color: "#fff"    
+        color: "#fff",
+        margin: 0
       }
     return (
         <div className="page-header" style={Header}>
