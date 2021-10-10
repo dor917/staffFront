@@ -2,11 +2,13 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/sidebar.css'
 import $ from 'jquery';
+
 import 'bootstrap/dist/js/bootstrap.min.js';
+import '../js/sidebar.event.js';
 window.jQuery = window.$ = $;
 
-
 function Sidebar() {
+  
     return(
       <aside className="sidebar">
       <div className="toggle">
