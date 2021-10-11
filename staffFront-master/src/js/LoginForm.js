@@ -4,31 +4,28 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
+
+
 const LoginForm = (props) => {
   return (
     <Form>
       {/* 인증번호 화면이 뜰지 안뜰지 설정 / props.showAuthCode가 true이면 안보입니다. */}
       <Collapse in={!props.showAuthCode}>
         <Form.Group controlId="exampleForm.SelectCustom">
-          <Form.Label>phone number</Form.Label>
+          <Form.Label>Email</Form.Label>
           <Form.Control
             type="text"
-            placeholder="phone number"
-            value={props.phone}
-            onChange={props.handlePhone}
+            placeholder="email"
+            value={props.email}
+            onChange={props.handleemail}
           />
-          <Form.Label>Visit Purpose</Form.Label>
+          <Form.Label>Password</Form.Label>
           <Form.Control
-            as="select"
-            custom
-            value={props.purpose}
-            onChange={props.handleSelect}
-          >
-            <option>Why are you here to visit?</option>
-            <option>As a Guest</option>
-            <option>As a Owner</option>
-          </Form.Control>
- 
+            type="text"
+            placeholder="password"
+            value={props.password}
+            onChange={props.handlePassword}
+          />
           <Button variant="primary" type="submit">
             Submit
           </Button>

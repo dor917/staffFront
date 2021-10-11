@@ -4,17 +4,21 @@ import LoginForm from "../js/LoginForm";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
- 
+
+
+
+
+
 const Login = () => {
-  const [phone, setPhone] = useState("");
-  const [purpose, setPurpose] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [code, setCode] = useState("");
  
-  const handlePhone = (e) => {
-    setPhone(e.target.value);
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
   };
-  const handleSelect = (e) => {
-    setPurpose(e.target.value);
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
   };
   const handleCode = (e) => {
     setCode(e.target.value);
@@ -27,14 +31,14 @@ const Login = () => {
       <Col xs={1} md={3}></Col>
       <Col xs={10} md={6}>
         <Card body style={{ marginTop: "1rem", borderRadius: "10px" }}>
-          <h3>Cranberry</h3>
-          <h5>Home IoT System</h5>
+          <h3>Staff-project</h3>
+          <h5>로그인 창입니다</h5>
           <LoginForm
-            phone={phone}
-            purpose={purpose}
+            email={email}
+            password={password}
             showAuthCode={false}
-            handlePhone={handlePhone}
-            handleSelect={handleSelect}
+            handleEmail={handleEmail}
+            handlePassword={handlePassword}
             handleSubmit={handleSubmit}
             handleCode={handleCode}
           />
