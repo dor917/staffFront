@@ -1,48 +1,47 @@
-import React, {Component} from 'react'
-import FullCalendar from '@fullcalendar/react'
-import dayGridPlugin from '@fullcalendar/daygrid'
-import axios from 'axios';
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction';
 
-//import 'main.css 파일이 위치한 경로'
+const events = [
+  {
+    id: 1,
+    title: 'event 1',
+    start: '2021-10-14T10:00:00',
+    end: '2021-10-14T12:00:00',
+  },
+  {
+    id: 2,
+    title: 'event 2',
+    start: '2021-10-16T13:00:00',
+    end: '2021-10-16T18:00:00',
+  },
+  { id: 3, title: 'event 3', start: '2021-10-17', end: '2021-10-20' },
+];
 
-class Calendar extends Component {
-
-  state = {}
-
-  componentDidMount() {
-    this._getEvents();
-  }
-
-  _getEvents = async () => {
-    const events = await this._axiosEvents();
-    this.setState({
-      events
-    })  
-  }   
-
-  _axiosEvents = () => {
-    return axios.get('/test')
-      .then(res => res.data)
-  }
-
-
-  render(){
-
-    let {events} = this.state;
-
-    return (
-      <div className="App">
-        {events ? 
-        <FullCalendar 
-          defaultView="dayGridMonth" 
-          plugins={[ dayGridPlugin ]}
-          events={this.state.events}
-        /> :
-        'loading'
-      }
-      </div>
-    );
-  }
+function Calendar() {
+  return (
+    <div className="App">
+      <FullCalendar
+        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+        initialView="dayGridMonth"
+        headerToolbar={{
+          center: 'dayGridMonth,timeGridWeek,timeGridDay new',
+        }}
+        customButtons={{
+          new: {
+            text: 'new',
+            click: () => console.log('new event'),
+          },
+        }}
+        events={events}
+        eventColor="red"
+        nowIndicator
+        dateClick={(e) => console.log(e.dateStr)}
+        eventClick={(e) => console.log(e.event.id)}
+      />
+    </div>
+  );
 }
 
 export default Calendar;
