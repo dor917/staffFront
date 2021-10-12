@@ -5,8 +5,7 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-
-
+import  "../css/login.css"
 
 
 const Login = () => {
@@ -30,7 +29,7 @@ const Login = () => {
     <Row>
       <Col xs={1} md={3}></Col>
       <Col xs={10} md={6}>
-        <Card body style={{ marginTop: "1rem", borderRadius: "10px" }}>
+        <Card Class="Card" body style={{ marginTop: "1rem", borderRadius: "10px" }}>
           <h3>Staff-project</h3>
           <h5>로그인 창입니다</h5>
           <LoginForm
