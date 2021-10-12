@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
 
+import  "../css/login.css"
 
 const LoginForm = (props) => {
   return (
@@ -12,7 +13,7 @@ const LoginForm = (props) => {
       {/* 인증번호 화면이 뜰지 안뜰지 설정 / props.showAuthCode가 true이면 안보입니다. */}
       <Collapse in={!props.showAuthCode}>
         <Form.Group controlId="exampleForm.SelectCustom">
-          <Form.Label>Email</Form.Label>
+          <Form.Label >Email</Form.Label>
           <Form.Control
             type="text"
             placeholder="email"
@@ -41,7 +42,7 @@ const LoginForm = (props) => {
             value={props.code}
             onChange={props.handleCode}
           />
-          <Button variant="primary" type="submit">
+          <Button  variant="primary" type="submit">
             Confirm
           </Button>
         </Form.Group>
