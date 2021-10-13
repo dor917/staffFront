@@ -13,17 +13,16 @@ const LoginForm = (props) => {
       {/* 인증번호 화면이 뜰지 안뜰지 설정 / props.showAuthCode가 true이면 안보입니다. */}
       <Collapse in={!props.showAuthCode}>
         <Form.Group controlId="exampleForm.SelectCustom">
-          <Form.Label >Email</Form.Label>
           <Form.Control
             type="text"
-            placeholder="email"
+            placeholder="Email"
             value={props.email}
             onChange={props.handleemail}
           />
-          <Form.Label>Password</Form.Label>
+          <Form.Label class="password-label"></Form.Label>
           <Form.Control
             type="text"
-            placeholder="password"
+            placeholder="Password"
             value={props.password}
             onChange={props.handlePassword}
           />

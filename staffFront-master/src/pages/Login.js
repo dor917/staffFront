@@ -1,7 +1,6 @@
 //client/src/pages/Login.js
 import React, { useState } from "react";
 import LoginForm from "../js/LoginForm";
-import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
@@ -28,10 +27,11 @@ const Login = () => {
   return (
     <Row>
       <Col xs={1} md={3}></Col>
-      <Col xs={10} md={6}>
-        <Card Class="Card" body style={{ marginTop: "1rem", borderRadius: "10px" }}>
-          <h3>Staff-project</h3>
-          <h5>로그인 창입니다</h5>
+      <div class="container" xs={10} md={6}>
+        <div Class="Card" body style={{ marginTop: "1rem", borderRadius: "10px" }}>
+          <div class="card-header">
+          <h3 class="form-header">Sign-IN</h3>
+          </div>
           <LoginForm
             email={email}
             password={password}
@@ -41,8 +41,8 @@ const Login = () => {
             handleSubmit={handleSubmit}
             handleCode={handleCode}
           />
-        </Card>
-      </Col>
+        </div>
+      </div>
       <Col xs={1} md={3}></Col>
     </Row>
   );
