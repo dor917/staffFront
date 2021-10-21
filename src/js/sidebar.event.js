@@ -2,7 +2,6 @@ import $ from 'jquery';
 window.jQuery = window.$ = $;
 $(function() {
 
-  'use strict';
 
   $('.js-menu-toggle').click(function(e) {
 

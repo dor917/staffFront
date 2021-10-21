@@ -1,5 +1,5 @@
 import React from "react";
-import '../css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/chat.css'
 
 function Chat() {
