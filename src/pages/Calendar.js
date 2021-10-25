@@ -2,7 +2,8 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-
+import addEvent from "../js/editcalendar.js";
+import $ from 'jquery';
 const events = [
   {
     id: 1,
@@ -26,19 +27,22 @@ function Calendar() {
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
         headerToolbar={{
-          center: 'dayGridMonth,timeGridWeek,timeGridDay new',
+          center: 'new',
         }}
         customButtons={{
           new: {
-            text: 'new',
-            click: () => console.log('new event'),
+            text: '일정추가',
+            click: () => addEvent()
           },
         }}
         events={events}
         eventColor="red"
         nowIndicator
-        dateClick={(e) => console.log(e.dateStr)}
-        eventClick={(e) => console.log(e.event.id)}
+        dateClick={(e) => alert(e.dateStr)}      //날자 누르면 이벤트 추가창 나와야 함
+        eventClick={(e) => alert(e.event.id) //이벤트 누르면 이벤트 정보가 나와야 함
+        
+        }
+        
       />
     </div>
   );
