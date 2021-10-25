@@ -24,15 +24,15 @@
       -ms-transform: translateX(0%);
       transform: translateX(0%); }
     aside .toggle {
-      padding-left: 30px;
-      padding-top: 30px;
+      padding-left: 15px;
+      padding-top: 15px;
       position: absolute;
       right: 0;
       -webkit-transform: translateX(100%);
       -ms-transform: translateX(100%);
       transform: translateX(100%); }
       .show-sidebar aside .toggle .burger:before, .show-sidebar aside .toggle .burger span, .show-sidebar aside .toggle .burger:after {
-        background: #fff; }
+        background: #000; }
     .show-sidebar aside {
       -webkit-box-shadow: 10px 0 30px 0 rgba(0, 0, 0, 0.2);
       box-shadow: 10px 0 30px 0 rgba(0, 0, 0, 0.2); }
@@ -161,7 +161,7 @@
     cursor: pointer;
     position: relative;
     z-index: 99;
-    float: right; }
+    float: left; }
   
   .burger:before, .burger span, .burger:after {
     width: 100%;
