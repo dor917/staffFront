@@ -5,6 +5,7 @@ import $ from 'jquery';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import '../js/sidebar.event.js';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
    faCalendar,
@@ -28,7 +29,7 @@ function Sidebar() {
          <div className="side-inner">
             <div className="nav-menu">
                <ul>
-                  <li className="active">
+                  <li>
                      <Link to="/Chat">
                         <div className="d-flex align-items-center">
                            <FontAwesomeIcon icon={faComment} />

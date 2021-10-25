@@ -24,7 +24,8 @@
       -ms-transform: translateX(0%);
       transform: translateX(0%); }
     aside .toggle {
-      padding-left: 15px;
+      margin-right: 50px;
+
       padding-top: 15px;
       position: absolute;
       right: 0;
@@ -114,6 +115,7 @@
             .show-sidebar aside .side-inner .search-form form .wrap-icon {
               left: 10px; }
       aside .side-inner .nav-menu {
+        margin-top: 30px;
         margin-bottom: 50px;
         clear: both; }
         aside .side-inner .nav-menu ul, aside .side-inner .nav-menu ul li {

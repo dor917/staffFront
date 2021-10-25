@@ -9,7 +9,8 @@ function Header() {
         margin: "0"
       }
     const header_title ={
-        margin: "0"
+        margin: "0",
+        marginLeft:"10px"
     }
     return (
         <div className="page-header" style={Header}>
