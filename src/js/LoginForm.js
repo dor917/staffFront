@@ -1,5 +1,5 @@
 //client/src/components/LoginForm.js
- 
+
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -9,7 +9,7 @@ import  "../css/login.css"
 
 function LoginForm(props) {
   return (
-    <Form>
+    <Form action="/Main">
       {/* 인증번호 화면이 뜰지 안뜰지 설정 / props.showAuthCode가 true이면 안보입니다. */}
       <Collapse in={!props.showAuthCode}>
         <Form.Group controlId="exampleForm.SelectCustom">

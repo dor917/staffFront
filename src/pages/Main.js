@@ -1,14 +1,13 @@
-import './App.css';
 import React from "react";
-import Chat from "./pages/Chat.js";
-import Header from "./pages/Header.js";
-import FileList from "./pages/FileList.js";
-import Sidebar from "./pages/Sidebar.js";
-import Calendar from "./pages/Calendar.js";
-import Login from './pages/Login.js';
+import Chat from "./Chat.js";
+import Header from "./Header.js";
+import FileList from "./FileList.js";
+import Sidebar from "./Sidebar.js";
+import Calendar from "./Calendar.js";
+
 import { BrowserRouter, Route } from 'react-router-dom';
 
-function App() {
+function Main() {
   const maincontent = {
     marginLeft: "70px"
   }
@@ -22,7 +21,6 @@ function App() {
           <Route exact path="/Chat" component={Chat} />
           <Route exact path="/FileList" component={FileList} />
           <Route exact path="/Calendar" component={Calendar} />
-          <Route exact path="/Login" component={Login} />
         </BrowserRouter>
       </div>
       
@@ -31,4 +29,4 @@ function App() {
   );
 }
 
-export default App;
+export default Main;
