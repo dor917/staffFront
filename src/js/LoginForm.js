@@ -7,7 +7,7 @@ import Collapse from "react-bootstrap/Collapse";
 
 import  "../css/login.css"
 
-const LoginForm = (props) => {
+function LoginForm(props) {
   return (
     <Form>
       {/* 인증번호 화면이 뜰지 안뜰지 설정 / props.showAuthCode가 true이면 안보입니다. */}
