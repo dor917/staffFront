@@ -25,6 +25,7 @@ const Login = () => {
   };
  
   return (
+   <div class="login-body"> 
     <Row>
       <Col xs={1} md={3}></Col>
       <div class="container" xs={10} md={6}>
@@ -45,6 +46,7 @@ const Login = () => {
       </div>
       <Col xs={1} md={3}></Col>
     </Row>
+  </div> 
   );
 };
 export default Login;
