@@ -3,7 +3,7 @@ import '../css/bootstrap.min.css';
 import '../css/chat.css';
 import '../css/fileList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import CodeView from './CodeView.js';
 function FileList() {
    return (
       <div>
@@ -46,7 +46,7 @@ function FileList() {
                   <span className="badge">3일 전</span>
                </li>
             </ul>
-   
+            <CodeView />
       </div>
    );
 }
