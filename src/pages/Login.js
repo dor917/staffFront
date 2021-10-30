@@ -25,13 +25,13 @@ const Login = () => {
   };
  
   return (
-   <div class="login-body"> 
+   <div className="login-body"> 
     <Row>
       <Col xs={1} md={3}></Col>
-      <div class="container" xs={10} md={6}>
-        <div Class="Card" body style={{ marginTop: "1rem", borderRadius: "10px" }}>
-          <div class="card-header">
-          <h3 class="form-header">Sign-IN</h3>
+      <div className="container" xs={10} md={6}>
+        <div className="Card" body style={{ marginTop: "1rem", borderRadius: "10px" }}>
+          <div className="card-header">
+          <h3 className="form-header">Sign-IN</h3>
           </div>
           <LoginForm
             email={email}
