@@ -12,10 +12,11 @@ font-family: 'Numans', sans-serif;
 }
 
 .container{
-height: 600px;
+height: 60rem;
 align-content: center;
 margin:0 auto;
 }
+
 .passowrd-label{
     margin-top:5px;
 }
