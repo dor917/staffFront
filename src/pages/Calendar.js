@@ -1,8 +1,10 @@
+import React from "react";
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import addEvent from "../js/editcalendar.js";
+import { BrowserRouter as Route, Router, Switch, Link,  } from 'react-router-dom';
+import '../css/Calendar1.css'
 import $ from 'jquery';
 const events = [
   {
@@ -21,31 +23,27 @@ const events = [
 ];
 
 function Calendar() {
-  return (
+  return (   
     <div className="App">
+      <Link to ="./editEventCalendar">
+        <button className="add-button">일정추가</button>
+      </Link>
+
       <FullCalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-        initialView="dayGridMonth"
-        headerToolbar={{
-          center: 'new',
-        }}
-        customButtons={{
-          new: {
-            text: '일정추가',
-            click: () => addEvent()
-          },
-        }}
+        initialView="dayGridMonth" 
         events={events}
-        eventColor="red"
+        eventColor="blue"
         nowIndicator
-        dateClick={(e) => alert(e.dateStr)}      //날자 누르면 이벤트 추가창 나와야 함
+        dateClick={
+          function (e) {
+          alert('Clicked on: ' + e.dateStr)}
+        }
         eventClick={(e) => alert(e.event.id) //이벤트 누르면 이벤트 정보가 나와야 함
         
-        }
-        
+        }       
       />
     </div>
-  );
+    );
 }
-
 export default Calendar;

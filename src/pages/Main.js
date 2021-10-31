@@ -4,6 +4,7 @@ import Header from "./Header.js";
 import FileList from "./FileList.js";
 import Sidebar from "./Sidebar.js";
 import Calendar from "./Calendar.js";
+import editEvent from "./editEventCalendar.js";
 
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -21,6 +22,7 @@ function Main() {
           <Route exact path="/Chat" component={Chat} />
           <Route exact path="/FileList" component={FileList} />
           <Route exact path="/Calendar" component={Calendar} />
+          <Route exact path="/editEventCalendar" component={editEvent} />
         </BrowserRouter>
       </div>
       
