@@ -4,6 +4,9 @@
 
 body{
 /* background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg'); */
+}
+.login-body{
+background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
@@ -11,10 +14,11 @@ font-family: 'Numans', sans-serif;
 }
 
 .container{
-height: 600px;
+height: 60rem;
 align-content: center;
 margin:0 auto;
 }
+
 .passowrd-label{
     margin-top:5px;
 }
@@ -25,7 +29,7 @@ margin-top:90%;
 margin-bottom: auto;
 margin-right:55%;
 width: 400px;
-background-color: rgba(0,0,0,0.5) !important;
+background-color: rgba(0,0,0,0.5) ! important;
 
 }
 
