@@ -1,52 +1,53 @@
-//client/src/pages/Login.js
-import React, { useState } from "react";
-import LoginForm from "../js/LoginForm";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import React from 'react';
+import '../css/login.css';
 
-import  "../css/login.css"
+function login() {
+   return (
+      <div className="login-body-back">
+         <div className="login-body">
+            <main className="form-signin">
+               <form action="/login.do" method="post">
+                  <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
+                  <div className="form-floating">
+                     <input
+                        name="id"
+                        type="email"
+                        className="form-control"
+                        id="floatingInput"
+                        placeholder="name@example.com"
+                     />
+                     <label for="floatingInput">Email address</label>
+                  </div>
+                  <div className="form-floating">
+                     <input
+                        name="password"
+                        type="password"
+                        className="form-control"
+                        id="floatingPassword"
+                        placeholder="Password"
+                     />
+                     <label for="floatingPassword">Password</label>
+                  </div>
 
-const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [code, setCode] = useState("");
- 
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-  };
-  const handleCode = (e) => {
-    setCode(e.target.value);
-  };
-  const handleSubmit = (e) => {
-  };
- 
-  return (
-   <div className="login-body"> 
-    <Row>
-      <Col xs={1} md={3}></Col>
-      <div className="container" xs={10} md={6}>
-        <div className="Card" body style={{ marginTop: "1rem", borderRadius: "10px" }}>
-          <div className="card-header">
-          <h3 className="form-header">Sign-IN</h3>
-          </div>
-          <LoginForm
-            email={email}
-            password={password}
-            showAuthCode={false}
-            handleEmail={handleEmail}
-            handlePassword={handlePassword}
-            handleSubmit={handleSubmit}
-            handleCode={handleCode}
-          />
-        </div>
+                  <div className="checkbox mb-3">
+                     <label>
+                        <input type="checkbox" value="remember-me" /> Remember
+                        me
+                     </label>
+                  </div>
+                  <button
+                     className="w-100 btn btn-lg btn-primary"
+                     type="submit"
+                  >
+                     Sign in
+                  </button>
+                  <p className="mt-5 mb-3 text-muted">&copy; staff 2021 </p>
+               </form>
+            </main>
+         </div>
       </div>
-      <Col xs={1} md={3}></Col>
-    </Row>
-  </div> 
-  );
-};
-export default Login;
+   );
+}
+
+export default login;

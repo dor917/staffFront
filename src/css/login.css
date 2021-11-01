@@ -1,95 +1,48 @@
-/* Made with love by Mutiullah Samim*/
-
-@import url('https://fonts.googleapis.com/css?family=Numans');
-
-body{
-/* background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg'); */
+html,
+body {
+  height: 100%;
 }
-.login-body{
-background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
-background-size: cover;
-background-repeat: no-repeat;
-height: 100%;
-font-family: 'Numans', sans-serif;
+.login-body-back {
+    height: 100%;
+    background-image: url("../img/loginmainimg.jpg");
+    
 }
+.login-body {
+ height: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color:rgba(0, 0, 0, 0.5);
 
-.container{
-height: 60rem;
-align-content: center;
-margin:0 auto;
-}
-
-.passowrd-label{
-    margin-top:5px;
-}
-.Card{
-margin: auto;
-height: 300px;
-margin-top:90%;
-margin-bottom: auto;
-margin-right:55%;
-width: 400px;
-background-color: rgba(0,0,0,0.5) ! important;
-
+ 
 }
 
-
-.card-header{
-color: white;
-margin-top: 100px;
+.form-signin {
+background-color: #fff;
+border-radius: 25;
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
 }
 
-
-.input-group-prepend span{
-width: 50px;
-background-color: #FFC312;
-color: black;
-border:0 !important;
+.form-signin .checkbox {
+  font-weight: 400;
 }
 
-input:focus{
-outline: 0 0 0 0  !important;
-box-shadow: 0 0 0 0 !important;
-
+.form-signin .form-floating:focus-within {
+  z-index: 2;
 }
 
-.remember{
-color: white;
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
-.remember input
-{
-width: 20px;
-height: 20px;
-margin-left: 15px;
-margin-right: 5px;
-}
-
-.btn-primary{
-color: black;
-background-color: #FFC312;
-border-color: #FFC312;
-width: 100px;
-margin-top: 35px;
-margin-left: 290px;
-}
-.form-header{
-    margin-left:0px;
-}
-.login_btn:hover{
-color: black;
-background-color: white;
-}
-.form-label{
-margin-top: 15px;
-color: white;
-}
-.form-control{
-margin-top: 10px;    
-}
-.links{
-color: white;
-}
-.links a{
-margin-left: 4px;
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }

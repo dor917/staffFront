@@ -3,7 +3,7 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import { BrowserRouter as Route, Router, Switch, Link,  } from 'react-router-dom';
+import { BrowserRouter as Link } from 'react-router-dom';
 import '../css/Calendar1.css'
 import $ from 'jquery';
 const events = [

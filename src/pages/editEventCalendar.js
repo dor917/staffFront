@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { BrowserRouter as Route, Router, Switch, Link,  } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 function editEvent() {

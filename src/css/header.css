@@ -1,0 +1,9 @@
+.page-header {
+    position: relative;
+    height: 48px;
+}
+.header-user-id{
+    position: absolute;
+    right: 12px;
+    top: 12px;
+}
