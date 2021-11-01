@@ -1,6 +1,5 @@
 import React from "react";
 import '../css/bootstrap.min.css'
-import '../css/chat.css'
 
 function Header() {
     const Header = {
