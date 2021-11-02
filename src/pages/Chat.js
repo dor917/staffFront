@@ -1,7 +1,8 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/chat.css'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 function Chat() {
     const container = {
         overflowY: "scroll !important",
@@ -30,7 +31,16 @@ function Chat() {
           
       }
       const chatTextarea= {
-        resize: "none"
+        resize: "none",
+        paddingRight: "80px"
+      }
+      const chatsendBtn = {
+        position: "relative",
+        left: "-70px"   
+      }
+      const chatsendIcon = {
+        height: "30px",
+        width: "30px"
       }
     return (
         <div className="page-content page-container" id="page-content">
@@ -109,8 +119,8 @@ function Chat() {
                         <div style={chatBox}>
                             <div className="publisher bt-1 border-light" > 
                                 <textarea className="publisher-input" type="text" placeholder="Write something" style={chatTextarea}/> 
-                                <span className="publisher-btn file-group"> 
-                                <i className="fa fa-paperclip file-browser"></i> 
+                                <span className="publisher-btn file-group chatsend-btn" style={chatsendBtn}> 
+                                <FontAwesomeIcon icon={faPaperPlane} style={chatsendIcon}/>
                                 <input type="file"/> 
                                 </span> 
                           
