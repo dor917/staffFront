@@ -47,6 +47,7 @@ function Issues() {
         )}
       </div>
       <div className='form-wrapper'>
+        <form action="/Issue.do" method="post">
         <input className="title-input"
           type='text'
           placeholder='제목'
@@ -79,7 +80,9 @@ function Issues() {
         className="submit-button"
         onClick={submitReview}
         >입력</button>
+        </form>
       </div>
+      
     </div>
   );
 }
