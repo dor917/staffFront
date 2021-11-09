@@ -1,8 +1,12 @@
 import React from 'react';
 import '../js/CodeView.fileRead.js';
 import '../css/CodeView.css';
+import FileList from './FileList.js';
 
-function CodeView() {
+
+
+
+function CodeView(){
    return (
       <div
          data-target="readme-toc.content"
@@ -11,10 +15,11 @@ function CodeView() {
          <div className="Box-header py-2 pr-2 d-flex flex-shrink-0 flex-md-row flex-items-center">
             <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1">
                138 lines (126 sloc)
-               <span class="file-info-divider"></span>
-               6.19 KB
+               <span class="slash">|</span>
+                  <span class="file-info-divider"></span>
+                  6.19 KB
             </div>
-            </div>
+         </div>
             <div class="js-check-bidi blob-code-content">
                <table
                   className="highlight tab-size js-file-line-container"
@@ -189,4 +194,30 @@ function CodeView() {
       </div>
    );
 }
-export default CodeView;
+
+
+function srcCodeView(props) {
+   
+   if(props.readCode == 'src')
+      return (CodeView());
+   else if(props.readCode == 'app')
+      return (appCodeView());   
+   else if(props.readCode == 'mono')
+      return (monoCodeView());
+   
+}
+
+function appCodeView(){
+   return (
+      <div>code</div>
+   )
+}
+
+function monoCodeView(){
+   return (
+      <div>code123123124</div>
+   )
+}
+
+   
+export default srcCodeView;

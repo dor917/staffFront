@@ -1,4 +1,4 @@
-import React from 'react';
+import {React,useState} from 'react';
 import '../css/bootstrap.min.css';
 import '../css/chat.css';
 import '../css/fileList.css';
@@ -7,7 +7,13 @@ import { faFile } from '@fortawesome/free-solid-svg-icons';
 import { faYoutube,faGithub } from '@fortawesome/free-brands-svg-icons';
 import CodeView from './CodeView.js';
 
+
+
+
 function FileList() {
+
+   const [readCode, setReadCode] = useState("src");
+
    return (
       <div>
 
@@ -31,38 +37,39 @@ function FileList() {
                </li>
                <li className="list-group-item d-flex justify-content-between align-items-center">
                   <span className="list-group-item-name">
-                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><a>src</a>
-                     
+                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><button onClick={()=>{setReadCode("src")}}>src</button>
                   </span>
-                  <span className="badge">3일 전</span>
+                  <span className="badge">4일 전</span>   
                </li>
                <li className="list-group-item d-flex justify-content-between align-items-center">
                   <span className="list-group-item-name">
-                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><a>App.js</a>
+                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><button onClick={()=>setReadCode("app")}>App.js</button>
                   </span>
-                  <span className="badge">3일 전</span>
+                  <span className="badge">일주일 전</span>
                </li>
                <li className="list-group-item d-flex justify-content-between align-items-center">
                   <span className="list-group-item-name">
-                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><a>mononononono.css</a>
+                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><button onClick={()=>setReadCode("mono")}>monononono.css</button>
                   </span>
-                  <span className="badge">3일 전</span>
+                  <span className="badge">한달 전</span>
                </li>
                <li className="list-group-item d-flex justify-content-between align-items-center">
                   <span className="list-group-item-name">
-                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><a>fileList.css</a>
+                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><button onClick={()=>setReadCode("app")}>fileList.css</button>
                   </span>
-                  <span className="badge">3일 전</span>
+                  <span className="badge">17일 전</span>
                </li>
                <li className="list-group-item d-flex justify-content-between align-items-center">
                   <span className="list-group-item-name">
-                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><a>calendar.js</a>
+                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><button onClick={()=>setReadCode("app")}>calendar.js</button>
                   </span>
-                  <span className="badge">3일 전</span>
+                  <span className="badge">두달 전</span>
                </li>
             </ul>
-            <CodeView />
+         <CodeView readCode={readCode}/>
+            
       </div>
+      
    );
 }
 export default FileList;
