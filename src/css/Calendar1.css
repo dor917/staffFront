@@ -1,11 +1,27 @@
 .add-button{
     position:absolute;
+    z-index: 2;
     background-color: gray;
-    left:80%;
+    left:75%;
     border: none;
     outline: none;
     color: white;
-    height: 45px;
-    width: 5%;
+    height: 40px;
+    width: 80px;
     border-radius: 4px;
+    margin-top: 1px;
   }
+.Calendar{
+  position:absolute;
+  z-index: 2;
+  width: 1050px;
+  height: 900px;
+}
+.addForm{
+  width: 900px;
+  height: 900px;
+}
+.Calendar-modal{
+  position: absolute;
+  z-index: 3;
+}
