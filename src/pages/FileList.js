@@ -3,7 +3,10 @@ import '../css/bootstrap.min.css';
 import '../css/chat.css';
 import '../css/fileList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFile } from '@fortawesome/free-solid-svg-icons';
+import { faYoutube,faGithub } from '@fortawesome/free-brands-svg-icons';
 import CodeView from './CodeView.js';
+
 function FileList() {
    return (
       <div>
@@ -28,20 +31,32 @@ function FileList() {
                </li>
                <li className="list-group-item d-flex justify-content-between align-items-center">
                   <span className="list-group-item-name">
-                     <FontAwesomeIcon icon={['far', 'coffee']} />
-                     src
+                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><a>src</a>
+                     
                   </span>
                   <span className="badge">3일 전</span>
                </li>
                <li className="list-group-item d-flex justify-content-between align-items-center">
                   <span className="list-group-item-name">
-                     <i className="far fa-file"></i>App.js
+                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><a>App.js</a>
                   </span>
                   <span className="badge">3일 전</span>
                </li>
                <li className="list-group-item d-flex justify-content-between align-items-center">
                   <span className="list-group-item-name">
-                     <i className="far fa-file"></i>monononono.css
+                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><a>mononononono.css</a>
+                  </span>
+                  <span className="badge">3일 전</span>
+               </li>
+               <li className="list-group-item d-flex justify-content-between align-items-center">
+                  <span className="list-group-item-name">
+                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><a>fileList.css</a>
+                  </span>
+                  <span className="badge">3일 전</span>
+               </li>
+               <li className="list-group-item d-flex justify-content-between align-items-center">
+                  <span className="list-group-item-name">
+                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><a>calendar.js</a>
                   </span>
                   <span className="badge">3일 전</span>
                </li>
