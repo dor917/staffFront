@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import '../css/Issues.css'
+import '../css/Issue.css'
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import Axios from 'axios';
 
 function Issues() {
-  const [movieContent, setMovieContent] = useState({
+  const [issueContent, setissueContent] = useState({
     title: '',
     content: ''
   })
@@ -20,17 +20,17 @@ function Issues() {
 
   const submitReview = ()=>{
     Axios.post('http://localhost:8000/api/insert', {
-      title: movieContent.title,
-      content: movieContent.content
+      title: issueContent.title,
+      content: issueContent.content
     }).then(()=>{
       alert('등록 완료!');
     })
   };
 
-  const getValue = e => {
+  const getValue1 = e => {
     const { name, value } = e.target;
-    setMovieContent({
-      ...movieContent,
+    setissueContent({
+      ...issueContent,
       [name]: value
     })
   };
@@ -38,8 +38,8 @@ function Issues() {
 
   return (
     <div className="Issues">
-      <h1>Movie Review</h1>
-      <div className='movie-container'>
+      <h1 className="">Issue page</h1>
+      <div className='issue-container'>
         {viewContent.map(element =>
           <div style={{ border: '1px solid #333' }}>
             <h2>{element.title}</h2>
@@ -50,12 +50,12 @@ function Issues() {
         <input className="title-input"
           type='text'
           placeholder='제목'
-          onChange={getValue}
+          onChange={getValue1}
           name='title'
         />
         <CKEditor
           editor={ClassicEditor}
-          data="<p>Hello from CKEditor 5!</p>"
+          data="<p>입력해주세요</p>"
           onReady={editor => {
             // You can store the "editor" and use when it is needed.
             console.log('Editor is ready to use!', editor);
@@ -63,8 +63,8 @@ function Issues() {
           onChange={(event, editor) => {
             const data = editor.getData();
             console.log({ event, editor, data });
-            setMovieContent({
-              ...movieContent,
+            setissueContent({
+              ...issueContent,
               content: data
             })
           }}
@@ -75,11 +75,11 @@ function Issues() {
             console.log('Focus.', editor);
           }}
         />
-      </div>
-      <button
+        <button className="issue-button"
         className="submit-button"
         onClick={submitReview}
         >입력</button>
+      </div>
     </div>
   );
 }
