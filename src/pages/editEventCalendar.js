@@ -21,7 +21,7 @@ function editEvent() {
         </AddContainer>
       
     );
-  }
+}
   
   export default editEvent;
 
