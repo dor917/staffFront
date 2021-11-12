@@ -24,7 +24,6 @@ function App() {
             <Route exact path="/" component={Login} />
             <Route exact path="/Login" component={Login} />
             <Route exact path="/Main" component={Main} />
-            <Route exact path="/Issue" component={Issue} />
          </BrowserRouter>
       
       </div>

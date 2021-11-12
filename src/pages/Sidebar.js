@@ -11,6 +11,7 @@ import {
    faCalendar,
    faComment,
    faFile,
+   faList,
 } from '@fortawesome/free-solid-svg-icons';
 window.jQuery = window.$ = $;
 
@@ -53,6 +54,15 @@ function Sidebar() {
                            <FontAwesomeIcon icon={faCalendar} />
                            &nbsp;&nbsp;
                            <span className="menu-text">Calendar</span>
+                        </div>
+                     </Link>
+                  </li>
+                  <li>
+                     <Link to="/Issue">
+                        <div className="d-flex align-items-center">
+                           <FontAwesomeIcon icon={faList} />
+                           &nbsp;&nbsp;
+                           <span className="menu-text">Issue</span>
                         </div>
                      </Link>
                   </li>

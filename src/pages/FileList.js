@@ -4,7 +4,7 @@ import '../css/chat.css';
 import '../css/fileList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFile } from '@fortawesome/free-solid-svg-icons';
-import { faYoutube,faGithub } from '@fortawesome/free-brands-svg-icons';
+
 import CodeView from './CodeView.js';
 
 
@@ -35,33 +35,33 @@ function FileList() {
 
                   <span className="badge list-group-item-commit">3일 전</span>
                </li>
-               <li className="list-group-item d-flex justify-content-between align-items-center">
+               <li className="list-group-item d-flex justify-content-between align-items-center" onClick={()=>{setReadCode("src")}}>
                   <span className="list-group-item-name">
-                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><button onClick={()=>{setReadCode("src")}}>src</button>
+                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon>src
                   </span>
                   <span className="badge">4일 전</span>   
                </li>
-               <li className="list-group-item d-flex justify-content-between align-items-center">
+               <li className="list-group-item d-flex justify-content-between align-items-center" onClick={()=>setReadCode("app")}>
                   <span className="list-group-item-name">
-                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><button onClick={()=>setReadCode("app")}>App.js</button>
+                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon>App.js
                   </span>
                   <span className="badge">일주일 전</span>
                </li>
-               <li className="list-group-item d-flex justify-content-between align-items-center">
+               <li className="list-group-item d-flex justify-content-between align-items-center" onClick={()=>setReadCode("mono")}>
                   <span className="list-group-item-name">
-                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><button onClick={()=>setReadCode("mono")}>monononono.css</button>
+                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon>monononono.css
                   </span>
                   <span className="badge">한달 전</span>
                </li>
-               <li className="list-group-item d-flex justify-content-between align-items-center">
+               <li className="list-group-item d-flex justify-content-between align-items-center" onClick={()=>setReadCode("app")}>
                   <span className="list-group-item-name">
-                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><button onClick={()=>setReadCode("app")}>fileList.css</button>
+                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon>fileList.css
                   </span>
                   <span className="badge">17일 전</span>
                </li>
-               <li className="list-group-item d-flex justify-content-between align-items-center">
+               <li className="list-group-item d-flex justify-content-between align-items-center"  onClick={()=>setReadCode("app")}>
                   <span className="list-group-item-name">
-                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon><button onClick={()=>setReadCode("app")}>calendar.js</button>
+                     <FontAwesomeIcon icon={faFile}></FontAwesomeIcon>calendar.js
                   </span>
                   <span className="badge">두달 전</span>
                </li>
