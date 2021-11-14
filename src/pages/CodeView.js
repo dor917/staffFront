@@ -4,9 +4,10 @@ import '../css/CodeView.css';
 import FileList from './FileList.js';
 
 
-
-
-function CodeView(){
+function CodeView(props){
+   CodeView.defaultProps = {
+      contents: '내용없음'
+    }
    return (
       <div
          data-target="readme-toc.content"
@@ -27,6 +28,7 @@ function CodeView(){
                   data-paste-markdown-skip
                >
                   <tbody>
+                     {/* for문*/ }
                      <tr>
                         <td
                            id="L1"
@@ -39,154 +41,11 @@ function CodeView(){
                            id="LC1"
                            className="blob-code blob-code-inner js-file-line"
                         >
-                           code
+                           {props.contents}
                         </td>
                      </tr>
 
-                     <tr>
-                        <td
-                           id="L2"
-                           className="blob-num js-line-number"
-                           data-line-number="2"
-                        >
-                           2
-                        </td>
-                        <td
-                           id="LC2"
-                           className="blob-code blob-code-inner js-file-line"
-                        >
-                           code
-                        </td>
-                     </tr>
-
-                     <tr>
-                        <td
-                           id="L3"
-                           className="blob-num js-line-number"
-                           data-line-number="3"
-                        >
-                           3
-                        </td>
-                        <td
-                           id="LC3"
-                           className="blob-code blob-code-inner js-file-line"
-                        >
-                           code
-                        </td>
-                     </tr>
-
-                     <tr>
-                        <td
-                           id="L4"
-                           className="blob-num js-line-number"
-                           data-line-number="4"
-                        >
-                           4
-                        </td>
-                        <td
-                           id="LC4"
-                           className="blob-code blob-code-inner js-file-line"
-                        >
-                           code
-                        </td>
-                     </tr>
-
-                     <tr>
-                        <td
-                           id="L5"
-                           className="blob-num js-line-number"
-                           data-line-number="5"
-                        >
-                           5
-                        </td>
-                        <td
-                           id="LC5"
-                           className="blob-code blob-code-inner js-file-line"
-                        >
-                           code
-                        </td>
-                     </tr>
-
-                     <tr>
-                        <td
-                           id="L6"
-                           className="blob-num js-line-number"
-                           data-line-number="6"
-                        >
-                           6
-                        </td>
-                        <td
-                           id="LC6"
-                           className="blob-code blob-code-inner js-file-line"
-                        >
-                           code
-                        </td>
-                     </tr>
-
-                     <tr>
-                        <td
-                           id="L7"
-                           className="blob-num js-line-number"
-                           data-line-number="7"
-                        >
-                           7
-                        </td>
-                        <td
-                           id="LC7"
-                           className="blob-code blob-code-inner js-file-line"
-                        >
-                           code
-                        </td>
-                     </tr>
-
-                     <tr>
-                        <td
-                           id="L8"
-                           className="blob-num js-line-number"
-                           data-line-number="8"
-                        >
-                           8
-                        </td>
-                        <td
-                           id="LC8"
-                           className="blob-code blob-code-inner js-file-line"
-                        >
-                           code
-                        </td>
-                     </tr>
-
-                     <tr>
-                        <td
-                           id="L9"
-                           className="blob-num js-line-number"
-                           data-line-number="9"
-                        >
-                           9
-                        </td>
-                        <td
-                           id="LC9"
-                           className="blob-code blob-code-inner js-file-line"
-                        >
-                           code
-                        </td>
-                     </tr>
-
-                     <tr>
-                        <td
-                           id="L10"
-                           className="blob-num js-line-number"
-                           data-line-number="10"
-                        >
-                           10
-                        </td>
-                        <td
-                           id="LC10"
-                           className="blob-code blob-code-inner js-file-line"
-                        >
-                           {' '}
-                           code
-                        </td>
-                     </tr>
+                     
                   </tbody>
                </table>
             
@@ -196,28 +55,5 @@ function CodeView(){
 }
 
 
-function srcCodeView(props) {
    
-   if(props.readCode == 'src')
-      return (CodeView());
-   else if(props.readCode == 'app')
-      return (appCodeView());   
-   else if(props.readCode == 'mono')
-      return (monoCodeView());
-   
-}
-
-function appCodeView(){
-   return (
-      <div>code</div>
-   )
-}
-
-function monoCodeView(){
-   return (
-      <div>code123123124</div>
-   )
-}
-
-   
-export default srcCodeView;
+export default CodeView;

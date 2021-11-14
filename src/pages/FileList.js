@@ -66,7 +66,16 @@ function FileList() {
                   <span className="badge">두달 전</span>
                </li>
             </ul>
-         <CodeView readCode={readCode}/>
+         <CodeView readCode={readCode} contents="asdasdasdassadasd
+         ㅁㄴㅇㄴㅁㅇㄴㅁ
+         ㅇㄴㅁㅇㅁㄴㅇ
+         ㅁㄴㅇㅁㄴ
+         ㅇㅁㄴ
+         ㅇㅁㄴㅇ
+         ㅁㄴㅇㅁㄴ
+         ㅇㄴㅁ
+         ㅇㅁㄴㄴ
+         ㅇ"/>
             
       </div>
       
