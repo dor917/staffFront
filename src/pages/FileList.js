@@ -13,6 +13,7 @@ import CodeView from './CodeView.js';
 function FileList() {
 
    const [readCode, setReadCode] = useState("src");
+   
 
    return (
       <div>
@@ -66,16 +67,14 @@ function FileList() {
                   <span className="badge">두달 전</span>
                </li>
             </ul>
-         <CodeView readCode={readCode} contents="asdasdasdassadasd
-         ㅁㄴㅇㄴㅁㅇㄴㅁ
-         ㅇㄴㅁㅇㅁㄴㅇ
-         ㅁㄴㅇㅁㄴ
-         ㅇㅁㄴ
-         ㅇㅁㄴㅇ
-         ㅁㄴㅇㅁㄴ
-         ㅇㄴㅁ
-         ㅇㅁㄴㄴ
-         ㅇ"/>
+            <CodeView readCode={readCode} contents="줄바꿈이
+         되게
+         해주세요
+         제발요!
+         file
+         asdf
+         asdasd
+         "/>
             
       </div>
       
