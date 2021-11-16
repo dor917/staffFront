@@ -6,8 +6,34 @@ import FileList from './FileList.js';
 
 function CodeView(props){
    CodeView.defaultProps = {
-      contents: '내용없음'
+      contents: ''
     }
+   const codeContent = ["src", "asdf", "kfdg", "sdfag", "qwrqwt", "asfgg", "asdf", "qwrtt", "qethh", "sdklgjkl", "asdjgkd", "sjdfkjg", "asdgjw", "asjgjep", "ajsdigje"];
+  
+   const render = () => {
+    const result = [];
+    for (let i = 0; i < codeContent.length; i++) {
+      result.push(
+         <tr>
+            <td
+               id="L1"
+               className="blob-num js-line-number"
+               data-line-number="1"
+            >
+               <span key={i}>{i+1 + "  "}</span>
+            </td>
+            <td
+               id="LC1"
+               className="blob-code blob-code-inner js-file-line"
+            >
+               <span key={i}>{codeContent[i] + "  "}</span>
+            </td>
+         </tr>
+      );
+    }
+    return result;
+   };
+   
    return (
       <div
          data-target="readme-toc.content"
@@ -28,24 +54,9 @@ function CodeView(props){
                   data-paste-markdown-skip
                >
                   <tbody>
-                     {/* for문*/ }
-                     <tr>
-                        <td
-                           id="L1"
-                           className="blob-num js-line-number"
-                           data-line-number="1"
-                        >
-                           1
-                        </td>
-                        <td
-                           id="LC1"
-                           className="blob-code blob-code-inner js-file-line"
-                        >
-                           {props.contents}
-                        </td>
-                     </tr>
-
                      
+                           {render()}
+
                   </tbody>
                </table>
             
