@@ -3,7 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/chat.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 function Chat() {
+    var userId = sessionStorage.getItem("userId");
+    // const sendChat
     const container = {
         overflowY: "scroll !important",
         height: "400px !important"
@@ -119,10 +122,19 @@ function Chat() {
                         <div style={chatBox}>
                             <div className="publisher bt-1 border-light" > 
                                 <textarea className="publisher-input" type="text" placeholder="Write something" style={chatTextarea}/> 
-                                <span className="publisher-btn file-group chatsend-btn" style={chatsendBtn}> 
-                                <FontAwesomeIcon icon={faPaperPlane} style={chatsendIcon}/>
-                                <input type="file"/> 
-                                </span> 
+                                <button onClick={()=>
+                                   axios.post('/sendChat.do', {
+                                      userId={userId},
+                                      message={}
+                                    })
+                                   .then((result)=>{ console.log(result.data) }) // 요청 성공시 실행코드
+                                   .catch(()=>{  }) // 요청 실패시 실행코드
+                                }> 
+                                  <span className="publisher-btn file-group chatsend-btn" style={chatsendBtn}> 
+                                  <FontAwesomeIcon icon={faPaperPlane} style={chatsendIcon}/>
+                                  </span> 
+                                </button>
+                              
                           
                             </div>
                         </div> 
