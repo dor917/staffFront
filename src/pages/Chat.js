@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/chat.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,6 +6,10 @@ import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 function Chat() {
     var userId = sessionStorage.getItem("userId");
+    const [message, messageText] = useState('');
+    const onChange = (e) => {
+      messageText(e.target.value);
+    }
     // const sendChat
     const container = {
         overflowY: "scroll !important",
@@ -121,11 +125,14 @@ function Chat() {
 
                         <div style={chatBox}>
                             <div className="publisher bt-1 border-light" > 
-                                <textarea className="publisher-input" type="text" placeholder="Write something" style={chatTextarea}/> 
+                                <textarea onChange={onChange} value={message} className="publisher-input" type="text" placeholder="Write something" style={chatTextarea}/> 
                                 <button onClick={()=>
-                                   axios.post('/sendChat.do', {
-                                      userId={userId},
-                                      message={}
+                                   axios.post('/sendChat.do',  {
+                                    chatVO: {
+                                        userId: {userId},
+                                        message: {message}
+                                      }
+                                     
                                     })
                                    .then((result)=>{ console.log(result.data) }) // 요청 성공시 실행코드
                                    .catch(()=>{  }) // 요청 실패시 실행코드
