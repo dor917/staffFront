@@ -4,7 +4,7 @@ import Header from "./Header.js";
 import FileList from "./FileList.js";
 import Sidebar from "./Sidebar.js";
 import Calendar from "./Calendar.js";
-import Issue from "./Issue.js";
+import Issue from "../Issue/Issue.js";
 import editEvent from "./editEventCalendar.js";
 
 import { BrowserRouter, Route } from 'react-router-dom';

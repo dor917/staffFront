@@ -122,10 +122,10 @@ function Chat() {
                         <div style={chatBox}>
                             <div className="publisher bt-1 border-light" > 
                                 <textarea className="publisher-input" type="text" placeholder="Write something" style={chatTextarea}/> 
-                                <button onClick={()=>
+                                <button onClick={()=> 
                                    axios.post('/sendChat.do', {
-                                      userId={userId},
-                                      message={}
+                                     // userId={userId},
+                                    // message={} 
                                     })
                                    .then((result)=>{ console.log(result.data) }) // 요청 성공시 실행코드
                                    .catch(()=>{  }) // 요청 실패시 실행코드
