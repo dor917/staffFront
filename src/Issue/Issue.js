@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Pagination from './Pagination';
 import moment from 'moment';
+import '../css/Issue.css';
 
 
 const NoticeComponent = (props) => {
@@ -26,7 +27,9 @@ const NoticeComponent = (props) => {
 
    return (
       <div className="container" style={{ fontFamily: 'Noto Sans Korean,Malgun Gothic,sans-serif' }}>
-		 <div className="lf-menu-nav"><span>공지사항</span></div>
+		 <div className="lf-menu-nav">
+          <span>공지사항</span>
+       </div>
          <div className="lf-contents pd12">
          <div className="top-controls">
              <a href="/noticewrite"><button className="lf-button primary float-right">글쓰기</button></a>
