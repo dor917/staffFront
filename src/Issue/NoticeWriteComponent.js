@@ -60,7 +60,7 @@ const NoticeWriteComponent = () => {
             <div className="lf-menu-nav"><span>설정</span><span>공지사항</span></div>
             <div className="lf-contents pd12">
                 <div className="top-controls">
-                    <a href="/"><button className="lf-button primary float-right">목록으로</button></a>
+                    <a href="/Issue"><button className="lf-button primary float-right">목록으로</button></a>
                 </div>
 
                 <div style={{ padding: "12px" }}>
