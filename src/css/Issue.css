@@ -1,46 +1,29 @@
-.Issue {
-    text-align: center;
-  }
+.container {
 
-  .issue-container {
-    margin: 0 auto;
-    width: 60%;
-    border: 1px solid #333;
-    padding: 10px 0 30px 0;
-    border-radius: 5px;
-    margin-bottom : 50px;
-  }
-
-  .form-wrapper{
-    width: 60%;
-    height: 40%;
-    margin: 0 auto;
-  }
-  
-  .title-input {
-    width: 100%;
-    height: 40px;
-    margin-bottom: 10px;
-
-  }
-  
-  .submit-button {
-    font-family:arial;
-  font-size:20px;
-  color: #ffffff;
-  text-decoration:none;
-  line-height:50px;
-  transition:all .5s ease;
-  z-index:2;
-  position:relative;
-  background: #0f4c81;
-  width: 200px;
-  margin-top:15px;
-  float:right;
-  border-radius: 12px; 
-  font-weight: border; 
 }
+.lf-menu-nav {
+    border:none;   
+    border-top:2px solid lightgray;
+    border-bottom:2px solid lightgray;
+    width: 100%;
+	  border-collapse: collapse;
+    max-width: 950px;
+    font-size: 20px;
   
-  .ck.ck-editor__editable:not(.ck-editor__nested-editable) {
-    min-height: 500px;
-  }
+    
+}
+.lf-contents pd12 {
+
+}
+.top-controls {
+
+}
+.board_list text-center {
+    
+}
+.text-left {
+
+}
+.text-ellipsis {
+
+}
