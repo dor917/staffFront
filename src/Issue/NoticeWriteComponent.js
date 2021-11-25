@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import ajax from '../../utils/ajax';
+//import ajax from '../../utils/ajax';
 import Editor from './EditorComponent';
 import UploadFiles from './UploadFiles';
-import LFSelect from '../common/LFSelect';
 import { Link } from "react-router-dom";
 
 
@@ -34,7 +33,7 @@ const NoticeWriteComponent = () => {
             const files = result;
 
 
-            ajax('/api/notice/saveNotice', { title: title, desc: desc, type: type, files: files }, (res) => {
+            /*ajax('/api/notice/saveNotice', { title: title, desc: desc, type: type, files: files }, (res) => {
                 if (res.data && res.data.ok === 1) {
                     alert('저장 완료');
                     setId(res.data.insertedId);
@@ -43,7 +42,7 @@ const NoticeWriteComponent = () => {
                 } else {
                     alert('공지사항을 저장하는 도중 오류가 발생하였습니다.')
                 }
-            }, null, true); 
+            }, null, true); */
 
         }).catch(function (err) {
 
@@ -66,7 +65,6 @@ const NoticeWriteComponent = () => {
                 <div style={{ padding: "12px" }}>
                   
                     <div className="form-group">
-                    <LFSelect options={tabs} onChange={(event) => setType(event.target.value)}/>
                     </div>
                     <div className="form-group">
                     <input type="text" placeholder="제목" className="form-control" onChange={(event) => setTitle(event.target.value)} />
