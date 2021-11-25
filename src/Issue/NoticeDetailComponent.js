@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import ajax from '../../utils/ajax'
 import moment from 'moment';
 import Editor from './EditorComponent';
-
 import 'react-quill/dist/quill.snow.css';
 
 const NoticeDetailComponent = (props) => {
