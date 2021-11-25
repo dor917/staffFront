@@ -26,7 +26,7 @@ function App() {
             <Route exact path="/Login" component={Login} />
             <Route exact path="/Main" component={Main} />
             <Route exact path="/Issue" component={Issue} />
-            <Route exact path="/NoticewriteComponent " component={NoticeWriteComponent} />
+            <Route exact path="/Noticewrite" component={NoticeWriteComponent} />
          </BrowserRouter>
       
       </div>

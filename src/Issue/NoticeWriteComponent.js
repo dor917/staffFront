@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 //import ajax from '../../utils/ajax';
 import Editor from './EditorComponent';
 import UploadFiles from './UploadFiles';
+//import LFSelect from '../common/LFSelect';
 import { Link } from "react-router-dom";
 
 
@@ -33,7 +34,7 @@ const NoticeWriteComponent = () => {
             const files = result;
 
 
-            /*ajax('/api/notice/saveNotice', { title: title, desc: desc, type: type, files: files }, (res) => {
+           /* ajax('/api/notice/saveNotice', { title: title, desc: desc, type: type, files: files }, (res) => {
                 if (res.data && res.data.ok === 1) {
                     alert('저장 완료');
                     setId(res.data.insertedId);

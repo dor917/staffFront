@@ -4,19 +4,19 @@ import Pagination from './Pagination';
 import moment from 'moment';
 
 
-const Issue = (props) => {
+const NoticeComponent = (props) => {
 
    const [posts, setPosts] = useState([]);
    const [currentPage, setCurrentPage] = useState(1);
    const [postsPerPage] = useState(10);
 
    useEffect(() => {
-      /*const fetchPosts = async () => {
-         let res = await ajax('/api/notice/noticeList');
-         setPosts(res.data);
-      }
+      // const fetchPosts = async () => {
+      //   let res = await ajax('/api/notice/noticeList');
+      //   setPosts(res.data);
+      //}
 
-      fetchPosts(); */
+      //fetchPosts();
    }, []);
 
    const indexOfLastPost = currentPage * postsPerPage;
@@ -29,7 +29,7 @@ const Issue = (props) => {
 		 <div className="lf-menu-nav"><span>공지사항</span></div>
          <div className="lf-contents pd12">
          <div className="top-controls">
-             <a href="/Noticewrite"><button className="lf-button primary float-right">글쓰기</button></a>
+             <a href="/noticewrite"><button className="lf-button primary float-right">글쓰기</button></a>
          </div>
             <div style={{ padding: "0 12px" }}>
                <table className="board_list text-center">
@@ -81,4 +81,4 @@ const Issue = (props) => {
 };
 
 
-export default Issue;
+export default NoticeComponent;
