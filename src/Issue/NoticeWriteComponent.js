@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 //import ajax from '../../utils/ajax';
 import Editor from './EditorComponent';
 import UploadFiles from './UploadFiles';
-//import LFSelect from '../common/LFSelect';
 import { Link } from "react-router-dom";
 
 
@@ -11,7 +10,7 @@ const NoticeWriteComponent = () => {
     const tabs = [
         { value: '공지사항', text: '공지사항' },
         { value: '업데이트', text: '업데이트' }
-     ]
+    ]
 
     const [id, setId] = useState(0);
     const [title, setTitle] = useState('');
@@ -34,7 +33,7 @@ const NoticeWriteComponent = () => {
             const files = result;
 
 
-           /* ajax('/api/notice/saveNotice', { title: title, desc: desc, type: type, files: files }, (res) => {
+            /*ajax('/api/notice/saveNotice', { title: title, desc: desc, type: type, files: files }, (res) => {
                 if (res.data && res.data.ok === 1) {
                     alert('저장 완료');
                     setId(res.data.insertedId);
@@ -59,9 +58,7 @@ const NoticeWriteComponent = () => {
         <div className="container" style={{ fontFamily: 'Noto Sans Korean,Malgun Gothic,sans-serif' }}>
             <div className="lf-menu-nav"><span>설정</span><span>공지사항</span></div>
             <div className="lf-contents pd12">
-                <div className="top-controls">
-                    <a href="/Issue"><button className="lf-button primary float-right">목록으로</button></a>
-                </div>
+                
 
                 <div style={{ padding: "12px" }}>
                   
@@ -73,7 +70,9 @@ const NoticeWriteComponent = () => {
                     <UploadFiles ref={uploadReferenece} />
                     <Editor value={desc} onChange={onEditorChange} />
                     <div className="text-center pd12">
+                        <a href="/Issue"><button className="lf-button primary ">목록으로</button></a>
                         <button className="lf-button primary" onClick={onClickSearch}>저장</button>
+                        
                     </div>
                     <Link id="notice_Detail_Link" to={{ pathname: '/noticeDetail', state: { _id: id } }}></Link>
                 </div>

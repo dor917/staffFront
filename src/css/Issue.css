@@ -2,28 +2,44 @@
 
 }
 .lf-menu-nav {
-    border:none;   
+    border:none;
     border-top:2px solid lightgray;
     border-bottom:2px solid lightgray;
+    
     width: 100%;
 	  border-collapse: collapse;
     max-width: 950px;
-    font-size: 20px;
-  
+    font-size: 30px;
+    
     
 }
 .lf-contents pd12 {
 
 }
 .top-controls {
+  
 
 }
-.board_list text-center {
-    
+.board_list {
+    font-size: 20px;
 }
 .text-left {
 
 }
 .text-ellipsis {
 
+}
+.text-center {
+
+}
+.lf-button {
+  font-size: 18px;
+  position: relative;
+  
+  
+  
+
+
+
+  
 }

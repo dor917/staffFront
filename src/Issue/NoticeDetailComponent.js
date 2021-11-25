@@ -48,9 +48,7 @@ const NoticeDetailComponent = (props) => {
          <div className="lf-menu-nav"><span>공지사항</span></div>
          <div className="lf-contents pd12">
             {/* align-right */}
-            <div className="top-controls">
-               <a href="/"><button className="lf-button primary float-right">목록으로</button></a>
-            </div>
+            
             <div style={{ padding: "12px" }}>
                <table className="notice-table">
                   <colgroup>

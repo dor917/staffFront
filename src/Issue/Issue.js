@@ -37,13 +37,13 @@ const NoticeComponent = (props) => {
             <div style={{ padding: "0 12px" }}>
                <table className="board_list text-center">
                   <colgroup>
-                     <col width="5%" />
-                     <col width="*" />
-                     <col width="50%" />
-                     <col width="*" />
-                     <col width="*" />
-                     <col width="*" />
-                     <col width="*" />
+                     <col width="10%" />
+                     <col width="10%" />
+                     <col width="10%" />
+                     <col width="10%" />
+                     <col width="10%" />
+                     <col width="10%" />
+                     <col width="10%" />
                   </colgroup>
                   <thead>
                      <tr>
