@@ -4,11 +4,24 @@ import '../css/chat.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+import MessageList from './MessageList.js';
 function Chat() {
    var userId = sessionStorage.getItem('userId');
 
    const [message, messageText] = useState('');
-   const onChange = (e) => {
+   const [messages, setMessage] = useState([
+
+   ]);
+   const sendMessage = (sendUserId, sendMessageText) => {
+      const message = {
+         id: {sendUserId},
+         sendMessageText: {sendMessageText},
+      };
+      setMessage(messages.concat(message));
+     
+
+    };
+   const changeMessage = (e) => {
       messageText(e.target.value);
    };
    const axiosConfig = {
@@ -16,7 +29,7 @@ function Chat() {
          'Content-Type': 'application/x-www-form-urlencoded',
       },
    };
-   const sendChatResult = [];
+   
    
    // const sendChat
    const container = {
@@ -90,7 +103,7 @@ function Chat() {
                      </p>
                   </div>
                </div>
-               {sendChatResult}
+              <MessageList props={messages} />
                <div className="ps-scrollbar-x-rail" style={scrollbar_x_rail}>
                   <div
                      className="ps-scrollbar-x"
@@ -110,7 +123,7 @@ function Chat() {
             <div style={chatBox}>
                <div className="publisher bt-1 border-light">
                   <textarea
-                     onChange={onChange}
+                     onChange={changeMessage}
                      value={message}
                      className="publisher-input"
                      type="text"
@@ -130,17 +143,17 @@ function Chat() {
                                  { axiosConfig }
                               )
                               .then((result) => {
-                                sendChatResult.put(
-                                <div className="media media-chat media-chat-reverse">
-                                  <div className="media-body">
-                                      <p>{result.getItem('message')}</p>
-                                      <p className="meta">
-                                        <time datetime="2018">00:12</time>
-                                      </p>
-                                  </div>
-                                </div>
-                                )
+                                 sendMessage({userId}, result.getItem('message'));
+                              //   sendChatResult.put(
+                              //    {
+                              //       userId:{userId},
+                              //       message:result.getItem('message')
+                              //    }
+
                               
+                              //   )
+                                 console.log(messages);
+                                 console.log(result);
                                 }) // 요청 성공시 실행코드
                               .catch(() => {}) // 요청 실패시 실행코드
                      }
