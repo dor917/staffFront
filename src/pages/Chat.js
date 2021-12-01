@@ -95,6 +95,26 @@ function Chat() {
                </div>
                <div className="media media-meta-day">Today</div>
 
+                        <div style={chatBox}>
+                            <div className="publisher bt-1 border-light" > 
+                                <textarea className="publisher-input" type="text" placeholder="Write something" style={chatTextarea}/> 
+                                <button onClick={()=> 
+                                   axios.post('/sendChat.do', {
+                                     // userId={userId},
+                                    // message={} 
+                                    })
+                                   .then((result)=>{ console.log(result.data) }) // 요청 성공시 실행코드
+                                   .catch(()=>{  }) // 요청 실패시 실행코드
+                                }> 
+                                  <span className="publisher-btn file-group chatsend-btn" style={chatsendBtn}> 
+                                  <FontAwesomeIcon icon={faPaperPlane} style={chatsendIcon}/>
+                                  </span> 
+                                </button>
+                              
+                          
+                            </div>
+                        </div> 
+
                <div className="media media-chat media-chat-reverse">
                   <div className="media-body">
                      <p>Okay then see you on sunday!!</p>
