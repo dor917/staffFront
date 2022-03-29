@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Pagination from './Pagination';
 import moment from 'moment';
 import '../css/Issue.css';
+import { BsFillPencilFill } from "react-icons/bs";
+
 
 
 const NoticeComponent = (props) => {
@@ -28,12 +30,15 @@ const NoticeComponent = (props) => {
    return (
       <div className="container" style={{ fontFamily: 'Noto Sans Korean,Malgun Gothic,sans-serif' }}>
 		 <div className="lf-menu-nav">
-          <span>공지사항</span>
+          <span>공지사항</span >
+           <div className="lf-top-button">
+           <a href="/noticewrite">
+              <button className="lf-button-primary-float-right"><BsFillPencilFill/>
+                 </button>
+                 </a>
+           </div>
        </div>
          <div className="lf-contents pd12">
-         <div className="top-controls">
-             <a href="/noticewrite"><button className="lf-button primary float-right">글쓰기</button></a>
-         </div>
             <div style={{ padding: "0 12px" }}>
                <table className="board_list text-center">
                   <colgroup>

@@ -7,6 +7,7 @@
     border-bottom:2px solid lightgray;
     
     width: 100%;
+    margin-top: 2.5rem;
 	  border-collapse: collapse;
     max-width: 950px;
     font-size: 30px;
@@ -32,14 +33,24 @@
 .text-center {
 
 }
-.lf-button {
-  font-size: 18px;
-  position: relative;
-  
-  
-  
-
-
-
-  
+.lf-top-button{
+ width:50px;
+ height: 30px;
+ float: right;
 }
+ 
+.lf-button-primary-float-right{
+  height: 40px;
+  background-color: rgba( 255, 255, 255, 0.5);
+  border: 10px solid transparent;
+
+}
+svg{
+  margin-top: -2.0rem;
+}
+  
+
+
+
+  
+
