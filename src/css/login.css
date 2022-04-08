@@ -46,3 +46,6 @@ border-radius: 25;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.lf-button-primary-float-right{
+  height: 40px;
+}

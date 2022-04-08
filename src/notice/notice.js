@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Pagination from './Pagination';
 import moment from 'moment';
-import '../css/Issue.css';
+import '../css/notice.css';
 import { BsFillPencilFill } from "react-icons/bs";
 
 
@@ -12,7 +12,6 @@ const NoticeComponent = (props) => {
    const [posts, setPosts] = useState([]);
    const [currentPage, setCurrentPage] = useState(1);
    const [postsPerPage] = useState(10);
-
    useEffect(() => {
       // const fetchPosts = async () => {
       //   let res = await ajax('/api/notice/noticeList');

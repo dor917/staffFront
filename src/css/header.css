@@ -4,6 +4,12 @@
 }
 .header-user-id{
     position: absolute;
-    right: 12px;
     top: 12px;
+    left:6rem;
+    list-style-type: none;
+    position:left;
+}
+.header-user-li{
+    float:left;
+    margin: 0 15px 0 0;
 }

@@ -58,11 +58,11 @@ function Sidebar() {
                      </Link>
                   </li>
                   <li>
-                     <Link to="/Issue">
+                     <Link to="/notice">
                         <div className="d-flex align-items-center">
                            <FontAwesomeIcon icon={faList} />
                            &nbsp;&nbsp;
-                           <span className="menu-text">Issue</span>
+                           <span className="menu-text">notice</span>
                         </div>
                      </Link>
                   </li>

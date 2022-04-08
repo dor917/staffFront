@@ -1,6 +1,8 @@
+import { right } from "@popperjs/core";
 import React from "react";
 import '../css/bootstrap.min.css'
 import '../css/header.css'
+
 
 function Header(props) {
     const Header = {
@@ -17,7 +19,13 @@ function Header(props) {
     return (
         <div className="page-header" style={Header}>
 	        <h1  style={header_title}>Staff</h1>
-            <span className = "header-user-id" >{props.userId}</span>
+            <ul className = "header-user-id">
+                <li className = "header-user-li">프로젝트 2</li>
+                <li className = "header-user-li">프로젝트 3</li>
+                <li className = "header-user-li">프로젝트 4</li>
+                <li className = "header-user-li">프로젝트 5</li>
+            </ul>
+            <span >{props.userId}</span>
 	    </div>
     );
 }

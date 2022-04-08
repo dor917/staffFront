@@ -7,19 +7,14 @@
     border-bottom:2px solid lightgray;
     
     width: 100%;
-    margin-top: 2.5rem;
 	  border-collapse: collapse;
-    max-width: 950px;
     font-size: 30px;
     
     
 }
 .lf-contents pd12 {
-
 }
 .top-controls {
-  
-
 }
 .board_list {
     font-size: 20px;
@@ -43,13 +38,10 @@
   height: 40px;
   background-color: rgba( 255, 255, 255, 0.5);
   border: 10px solid transparent;
-
 }
-svg{
-  margin-top: -2.0rem;
-}
-  
-
+ svg{
+   display:block;
+ }
 
 
   
