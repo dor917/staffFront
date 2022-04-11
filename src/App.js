@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Main from './pages/Main.js';
 import Login from './pages/Login.js';
 import notice from './notice/notice';
+import Issue from './pages/Issue.js';
 import NoticeWriteComponent from './notice/NoticeWriteComponent';
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -27,6 +28,7 @@ function App() {
             <Route exact path="/Main" component={Main} />
             <Route exact path="/notice" component={notice} />
             <Route exact path="/Noticewrite" component={NoticeWriteComponent} />
+            <Route exact path="/Issue" component={{Issue}}/>
          </BrowserRouter>
       
       </div>
