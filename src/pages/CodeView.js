@@ -2,17 +2,21 @@ import React from 'react';
 import '../js/CodeView.fileRead.js';
 import '../css/CodeView.css';
 import FileList from './FileList.js';
+import { applyStyles } from '@popperjs/core';
+
 
 
 function CodeView(props){
-   CodeView.defaultProps = {
-      contents: ''
-    }
+   // CodeView.defaultProps = {
+   //    contents: ''
+      
+   // }
    const codeContent = ["src", "asdf", "kfdg", "sdfag", "qwrqwt", "asfgg", "asdf", "qwrtt", "qethh", "sdklgjkl", "asdjgkd", "sjdfkjg", "asdgjw", "asjgjep", "ajsdigje"];
-  
+   const codeContents = ["asdf", "hgdsfjh", "asfdhjkl", "ssjtasdf", "oiuiouo", "werhth", "cvnn", "hjhjr", "sfoijhoi", "hjqwf", "sfhrhr", "hjkd", "jyjwer", "oijhoi", "ofjre"]
+
    const render = () => {
-    const result = [];
-    for (let i = 0; i < codeContent.length; i++) {
+   const result = [];
+      for (let i = 0; i < codeContent.length; i++) {
       result.push(
          <tr>
             <td
@@ -30,10 +34,10 @@ function CodeView(props){
             </td>
          </tr>
       );
-    }
-    return result;
+      }
+   return result;
    };
-   
+
    return (
       <div
          data-target="readme-toc.content"
@@ -54,15 +58,13 @@ function CodeView(props){
                   data-paste-markdown-skip
                >
                   <tbody>
-                     
-                           {render()}
-
+                  {render()}
                   </tbody>
                </table>
-            
          </div>
       </div>
    );
+   
 }
 
 

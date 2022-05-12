@@ -55,7 +55,7 @@ function Chat() {
    const chatBox = {
       position: 'fixed',
       bottom: 0,
-      width: '100%',
+      width: '80%',
    };
    const chatTextarea = {
       resize: 'none',
@@ -63,7 +63,8 @@ function Chat() {
    };
    const chatsendBtn = {
       position: 'relative',
-      left: '-70px',
+      left: '-2px',
+      bottom: '-2px',
    };
    const chatsendIcon = {
       height: '30px',
@@ -71,7 +72,9 @@ function Chat() {
    };
 
    return (
-      <div className="page-content page-container" id="page-content">
+      <div className='col-12 row'>
+      <div className='col-2'></div>
+      <div className="col-8 page-content page-container" id="page-content">
          <div className="card card-bordered">
             <div
                className="ps-container ps-theme-default ps-active-y"
@@ -96,7 +99,7 @@ function Chat() {
                <div className="media media-meta-day">Today</div>
 
                         <div style={chatBox}>
-                            <div className="publisher bt-1 border-light" > 
+                            <div className="width-78 publisher bt-1 border-light" > 
                                 <textarea className="publisher-input" type="text" placeholder="Write something" style={chatTextarea}/> 
                                 <button onClick={()=> 
                                    axios.post('/sendChat.do', {
@@ -123,7 +126,7 @@ function Chat() {
                      </p>
                   </div>
                </div>
-              <MessageList props={messages} />
+               <MessageList props={messages} />
                <div className="ps-scrollbar-x-rail" style={scrollbar_x_rail}>
                   <div
                      className="ps-scrollbar-x"
@@ -191,6 +194,7 @@ function Chat() {
                </div>
             </div>
          </div>
+      </div>
       </div>
    );
 }

@@ -28,7 +28,7 @@ function App() {
             <Route exact path="/Issue" component={Issue} />
             <Route exact path="/Noticewrite" component={NoticeWriteComponent} />
          </BrowserRouter>
-      
+         
       </div>
    );
 }

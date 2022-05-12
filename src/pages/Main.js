@@ -6,6 +6,8 @@ import Sidebar from "./Sidebar.js";
 import Calendar from "./Calendar.js";
 import Issue from "../Issue/Issue.js";
 import editEvent from "./editEventCalendar.js";
+import Profile from "./Profile.js";
+
 
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -20,12 +22,14 @@ function Main() {
   // delCookie_by_name("USERNO");
   // delCookie_by_name("USERID");
   return (
+
     <div>
       <Header userId={userId}/>
       
       <div style={maincontent}>
         <BrowserRouter>
           <Sidebar />
+          <Route exact path="/Main" component={Profile} />
           <Route exact path="/Chat" component={Chat} />
           <Route exact path="/FileList" component={FileList} />
           <Route exact path="/Calendar" component={Calendar} />
@@ -35,7 +39,6 @@ function Main() {
       </div>
       
     </div>
-
   );
 }
 function delCookie_by_name(name){
@@ -62,9 +65,13 @@ function getCookie(name) {
       }
   }
 
+
+
   return ""; 
 
 }
+
+
 
 
 export default Main;
