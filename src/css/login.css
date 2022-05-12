@@ -49,3 +49,9 @@ border-radius: 25;
 .lf-button-primary-float-right{
   height: 40px;
 }
+.signup-button{
+  margin-top:1rem;
+  border:hidden;
+  float:right;
+  margin-right:1rem;
+}

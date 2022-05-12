@@ -1,0 +1,100 @@
+html,
+body {
+  height: 100%;
+
+}
+.signup-body-back {
+    height: 100%;
+    background-image: url("../img/loginmainimg.jpg");
+    
+}
+.signup-body {
+ height: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color:rgba(0, 0, 0, 0.5);
+
+ 
+}
+
+.form-signup {
+background-color: #fff;
+border-radius: 25;
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signup .checkbox {
+  font-weight: 400;
+}
+
+.form-signup .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signup input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signup input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.lf-button-primary-float-right{
+  height: 40px;
+}
+.form-floating{
+    margin-top: 1rem;
+}
+.signup-cancel-button{
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    width: 80%;
+    margin-top: 0.3rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.6rem;
+    line-height: 1.5rem;
+    border-radius: 0.3rem;    
+    margin-left:2rem;
+}
+.w-100.btn.btn-lg.btn-primary{
+    margin-top:1rem;
+}
+#bir_wrap {
+    display: table;
+    width: 100%;
+    float:right;
+}
+
+#bir_yy {
+    display: table-cell;
+    width: 147px;
+}
+
+#bir_mm {
+    display: table-cell;
+    width: 147px;
+    vertical-align: middle;
+}
+
+#bir_dd {
+    display: table-cell;
+    width: 147px;
+}
+
+#bir_mm, #bir_dd {
+    padding-left: 10px;
+}
+
+.form-control,
+.form-select {
+    height: 0 !important;
+  }

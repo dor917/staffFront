@@ -1,4 +1,4 @@
-import axios from 'axios';
+/*import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Select from 'react-select'
 
@@ -64,3 +64,4 @@ useEffect(async() =>{
             </div>
         );
 }
+*/

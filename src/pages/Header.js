@@ -3,7 +3,6 @@ import React from "react";
 import '../css/bootstrap.min.css'
 import '../css/header.css'
 
-
 function Header(props) {
     const Header = {
         backgroundColor: "#0f4c81" ,
@@ -24,6 +23,8 @@ function Header(props) {
                 <li className = "header-user-li">프로젝트 3</li>
                 <li className = "header-user-li">프로젝트 4</li>
                 <li className = "header-user-li">프로젝트 5</li>
+                <li className = "header-user-li">추가</li>
+                <li className = "logout"></li>
             </ul>
             <span >{props.userId}</span>
 	    </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Main from './pages/Main.js';
 import Login from './pages/Login.js';
 import notice from './notice/notice';
-import Issue from './pages/Issue.js';
+import Signup from './pages/Signup.js';
 import NoticeWriteComponent from './notice/NoticeWriteComponent';
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -24,11 +24,11 @@ function App() {
       <div style={maincontent}>
          <BrowserRouter>
             <Route exact path="/" component={Login} />
+            <Route exact path="/Signup" component={Signup} />
             <Route exact path="/Login" component={Login} />
             <Route exact path="/Main" component={Main} />
             <Route exact path="/notice" component={notice} />
             <Route exact path="/Noticewrite" component={NoticeWriteComponent} />
-            <Route exact path="/Issue" component={{Issue}}/>
          </BrowserRouter>
       
       </div>

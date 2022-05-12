@@ -13,3 +13,8 @@
     float:left;
     margin: 0 15px 0 0;
 }
+
+.logout{
+  float:right;
+  margin-left:83rem;
+}
