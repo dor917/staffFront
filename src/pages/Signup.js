@@ -13,7 +13,7 @@ function Signup() {
                <form action="/Signup.do" method="post">
                   <h1 className="h3 mb-3 fw-normal">Sign up</h1>
 
-                  <div className="form-floating">Username
+                  <div className="form-floating">
                      <input
                         name="id"
                         type="email"
@@ -21,8 +21,9 @@ function Signup() {
                         id="floatingInput"
                         placeholder="name@example.com"
                      />
+                     <label for="floatingInput">Username</label>
                   </div>
-                  <div className="form-floating">Password
+                  <div className="form-floating">
                      <input
                         name="password"
                         type="password"
@@ -30,8 +31,9 @@ function Signup() {
                         id="floatingPassword"
                         placeholder="Password"
                      />
+                     <label for="floatingInput">Password</label>
                   </div>
-                  <div className="form-floating">cofrim password
+                  <div className="form-floating">
                      <input
                         name="form-control"
                         type="cofrim password"
@@ -39,11 +41,10 @@ function Signup() {
                         id="floatingverify password"
                         placeholder="cofrim password"
                      />
+                     <label for="floatingInput">Cofrim Password</label>
                   </div>
-                  <div className="form-floating">Date of Birth
-                  <div>
-                    <div id="bir_wrap">
-                    
+                  <div className="form-floating">Date of Birth              
+                    <div id="form-floating">
                         <div id="bir_yy">
                             <span class="box">
                                 <input type="text" id="yy" class="int" maxlength="4" placeholder="년(4자)"/>
@@ -51,7 +52,7 @@ function Signup() {
                         </div>
 
                         <div id="bir_mm">
-                            <span class="box">
+                            <span class="int">
                                 <select id="mm">
                                     <option>월</option>
                                     <option value="01">1</option>
@@ -74,19 +75,18 @@ function Signup() {
                                 <input type="text" id="dd" class="int" maxlength="2" placeholder="일"/>
                             </span>
                         </div>
-
                     </div>
                     <span class="error_next_box"></span>    
                 </div>
-                  </div>
-                  <div className="form-floating">Email
+                  <div className="form-floating"id="email">
                      <input
                         name="form-control"
-                        type="cofrim password"
+                        type="email"
                         className="form-control"
-                        id="floatingverify password"
-                        placeholder="cofrim password"
+                        id="floatingemail"
+                        placeholder="email"
                      />
+                     <label for="floatingInput">Email</label>
                   </div>
                   
                   <button
