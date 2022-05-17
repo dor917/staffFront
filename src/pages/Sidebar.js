@@ -57,15 +57,6 @@ function Sidebar() {
                         </div>
                      </Link>
                   </li>
-                  <li>
-                     <Link to="/notice">
-                        <div className="d-flex align-items-center">
-                           <FontAwesomeIcon icon={faList} />
-                           &nbsp;&nbsp;
-                           <span className="menu-text">notice</span>
-                        </div>
-                     </Link>
-                  </li>
                </ul>
             </div>
          </div>
