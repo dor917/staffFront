@@ -319,3 +319,11 @@ textarea {
 .col-12 {-ms-flex: 0 0 100%;flex: 0 0 100%;max-width: 100%;}
 
 .width-78 {width: 78% !important;}
+.row>* {width: auto !important; padding: 10px 20px;}
+.section-id-list {border: 1px solid #1e1e1e; padding: 5px 15px;}
+.bg-e0 {background: #e0e0e0;}
+.reset-basic-set{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+}

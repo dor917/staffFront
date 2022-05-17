@@ -51,11 +51,17 @@ const Profile = () =>{
                 <div className="card-body">
                   <div className="row">
                     <div className="col-sm-3">
-                      <h6 className="mb-0">Full Name</h6>
+                      <h6 className="mb-0">First Name</h6>
                     </div>
                     <div className="col-sm-9 text-secondary">
-                      Kenneth Valdez
+                      호연
                     </div>
+                    <div className="col-sm-3">
+                      <h6 className="mb-0">Last  Name</h6>
+                    </div>
+                      <div className="col-sm-9 text-secondary">
+                      나
+                      </div>
                   </div>
                   <hr></hr>
                   <div className="row">
@@ -63,7 +69,7 @@ const Profile = () =>{
                       <h6 className="mb-0">Email</h6>
                     </div>
                     <div className="col-sm-9 text-secondary">
-                      fip@jukmuh.al
+                      nahy0107@naver.com
                     </div>
                   </div>
                   <hr></hr>
@@ -72,7 +78,7 @@ const Profile = () =>{
                       <h6 className="mb-0">Phone</h6>
                     </div>
                     <div className="col-sm-9 text-secondary">
-                      (239) 816-9029
+                      010-9775-7034
                     </div>
                   </div>
                   <hr></hr>
@@ -90,7 +96,7 @@ const Profile = () =>{
                       <h6 className="mb-0">Address</h6>
                     </div>
                     <div className="col-sm-9 text-secondary">
-                      Bay Area, San Francisco, CA
+                      충청북도 청원구 내덕동 82-18
                     </div>
                   </div>
                   <hr></hr>

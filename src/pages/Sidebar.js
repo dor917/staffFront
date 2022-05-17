@@ -6,12 +6,14 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import '../js/sidebar.event.js';
 
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
    faCalendar,
    faComment,
    faFile,
    faList,
+   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 window.jQuery = window.$ = $;
 
@@ -60,7 +62,7 @@ function Sidebar() {
                   <li>
                      <Link to="/Issue">
                         <div className="d-flex align-items-center">
-                           <FontAwesomeIcon icon={faList} />
+                        <FontAwesomeIcon icon={faUser} />
                            &nbsp;&nbsp;
                            <span className="menu-text">Issue</span>
                         </div>

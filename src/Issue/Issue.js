@@ -20,24 +20,35 @@ const Profile = () =>{
                                     <div className = "row">
                                         <div className = "pr-1 col-md-5">
                                             <div class="form-group">
-                                                <label>Company (disabled)</label>
+                                                <label>FIRST NAME</label>
                                                 <input placeholder = "Company" type = "text"
-                                                className = "form-control" value = "Creative Code Inc."></input>
+                                                className = "form-control" value = "호연"></input>
                                             </div>
                                         </div>
                                         <div className = "px-1 col-md-3">
                                             <div className = "form-group">
-                                                <label>Username</label>
-                                                <input placeholder = "Username" type = "text" className="form-control" value = "nahy0107"></input>
-                                            </div>
-                                        </div>
-                                        <div className = "ph-1 col-md-4">
-                                            <div className = "form-group">
-                                                <label for = "exampleInputEmail1">Email address</label>
-                                                <input placeholder = "Email" type = "email" className = "form-control" value = "nahy0107@naver.com"></input>
+                                                <label>LAST NAME</label>
+                                                <input placeholder = "Username" type = "text" className="form-control" value = "나"></input>
                                             </div>
                                         </div>
                                     </div>
+                                    <div className = "row">
+                                        <div className = "ph-1 col-md-9">
+                                            <div className = "form-group">
+                                                <label for = "exampleInputEmail1">Email-Address</label>
+                                                <input placeholder = "Email" type = "email" className = "form-control" value = "nahy0107@naver.com"></input>
+                                            </div>
+                                        </div>
+                                            <div className = "form-group">
+                                                <label for = "exampleInputEmail1">Phone Number</label>
+                                                <input placeholder = "Email" type = "email" className = "form-control" value = "010-9775-7034"></input>
+                                            </div>
+                                        
+                                    </div>
+                                        
+                                            
+                                        
+                                    
                                     <div className = "row">
                                         <div className = "pr-1 col-md-6">
                                             <div class = "form-group">
