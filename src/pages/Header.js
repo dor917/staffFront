@@ -2,6 +2,7 @@ import { right } from "@popperjs/core";
 import React from "react";
 import '../css/bootstrap.min.css'
 import '../css/header.css'
+import { Link } from 'react-router-dom';
 
 function Header(props) {
     const Header = {
@@ -24,7 +25,12 @@ function Header(props) {
                 <li className = "header-user-li">프로젝트 4</li>
                 <li className = "header-user-li">프로젝트 5</li>
                 <li className = "header-user-li">추가</li>
-                <li className = "logout"></li>
+                <div className="log">
+            <div className="login">로그인</div>
+            <Link to="/Login">
+            <div className="logout">로그아웃</div>
+            </Link>
+        </div>
             </ul>
             <span >{props.userId}</span>
 	    </div>

@@ -31,6 +31,16 @@ function Signup() {
                         id="floatingPassword"
                         placeholder="Password"
                      />
+                     <label for="floatingInput">Id</label>
+                  </div>
+                  <div className="form-floating">
+                     <input
+                        name="form-control"
+                        type="cofrim id"
+                        className="form-control"
+                        id="floatingverify id"
+                        placeholder="cofrim id"
+                     />
                      <label for="floatingInput">Password</label>
                   </div>
                   <div className="form-floating">
@@ -43,41 +53,6 @@ function Signup() {
                      />
                      <label for="floatingInput">Cofrim Password</label>
                   </div>
-                  <div className="form-floating">Date of Birth              
-                    <div id="form-floating">
-                        <div id="bir_yy">
-                            <span class="box">
-                                <input type="text" id="yy" class="int" maxlength="4" placeholder="년(4자)"/>
-                            </span>
-                        </div>
-
-                        <div id="bir_mm">
-                            <span class="int">
-                                <select id="mm">
-                                    <option>월</option>
-                                    <option value="01">1</option>
-                                    <option value="02">2</option>
-                                    <option value="03">3</option>
-                                    <option value="04">4</option>
-                                    <option value="05">5</option>
-                                    <option value="06">6</option>
-                                    <option value="07">7</option>
-                                    <option value="08">8</option>
-                                    <option value="09">9</option>                                    
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                </select>
-                            </span>
-                        </div>
-                        <div id="bir_dd">
-                            <span class="box">
-                                <input type="text" id="dd" class="int" maxlength="2" placeholder="일"/>
-                            </span>
-                        </div>
-                    </div>
-                    <span class="error_next_box"></span>    
-                </div>
                   <div className="form-floating"id="email">
                      <input
                         name="form-control"
@@ -88,7 +63,7 @@ function Signup() {
                      />
                      <label for="floatingInput">Email</label>
                   </div>
-                  
+
                   <button
                      className="w-100 btn btn-lg btn-primary"
                      type="submit">

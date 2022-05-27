@@ -13,12 +13,12 @@ function login() {
                   <div className="form-floating">
                      <input
                         name="id"
-                        type="email"
+                        type="id"
                         className="form-control"
                         id="floatingInput"
-                        placeholder="name@example.com"
+                        placeholder="Id"
                      />
-                     <label for="floatingInput">Email address</label>
+                     <label for="floatingInput">Id</label>
                   </div>
                   <div className="form-floating">
                      <input
