@@ -1,8 +1,6 @@
 body{
-    margin-top:20px;
     color: #1a202c;
-    text-align: left;
-    background-color: #e2e8f0;    
+    text-align: left;    
 }
 .main-body {
     padding: 15px;
@@ -30,7 +28,7 @@ body{
     flex: 1 1 auto;
     min-height: 1px;
     padding: 1rem;
-    width:400px;
+    width:355px;
 }
 
 .gutters-sm {
@@ -52,8 +50,39 @@ body{
     background-color: #e2e8f0;
 }
 .h-100 {
-    height: 100%!important;
+    height: 80%!important;
 }
 .shadow-none {
     box-shadow: none!important;
+}
+
+.public{
+    color: black;
+    padding: 3px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    float: right;
+    margin: 1px 1px;
+    border-radius: 12px;
+}
+.circle {
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+    background:#00d3d3;
+    text-align: center;
+    line-height: 20px;
+}
+
+.ali_right {
+    display: flex !important;
+    justify-content: right !important;
+}
+
+.card-body2 {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1rem;
+    width:710px;
 }

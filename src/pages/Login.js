@@ -1,5 +1,7 @@
 import React from 'react';
 import '../css/login.css';
+import { Link } from 'react-router-dom';
+import '../js/sidebar.event.js';
 
 function login() {
    return (
@@ -38,11 +40,17 @@ function login() {
                   </div>
                   <button
                      className="w-100 btn btn-lg btn-primary"
-                     type="submit"
-                  >
+                     type="submit">
                      Sign in
                   </button>
-                  <p className="mt-5 mb-3 text-muted">&copy; staff 2021 </p>
+                  <Link to="Signup">
+                  <button
+                     className="signup-button"
+                     type="href"
+                     href='./pages/signup'>Sign up
+                  </button>
+                  </Link>
+                  <p className="mt-5 mb-3 text-muted">&copy; staff 2022 </p>
                </form>
             </main>
          </div>

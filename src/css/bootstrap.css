@@ -2388,6 +2388,9 @@ textarea.form-control {
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+.btnSize{
+  float:right !important;
+}
 
 @media screen and (prefers-reduced-motion: reduce) {
   .btn {
@@ -2693,6 +2696,7 @@ fieldset:disabled a.btn {
 .btn-outline-primary {
   color: #007bff;
   border-color: #007bff;
+  
 }
 
 .btn-outline-primary:hover {
@@ -4582,6 +4586,7 @@ input[type="button"].btn-block {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  
 }
 
 .card > hr {

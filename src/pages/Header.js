@@ -1,6 +1,20 @@
+import { right } from "@popperjs/core";
 import React from "react";
 import '../css/bootstrap.min.css'
 import '../css/header.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
+import { faGripLinesVertical } from "@fortawesome/free-solid-svg-icons";
+import { faBell } from "@fortawesome/free-regular-svg-icons";
+import { faWrench } from "@fortawesome/free-solid-svg-icons";
+import { faWindowRestore } from "@fortawesome/free-regular-svg-icons";
+import { faGear } from "@fortawesome/free-solid-svg-icons";
+import { faUserGear } from "@fortawesome/free-solid-svg-icons";
+import { faUsersGear } from "@fortawesome/free-solid-svg-icons";
+
+
+
+
 
 function Header(props) {
     const Header = {
@@ -16,8 +30,50 @@ function Header(props) {
 
     return (
         <div className="page-header" style={Header}>
-	        <h1  style={header_title}>Staff</h1>
-            <span className = "header-user-id" >{props.userId}</span>
+            <Link to="/main">
+                <h1 style={header_title}>Staff</h1>
+            </Link>    
+            <ul className = "header-user-id">
+
+                <li className = "header-user-li">프로젝트 2
+                    <span className="icon-line">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <FontAwesomeIcon icon = {faWrench}/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <FontAwesomeIcon icon = {faGripLinesVertical}/>
+                        
+                    </span>
+                </li>
+                <li className = "header-user-li">프로젝트 3
+                    <span className="icon-line">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <FontAwesomeIcon icon = {faGripLinesVertical}/>
+                    </span></li>
+                <li className = "header-user-li">프로젝트 4
+                    <span className="icon-line">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <FontAwesomeIcon icon = {faGripLinesVertical}/>
+                        &nbsp;&nbsp;
+                    </span></li>
+                <li className = "header-user-li">프로젝트 5
+                    <span className="icon-line">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <FontAwesomeIcon icon = {faWrench}/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <FontAwesomeIcon icon = {faGripLinesVertical}/>
+                    </span></li>
+                <li className = "header-user-li">추가</li>
+                <div className = "log">
+                    <FontAwesomeIcon icon = {faBell}/>
+                    <Link to = "/Login">
+                        <li className = "logout">로그아웃</li>
+                    </Link>
+                </div>
+            </ul>    
+            
+                
+            
+            <span >{props.userId}</span>
 	    </div>
     );
 }

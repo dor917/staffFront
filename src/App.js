@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Main from './pages/Main.js';
 import Login from './pages/Login.js';
-import Issue from './Issue/Issue';
-import NoticeWriteComponent from './Issue/NoticeWriteComponent';
+import notice from './notice/notice';
+import Signup from './pages/Signup.js';
+import NoticeWriteComponent from './notice/NoticeWriteComponent';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 function App() {
@@ -23,9 +24,10 @@ function App() {
       <div style={maincontent}>
          <BrowserRouter>
             <Route exact path="/" component={Login} />
+            <Route exact path="/Signup" component={Signup} />
             <Route exact path="/Login" component={Login} />
             <Route exact path="/Main" component={Main} />
-            <Route exact path="/Issue" component={Issue} />
+            <Route exact path="/notice" component={notice} />
             <Route exact path="/Noticewrite" component={NoticeWriteComponent} />
          </BrowserRouter>
          

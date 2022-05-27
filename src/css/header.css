@@ -4,6 +4,27 @@
 }
 .header-user-id{
     position: absolute;
-    right: 12px;
     top: 12px;
+    left:6rem;
+    list-style-type: none;
+    position:left;
 }
+.header-user-li{
+    float:left;
+    margin: 0 15px 0 0;
+}
+
+.logout{
+    margin-right:-7rem;
+    margin-top:0rem; 
+    float: right;
+}
+.log{
+    float:right;
+    margin-left:65rem;
+    margin-top:0rem;
+}
+/* .login{
+    margin-left:-3.5rem;
+    margin-top: 1.5rem;
+} */

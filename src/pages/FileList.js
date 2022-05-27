@@ -3,9 +3,12 @@ import '../css/bootstrap.min.css';
 import '../css/chat.css';
 import '../css/fileList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFile } from '@fortawesome/free-solid-svg-icons';
+import { faFile, faTrash, faPlus } from '@fortawesome/free-solid-svg-icons';
 import CodeView from './CodeView.js';
 import { Link } from 'react-router-dom';
+import '../js/sidebar.event.js';
+
+
 
 
 function idlist() {
@@ -23,6 +26,10 @@ function idlist() {
                   아이디
                   <span className="list-group-item-header-commit">
                      파일 리스트 js 수정
+                     <span className="list-group-item-header-button">
+                     &nbsp;&nbsp;
+                     <FontAwesomeIcon icon={faTrash} />
+                     </span>
                   </span>
                </span>
             </div>
@@ -40,6 +47,9 @@ function FileList() {
       <div>
          <div className='col-12 row bg-e0 reset-basic-set'>
             {idlist()}
+            <div className="one-line">
+               <FontAwesomeIcon icon={faPlus} />
+            </div>
          </div>
             <ul className="list-group list-group-fileList">
                {/* <li className="list-group-item d-flex justify-content-between align-items-center list-group-item-header">
@@ -90,17 +100,30 @@ function FileList() {
                   <span className="badge">두달 전</span>
                </li>
             </ul>
-            <div>&nbsp;</div>
-            <div className="dateButton">
-               <button className="date">2022-03-14</button>
-               <button className="date">2022-04-20</button>
-               <button className="date">2022-07-30</button>
-               <button className="date">2022-11-22</button>
+            &nbsp;&nbsp;
+            <div className="fontawesome-size fontawesome-locate ">
+               <div className='col-12 row'>
+                  <div className='col-6 text-right'>
+                     <input type='date' />
+                  </div>
+                  <div className='col-6 text-right'>
+                     <input type='date' />
+                  </div>
+               </div>
+            {/* <div className="dateButton fa-4x">
+               <FontAwesomeIcon icon={faAngleDoubleLeft}></FontAwesomeIcon>
+                  <button className="date">2022-03-14</button>
+                  <button className="date">2022-05-07</button>
+                  <button className="date">2022-07-19</button>
+                  <button className="date">2022-09-09</button>  
+               <FontAwesomeIcon icon={faAngleDoubleRight}></FontAwesomeIcon> 
+            </div> */}
             </div>
-            
             <CodeView readCode = {readCode}/>
-            
-      </div>
+            &nbsp;&nbsp;
+            <button className="edit">Edit</button>
+            <button className="edit">Edit</button>
+         </div>
       
    );
 }

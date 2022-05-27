@@ -1,4 +1,5 @@
 import React from 'react';
+import '../js/sidebar.event.js';
 
 function MessageList(props) {
     return (

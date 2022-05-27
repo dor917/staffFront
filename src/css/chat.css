@@ -237,7 +237,9 @@ h4.card-title {
     -webkit-box-align: center;
     align-items: center;
     padding: 12px 20px;
-    background-color: #f9fafb
+    background-color: #f9fafb;
+    width: 1245px;
+    padding-left: 0px;
 }
 
 .publisher>*:first-child {
@@ -251,9 +253,18 @@ h4.card-title {
 .publisher-input {
     -webkit-box-flex: 1;
     flex-grow: 1;
-    border: none;
+    border: 1px solid rgba(0,0,0,.125);
     outline: none !important;
     background-color: transparent
+    
+    
+}
+publisher-inputing {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    border: 1px solid rgba(0,0,0,.125);
+    outline: none !important;
+    background-color: transparent;
 }
 
 button,
@@ -262,7 +273,7 @@ optgroup,
 select,
 textarea {
     font-family: Roboto, sans-serif;
-    font-weight: 300
+    font-weight: 300;
 }
 
 .publisher-btn {
@@ -273,12 +284,12 @@ textarea {
     cursor: pointer;
     overflow: -moz-hidden-unscrollable;
     -webkit-transition: .2s linear;
-    transition: .2s linear
+    transition: .2s linear;
 }
 
 .file-group {
     position: relative;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .publisher-btn {
@@ -289,18 +300,18 @@ textarea {
     cursor: pointer;
     overflow: -moz-hidden-unscrollable;
     -webkit-transition: .2s linear;
-    transition: .2s linear
+    transition: .2s linear;
 }
 
 .file-group input[type="file"] {
     position: absolute;
     opacity: 0;
     z-index: -1;
-    width: 20px
+    width: 20px;
 }
 
 .text-info {
-    color: #48b0f7 !important
+    color: #48b0f7 !important;
 }
 
 /* Grid Component Basic CSS */
@@ -326,4 +337,43 @@ textarea {
     margin-left: 0 !important;
     margin-right: 0 !important;
     padding-left: 0 !important;
+}
+
+.no-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    height: 100% !important; 
+}
+
+.disFlex {
+    display: flex;
+}
+
+.chatList{
+    border: 2px solid gray;
+    height: 65px;
+    align-items: center;
+}
+
+.userProfile {
+    justify-content: right;
+}
+
+.userProfile span {
+    font-size: 20px;
+}
+.userName {
+    box-sizing: border-box;
+}
+
+.userName span {
+    font-size: 10px;
+}
+
+.chatFontSize {
+    box-sizing: border-box; 
+}
+.chatFontSize span{
+    font-size: 5px;
 }

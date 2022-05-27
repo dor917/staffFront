@@ -70,7 +70,7 @@ const NoticeWriteComponent = () => {
                     <UploadFiles ref={uploadReferenece} />
                     <Editor value={desc} onChange={onEditorChange} />
                     <div className="text-center pd12">
-                        <a href="/Issue"><button className="lf-button primary ">목록으로</button></a>
+                        <a href="/notice"><button className="lf-button primary ">목록으로</button></a>
                         <button className="lf-button primary" onClick={onClickSearch}>저장</button>
                         
                     </div>

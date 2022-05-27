@@ -1,6 +1,22 @@
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import {React,useState} from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { fa1 } from '@fortawesome/free-solid-svg-icons';
+import { flexibleCompare } from '@fullcalendar/react';
+import '../js/sidebar.event.js';
 
-
+const publicBtn = {
+  color: 'black',
+  padding: '3px 10px',
+  textAlign: 'center',
+  textDecoration: 'none',
+  fontSize: '16px',
+  float: 'right',
+  margin: '1px 1px',
+  borderRadius: '12px'
+}
 const Profile = () =>{
   return(
     <div className="container">
@@ -15,7 +31,9 @@ const Profile = () =>{
                       <h4>나호연</h4>
                       <p className="text-secondary mb-1">Full Stack Developer</p>
                       <p className="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                      <button className="btn btn-outline-primary">Message</button>
+                      <Link to="/Chat">
+                        <button className="btn btn-outline-primary">Message</button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -44,29 +62,34 @@ const Profile = () =>{
                   </li>
                 </ul>
               </div>
-              <button className="btn btn-outline-primary">ID_Search</button>
             </div>
             <div className="col-md-8">
               <div className="card mb-3">
-                <div className="card-body">
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0">First Name</h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                      호연
-                    </div>
-                    <div className="col-sm-3">
-                      <h6 className="mb-0">Last  Name</h6>
-                    </div>
-                      <div className="col-sm-9 text-secondary">
-                      나
+                <div className="card-body2">
+                  <div className="row col-12" style={{height:"54px"}}>
+                    <div className='row col-6'>
+                      <div className="col-6">
+                        <h6 className="mb-0">First Name</h6>
                       </div>
+                      <div className="col-6 text-secondary">
+                      &nbsp;&nbsp;&nbsp;
+                        호연
+                      </div>
+                    </div>
+                    <div className='row col-6'>
+                      <div className="col-6">
+                        <h6 className="mb-0">Last Name</h6>
+                      </div>
+                      <div className="col-6 text-secondary">
+                        나
+                      </div> 
+                    </div>
                   </div>
                   <hr></hr>
                   <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0">Email</h6>
+                    <div className="col-sm-3">               
+                      <h6 className="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;
+                        Email</h6>
                     </div>
                     <div className="col-sm-9 text-secondary">
                       nahy0107@naver.com
@@ -75,7 +98,8 @@ const Profile = () =>{
                   <hr></hr>
                   <div className="row">
                     <div className="col-sm-3">
-                      <h6 className="mb-0">Phone</h6>
+                      <h6 className="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;
+                        Phone</h6>
                     </div>
                     <div className="col-sm-9 text-secondary">
                       010-9775-7034
@@ -84,7 +108,8 @@ const Profile = () =>{
                   <hr></hr>
                   <div className="row">
                     <div className="col-sm-3">
-                      <h6 className="mb-0">Country</h6>
+                      <h6 className="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;
+                        Country</h6>
                     </div>
                     <div className="col-sm-9 text-secondary">
                       KOREA
@@ -93,7 +118,9 @@ const Profile = () =>{
                   <hr></hr>
                   <div className="row">
                     <div className="col-sm-3">
-                      <h6 className="mb-0">Address</h6>
+                      <h6 className="mb-0">
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      Address</h6>
                     </div>
                     <div className="col-sm-9 text-secondary">
                       충청북도 청원구 내덕동 82-18
@@ -101,7 +128,7 @@ const Profile = () =>{
                   </div>
                   <hr></hr>
                   <div className="row">
-                    <div className="col-sm-12">
+                    <div className="col-sm-12" style={{display: 'flex', justifyContent:'right', paddingLeft:'px'}}>
                       <a className="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
                     </div>
                   </div>
@@ -112,61 +139,61 @@ const Profile = () =>{
                 <div className="col-sm-6 mb-3">
                   <div className="card h-100">
                     <div className="card-body">
-                      <h6 className="d-flex align-items-center mb-3"><i className="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                      <small>Web Design</small>
+                      <h6 className="d-flex align-items-center mb-3"><i className="material-icons text-info mr-2">algorithm</i>
+                        <button style={publicBtn}>public</button>
+                      </h6>
                       <div className="progress mb-3" style={{height: "5px"}}>
                         <div className="progress-bar bg-primary" role="progressbar" style={{width: "80%"}} aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                      <small>Website Markup</small>
-                      <div className="progress mb-3" style={{height: "5px"}}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{width: "72%"}} aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>One Page</small>
-                      <div className="progress mb-3" style={{height: "5px"}}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{width: "89%"}} aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Mobile Template</small>
-                      <div className="progress mb-3" style={{height: "5px"}}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{width: "55%"}} aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Backend API</small>
                       <div className="progress mb-3" style={{height: "5px"}}>
                         <div className="progress-bar bg-primary" role="progressbar" style={{width: "66%"}} aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
+                      <span className="circle">asd</span>
                     </div>
                   </div>
                 </div>
                 <div className="col-sm-6 mb-3">
                   <div className="card h-100">
                     <div className="card-body">
-                      <h6 className="d-flex align-items-center mb-3"><i className="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                      <small>Web Design</small>
-                      <div className="progress mb-3" style={{height: "5px"}}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{width: "80%"}} aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Website Markup</small>
-                      <div className="progress mb-3" style={{height: "5px"}}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{width: "72%"}} aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>One Page</small>
-                      <div className="progress mb-3" style={{height: "5px"}}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{width: "89%"}} aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Mobile Template</small>
-                      <div className="progress mb-3" style={{height: "5px"}}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{width: "55%"}} aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Backend API</small>
-                      <div className="progress mb-3" style={{height: "5px"}}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{width: "66%"}} aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                      <h6 className="d-flex align-items-center mb-3"><i className="material-icons text-info mr-2">algorithm</i>
+                        <button style={publicBtn}>public</button>
+                      </h6>
+                    <div className="progress mb-3" style={{height: "5px"}}>
+                      <div className="progress-bar bg-primary" role="progressbar" style={{width: "80%"}} aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div className="progress mb-3" style={{height: "5px"}}>
+                      <div className="progress-bar bg-primary" role="progressbar" style={{width: "66%"}} aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <li>java</li>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-sm-6 mb-3">
+                  <div className="card h-100">
+                    <div className="card-body">
+                      <h6 className="d-flex align-items-center mb-3"><i className="material-icons text-info mr-2">algorithm</i>
+                        <button style={publicBtn}>public</button>
+                      </h6>
+                    <div className="progress mb-3" style={{height: "5px"}}>
+                      <div className="progress-bar bg-primary" role="progressbar" style={{width: "80%"}} aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div className="progress mb-3" style={{height: "5px"}}>
+                      <div className="progress-bar bg-primary" role="progressbar" style={{width: "66%"}} aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <li>java</li>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-sm-6 mb-3">
+                  <div className="card h-100">
+                    <div className="card-body" style={{display: 'flex', justifyContent:'center'}}>
+                      <div className="fa-5x">
+                        <FontAwesomeIcon icon = {faPlus}/>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-
-
             </div>
           </div>
 

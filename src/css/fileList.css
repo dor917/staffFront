@@ -9,7 +9,6 @@
 .list-group-item-header-commit {
     font-size: 12px;
     margin-left: 10px;
-   
 }
 .badge {
     color: black;
@@ -28,6 +27,7 @@
     height: 120px;
     margin: auto;
     text-align: center;
+    font-size: 30px;
     
 }
 .dateButton {
@@ -35,6 +35,22 @@
     margin:auto;
     display:block;
     
+}
+.edit{
+    display: inline-flex;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 2.25rem;
+    font-size: 1rem;
+    background: black;
+
+    margin-left: 52rem;
 }
 
 .row {display: -ms-flexbox;display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap;}
@@ -60,3 +76,4 @@
     margin-right: 0 !important;
     padding-left: 0 !important;
 }
+.text-right{text-align: right;}

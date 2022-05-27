@@ -5,8 +5,6 @@ import $ from 'jquery';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import '../js/sidebar.event.js';
-
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
    faCalendar,
@@ -14,7 +12,11 @@ import {
    faFile,
    faList,
    faUser,
+   faGear,
 } from '@fortawesome/free-solid-svg-icons';
+import { faAndroid } from '@fortawesome/free-brands-svg-icons';
+import { faUserGear } from '@fortawesome/free-solid-svg-icons';
+import { faSign } from '@fortawesome/free-solid-svg-icons';
 window.jQuery = window.$ = $;
 
 function Sidebar() {
@@ -33,20 +35,20 @@ function Sidebar() {
             <div className="nav-menu">
                <ul>
                   <li>
-                     <Link to="/Chat">
-                        <div className="d-flex align-items-center">
-                           <FontAwesomeIcon icon={faComment} />
-                           &nbsp;&nbsp;
-                           <span className="menu-text">Chat</span>
-                        </div>
-                     </Link>
-                  </li>
-                  <li>
                      <Link to="/FileList">
                         <div className="d-flex align-items-center">
                            <FontAwesomeIcon icon={faFile} />
                            &nbsp;&nbsp;
                            <span className="menu-text">FileList</span>
+                        </div>
+                     </Link>
+                  </li>
+                  <li>
+                     <Link to="/Chat">
+                        <div className="d-flex align-items-center">
+                           <FontAwesomeIcon icon={faComment} />
+                           &nbsp;&nbsp;
+                           <span className="menu-text">Chat</span>
                         </div>
                      </Link>
                   </li>
@@ -60,11 +62,20 @@ function Sidebar() {
                      </Link>
                   </li>
                   <li>
-                     <Link to="/Issue">
+                     <Link to="/notice">
                         <div className="d-flex align-items-center">
                         <FontAwesomeIcon icon={faUser} />
                            &nbsp;&nbsp;
-                           <span className="menu-text">Issue</span>
+                           <span className="menu-text">notice</span>
+                        </div>
+                     </Link>
+                  </li>
+                  <li>
+                     <Link to="/Project">
+                        <div className="d-flex align-items-center">
+                        <FontAwesomeIcon icon={faSign} />
+                           &nbsp;&nbsp;
+                           <span className="menu-text">Project</span>
                         </div>
                      </Link>
                   </li>

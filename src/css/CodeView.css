@@ -125,6 +125,9 @@
     margin-left: 0 !important;
     margin-right: 0 !important;
     padding-left: 0 !important;
+    
+    
+    
 }
 
 .flex-container{
@@ -132,8 +135,14 @@
     margin-left: 5px;
     width:50%;
     padding: 0;
+    
 }
 .flex-contain{
     display:flex;
     width:49.5%;
+    
+}
+.blob-code-content{
+    overflow-y: scroll;
+    overflow-x: auto;
 }

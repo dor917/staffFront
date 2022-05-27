@@ -9,6 +9,8 @@ import Modal from 'react-modal';
 import '../css/Calendar1.css'
 import $ from 'jquery';
 import { left } from "@popperjs/core";
+import '../js/sidebar.event.js';
+
 const events = [
   {
     id: 1,

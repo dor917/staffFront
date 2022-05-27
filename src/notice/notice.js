@@ -1,9 +1,14 @@
+
 import {React,useState} from 'react';
 import '../css/bootstrap.min.css';
 import { Form, Button , List , Input, Card} from 'antd';
 import { DatePicker } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Icon from '@ant-design/icons';
+
+
+
+
 
 const Profile = () =>{
     return(
@@ -101,7 +106,7 @@ const Profile = () =>{
                                             </div>
                                         </div>
                                     </div>
-                                    <button type = "submit" className = "btn-fill pull-right btn btn-info">Update Profile</button>
+                                    <button type = "submit" className = "btn-fill pull-right btn btn-info">Create Profile</button>
                                     <div className = "clearfix">
 
                                     </div>
@@ -132,6 +137,7 @@ const Profile = () =>{
                 </div>
         </div>    
                 
+
 
                 
                 
