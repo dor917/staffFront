@@ -61,6 +61,7 @@ function Sidebar() {
                         </div>
                      </Link>
                   </li>
+
                   <li>
                      <Link to="/notice">
                         <div className="d-flex align-items-center">
@@ -79,6 +80,7 @@ function Sidebar() {
                         </div>
                      </Link>
                   </li>
+
                </ul>
             </div>
          </div>

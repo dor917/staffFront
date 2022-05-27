@@ -13,9 +13,6 @@ import { faUserGear } from "@fortawesome/free-solid-svg-icons";
 import { faUsersGear } from "@fortawesome/free-solid-svg-icons";
 
 
-
-
-
 function Header(props) {
     const Header = {
         backgroundColor: "#0f4c81" ,
@@ -63,6 +60,7 @@ function Header(props) {
                         <FontAwesomeIcon icon = {faGripLinesVertical}/>
                     </span></li>
                 <li className = "header-user-li">추가</li>
+
                 <div className = "log">
                     <FontAwesomeIcon icon = {faBell}/>
                     <Link to = "/Login">
@@ -73,6 +71,15 @@ function Header(props) {
             
                 
             
+
+            <div className="log">
+                <div className="login">로그인</div>
+                    <Link to="/Login">
+                <div className="logout">로그아웃</div>
+                </Link>
+            </div>
+            
+
             <span >{props.userId}</span>
 	    </div>
     );

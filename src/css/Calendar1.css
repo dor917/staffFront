@@ -11,6 +11,7 @@
     border-radius: 4px;
     margin-top: 1px;
   }
+
 .Calendar{
   position:absolute;
   z-index: 2;
@@ -24,4 +25,12 @@
 .Calendar-modal{
   position: absolute;
   z-index: 3;
+}
+.section{
+ float:right;
+}
+.label{
+  display:inline-block;
+  width:100px;
+  line-height:50px;
 }

@@ -11,6 +11,9 @@ import $ from 'jquery';
 import { left } from "@popperjs/core";
 import '../js/sidebar.event.js';
 
+
+
+
 const events = [
   {
     id: 1,
@@ -30,9 +33,8 @@ const events = [
 Modal.setAppElement('#root')
 
 function Calendar() {
+  const[checkeditems, setcheckeditems] = useState(new Set());
 
-  
-  
   const [modalIsOpen, setModalIsOpen] = useState(false)
   return (   
     <div className="Calendar">     
@@ -51,7 +53,7 @@ function Calendar() {
             {                   
             content:{
               color:'black',
-              position:'absolute',
+              
               left:'1150px',
               top:'110px',
               width:'700px',
@@ -63,6 +65,15 @@ function Calendar() {
               <AddContainer>
                     <InputBox>
                     <h2>새로운 일정</h2>
+                    <h3>type</h3>
+                    <input type="checkbox"id="bug"className="issue"/>bug
+                    <input type="checkbox"id="wonfix"className="issue"/>wonfix
+                    <input type="checkbox"id="question"className="issue"/>question
+                    <input type="checkbox"id="help"className="issue"/>help                       
+                    <input type="checkbox"id="conference"className="schedule"/>conference
+                    <input type="checkbox"id="start"className="schedule"/>start
+                    <input type="checkbox"id="end"className="schedule"/>end
+                    <input type="checkbox"id="vacation"className="schedule"/>vacation     
                     <h4>Title</h4>
                     <input type="text" id="scheduleInput" style={{height:5+'%'}}></input>
                     <h4>Content</h4>

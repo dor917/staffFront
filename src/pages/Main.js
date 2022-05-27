@@ -4,7 +4,6 @@ import Header from "./Header.js";
 import FileList from "./FileList.js";
 import Sidebar from "./Sidebar.js";
 import Calendar from "./Calendar.js";
-import notice from "../notice/notice.js";
 import editEvent from "./editEventCalendar.js";
 import Profile from "./Profile.js";
 import Create from "./Create.js";
@@ -33,7 +32,6 @@ function Main() {
           <Route exact path="/Chat" component={Chat} />
           <Route exact path="/FileList" component={FileList} />
           <Route exact path="/Calendar" component={Calendar} />
-          <Route exact path="/notice" component={notice} />
           <Route exact path="/editEventCalendar" component={editEvent} />
           <Route exact path="/Project" component={Create} />
         </BrowserRouter>
