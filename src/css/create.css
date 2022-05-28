@@ -40,7 +40,7 @@
 
 .searchName {
     height: 45px;
-    width: 426px;
+    width: 739px;
     border: 1px solid lightgray;
     align-items: center;
     margin: 0px;
@@ -75,6 +75,42 @@
 
 .stackProject{
     padding-top:20px;
+}
+.progressProject {
+    border: 2px solid lightgray;
+    height: 40px;
+    align-items: center;
+    margin: 0px;
+    display: flex;
+    padding-top: 20px;
+    width:200px;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+.proposeProject{
+    border: 2px solid lightgray;
+    height: 130px;
+    align-items: center;
+    margin: 0px;
+    display: flex;
+    padding-top: 20px;
+    width:1000px;
     
+}
+.contStyle{
+    border-radius: 0.35rem;
+    width: 3rem;
+    height: 15rem;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(3, 1fr);
     
+}
+.innerBox{
+    display: flex;
+    text-align: center;
+    justify-content: left;
+}
+.checkBox{
+    justify-content: center;
 }

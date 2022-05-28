@@ -77,7 +77,7 @@ function Chat() {
       <div className='col-12 row'>
       <div className='col-2'></div> {/*왼쪽빈칸 */}
       <div className="col-8 page-content page-container" id="page-content">
-         <div className="card card-bordered">
+         <div className="chatSize chatSize-bordered">
             <div
                className="ps-container ps-theme-default ps-active-y"
                id="chat-content"

@@ -41,15 +41,47 @@ const Check = () => {
                 <label key = {item.id} className = "innerBox">
                     <input
                     type="checkbox"
-                    value={item.name}
+                    value={item.language}
                     onChange={(e) => checkHandler(e)}
                 />
-                <div>{item.name}</div>
+                <div>{item.language}</div>
                 </label>
             ))}
             </div>
     );
 };
-    
+    // const [checkedItems, setCheckedItems] = useState(new Set());
+
+    // const onHandleCheckedItems = (id, isChecked) => {
+    //     if (isChecked) {
+    //         checkedItems.add(id);
+    //         setCheckedItems(checkedItems);
+    //     }
+    //     else if (!isChecked && checkedItems.has(id)) {
+    //         checkedItems.delete(id);
+    //         setCheckedItems(checkedItems);
+    //     }
+    //     console.log('checkedItems', checkedItems)
+    // };
+
+    // return (
+    //     <ul className='flex flex-col gap-2 mt-4'>
+
+    //     </ul>
+    // )
+    // const InputBox = ({row, onHandleCheckedItems }) => {
+    //     const [bChecked, setChecked] = useState(false);
+
+    //     const checkHandler = ({ target }) => {
+    //         setChecked(!bChecked);
+    //         onHandleCheckedItems(row.id, target.checked);
+    //     };
+        
+    //     return(
+            
+    //         <input type="checkbox" checked={bChecked} onChange={(e) => checkHandler(e)}
+            
+    //     );
+    // };
 
 export default Check;

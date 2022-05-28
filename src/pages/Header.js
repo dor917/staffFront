@@ -69,17 +69,6 @@ function Header(props) {
                 </div>
             </ul>    
             
-                
-            
-
-            <div className="log">
-                <div className="login">로그인</div>
-                    <Link to="/Login">
-                <div className="logout">로그아웃</div>
-                </Link>
-            </div>
-            
-
             <span >{props.userId}</span>
 	    </div>
     );

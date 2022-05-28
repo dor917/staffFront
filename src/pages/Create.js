@@ -18,7 +18,7 @@ const Create = () =>{
 
     return(
         <div className="row">
-            <div className="col-3 col-3-border">
+            <div className="col-5 col-3-border">
                 <div className="createUser">나호연(nahy0107)
                     <div className="createList">
                         <img
@@ -77,7 +77,7 @@ const Create = () =>{
                     </div>
                 </div>
             </div>
-            <div className="col-9 ">
+            <div className="col-7 ">
                 <div className="makeProject">&nbsp;&nbsp;
                     <h1 className="titleProject">Project
                         <div className="nameProject">Project name
@@ -87,20 +87,28 @@ const Create = () =>{
                                 <input type="date" />~
                                 <input type="date" />
                             </div>
-                        <div className="nameProject">Stack
+                        <div className="nameProject">Project progress
+                            <div className="progressProject">
+                                80/100
+                            </div>
+                        </div>
+                        <div className="nameProject">Language
                             <div className="stackProject">
                                 {<Check/>}
                             </div>
                         </div>
+                        <div className="nameProject">Project purpose
+                            <div className="proposeProject">
+
+                            </div>
+                        </div>
+                        <button className="btn btn-info" style={{float:"right"}}>save</button>
                         </div>
                         </div>
                     </h1>
-                </div>
-                    
+                </div>  
             </div>
-            
         </div>
-    
     );
 }
 
