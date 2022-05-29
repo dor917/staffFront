@@ -30,37 +30,7 @@ function Header(props) {
             <Link to="/main">
                 <h1 style={header_title}>Staff</h1>
             </Link>    
-            <ul className = "header-user-id">
-
-                <li className = "header-user-li">프로젝트 2
-                    <span className="icon-line">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <FontAwesomeIcon icon = {faWrench}/>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <FontAwesomeIcon icon = {faGripLinesVertical}/>
-                        
-                    </span>
-                </li>
-                <li className = "header-user-li">프로젝트 3
-                    <span className="icon-line">
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <FontAwesomeIcon icon = {faGripLinesVertical}/>
-                    </span></li>
-                <li className = "header-user-li">프로젝트 4
-                    <span className="icon-line">
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <FontAwesomeIcon icon = {faGripLinesVertical}/>
-                        &nbsp;&nbsp;
-                    </span></li>
-                <li className = "header-user-li">프로젝트 5
-                    <span className="icon-line">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <FontAwesomeIcon icon = {faWrench}/>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <FontAwesomeIcon icon = {faGripLinesVertical}/>
-                    </span></li>
-                <li className = "header-user-li">추가</li>
-
+            <ul className = "header-user-id">              
                 <div className = "log">
                     <FontAwesomeIcon icon = {faBell}/>
                     <Link to = "/Login">
@@ -68,7 +38,6 @@ function Header(props) {
                     </Link>
                 </div>
             </ul>    
-            
             <span >{props.userId}</span>
 	    </div>
     );

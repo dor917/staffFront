@@ -11,34 +11,6 @@ import '../js/sidebar.event.js';
 
 
 
-function idlist() {
-   let array = []
-   for (let i = 0; i < 5 ; i++){
-      array.push(
-         <div className="section-id-list">
-            <div className="rightBorder">
-               <img
-               className="avatar"
-               src="https://img.icons8.com/color/36/000000/administrator-male.png"
-               alt="..."
-               />
-               <span className="list-group-item-header-id">
-                  아이디
-                  <span className="list-group-item-header-commit">
-                     파일 리스트 js 수정
-                     <span className="list-group-item-header-button">
-                     &nbsp;&nbsp;
-                     <FontAwesomeIcon icon={faTrash} />
-                     </span>
-                  </span>
-               </span>
-            </div>
-         </div>
-      );
-   }
-   return array;
-}
-
 function FileList() {
 
    const [readCode, setReadCode] = useState("src");
@@ -46,10 +18,6 @@ function FileList() {
    return (
       <div>
          <div className='col-12 row bg-e0 reset-basic-set'>
-            {idlist()}
-            <div className="one-line">
-               <FontAwesomeIcon icon={faPlus} />
-            </div>
          </div>
             <ul className="list-group list-group-fileList">
                {/* <li className="list-group-item d-flex justify-content-between align-items-center list-group-item-header">
@@ -121,8 +89,8 @@ function FileList() {
             </div>
             <CodeView readCode = {readCode}/>
             &nbsp;&nbsp;
-            <button className="edit">Edit</button>
-            <button className="edit">Edit</button>
+            <button className="btn btn-info" style={{float:"right"}}>change</button>
+            
          </div>
       
    );

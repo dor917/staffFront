@@ -32,7 +32,9 @@ const Profile = () =>{
 									<h4>나호연</h4>
 									<p class="text-secondary mb-1">Full Stack Developer</p>
 									<p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                  <Link to="/Chat">
 									<button class="btn btn-outline-primary">Message</button>
+                  </Link>
 								</div>
 							</div>
 							<hr></hr>
@@ -122,7 +124,9 @@ const Profile = () =>{
           </div>
         </div>
         <hr></hr>
+        <Link to="/editProfile">
         <a className="btn btn-info editButton" target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+        </Link>
       </div>
     
     <div className="row gutters-sm">

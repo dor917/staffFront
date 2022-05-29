@@ -7,7 +7,9 @@ import Calendar from "./Calendar.js";
 import editEvent from "./editEventCalendar.js";
 import Profile from "./Profile.js";
 import Create from "./Create.js";
+import editProfile from "./editProfile.js";
 import '../js/sidebar.event.js';
+
 
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -34,6 +36,7 @@ function Main() {
           <Route exact path="/Calendar" component={Calendar} />
           <Route exact path="/editEventCalendar" component={editEvent} />
           <Route exact path="/Project" component={Create} />
+          <Route exact path="/editProfile" component={editProfile} />
         </BrowserRouter>
       </div>
     </div>
