@@ -6,6 +6,9 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import MessageList from './MessageList.js';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import Header from "./Header.js";
+import Sidebar from './Sidebar.js';
+
 
 function Chat() {
    var userId = sessionStorage.getItem('userId');
@@ -74,6 +77,14 @@ function Chat() {
    };
 
    return (
+      <div>
+      <div>
+         <Header userId={userId}/>
+         
+         <div>
+            <Sidebar />
+         </div>
+      </div>
       <div className='col-12 row'>
       <div className='col-2'></div> {/*왼쪽빈칸 */}
       <div className="col-8 page-content page-container" id="page-content">
@@ -97,6 +108,7 @@ function Chat() {
                         <time datetime="2018">23:58</time>
                      </p>
                   </div>
+            
                </div>
                <div className="media media-meta-day">Today</div>
                   <div style={chatBox}>
@@ -194,104 +206,8 @@ function Chat() {
          </div>
       </div>
       <div className='col-2 no-padding'>
-         <div className="chatList userProfile disFlex">
-            <span>나호연</span> 
-            <img
-                  className="avatar"
-                  src="https://img.icons8.com/color/36/000000/administrator-male.png"
-                  alt="..."
-            />
-         </div>
-         <div className="chatTextArea">
-            <FontAwesomeIcon icon = {faSearch}/>
-            <textarea
-               onChange={changeMessage}
-               value={message}
-               className="publisher-inputing"
-               type="text"
-               FontAwesomeIcon icon = {faSearch}
-               placeholder="채팅방 혹은 이름 검색" /* 폰트사이즈 변경 */
-               style={chatTextarea}
-            />
-         </div>
-         <div className="chatList disFlex">
-            <img
-               className="avatar"
-               src="https://img.icons8.com/color/36/000000/administrator-male.png"
-               alt="..."
-            />
-            <div className="userName">
-               <span>개발팀(6)</span>
-            </div>
-            <div className="chatFontSize">
-               <span>앞으로 개발팀 업무와 관련된 내용은 해당 채팅방을 통해 진행해주세요^^</span>
-            </div>
-         </div>
-         <div className="chatList">
-         <img
-               className="avatar"
-               src="https://img.icons8.com/color/36/000000/administrator-male.png"
-               alt="..."
-            />
-            <div className="userName">
-               <span>회의 일정 공유(10)</span>
-            </div>
-            <div className="chatFontSize">
-               <span>내용 관련된 내용은 해당 채팅방을 통해 진행해주세요</span>
-            </div>
-         </div>
-         <div className="chatList">
-         <img
-               className="avatar"
-               src="https://img.icons8.com/color/36/000000/administrator-male.png"
-               alt="..."
-            />
-            <div className="userName">
-               <span>.</span>
-            </div>
-            <div className="chatFontSize">
-               <span>이렇게 하면 되지 않을까요?</span>
-            </div>
-         </div>
-         <div className="chatList">
-         <img
-               className="avatar"
-               src="https://img.icons8.com/color/36/000000/administrator-male.png"
-               alt="..."
-            />
-            <div className="userName">
-               <span></span>
-            </div>
-            <div className="chatFontSize">
-               <span>코드 질문 좀 하겠습니다.</span>
-            </div>
-         </div>
-         <div className="chatList">
-         <img
-               className="avatar"
-               src="https://img.icons8.com/color/36/000000/administrator-male.png"
-               alt="..."
-            />
-            <div className="userName">
-               <span></span>
-            </div>
-            <div className="chatFontSize">
-               <span>최강 원딜 나호연.</span>
-            </div>
-         </div>    
-         <div className="chatList">
-         <img
-               className="avatar"
-               src="https://img.icons8.com/color/36/000000/administrator-male.png"
-               alt="..."
-            />
-            <div className="userName">
-               <span></span>
-            </div>
-            <div className="chatFontSize">
-               <span>최강 원딜 나호연.</span>
-            </div>
-         </div>          
+         
+      </div>
       </div>
       </div>
    );

@@ -32,7 +32,7 @@
 
 .form-size {
     width:900px;
-    height:270px;
+    height:240px;
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.5;
@@ -63,3 +63,9 @@
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+/*
+    sihyun section
+*/
+.width-32{width: 32% !important;}
+.width-81{width: 81% !important;}

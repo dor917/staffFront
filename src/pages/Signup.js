@@ -74,7 +74,7 @@ function Signup() {
                      className="signup-cancel-button"
                      type="button"
                      href=".pages/Login"
-                    >cancel
+                  >cancel
                   </button>
                   </Link>
                   <p className="mt-5 mb-3 text-muted">&copy; staff 2022 </p>

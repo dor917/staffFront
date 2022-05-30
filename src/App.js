@@ -4,6 +4,11 @@ import Login from './pages/Login.js';
 import Signup from './pages/Signup.js';
 import Calendar from './pages/Calendar.js';
 import { BrowserRouter, Route } from 'react-router-dom';
+import Sidebar from './pages/Sidebar.js';
+import FileList from './pages/FileList.js';
+import Create from './pages/Create.js';
+import Chat from './pages/Chat.js';
+import Header from "./pages/Header.js";
 
 function App() {
    // const [message, setMessage] = useState([]);
@@ -27,6 +32,9 @@ function App() {
             <Route exact path="/Login" component={Login} />
             <Route exact path="/Main" component={Main} />
             <Route exact path="/Calendar" component={Calendar} />
+            <Route exact path="/Chat" component={Chat} />
+            <Route exact path="/FileList" component={FileList} />
+            <Route exact path="/Project" component={Create} />
          </BrowserRouter>
          
       </div>

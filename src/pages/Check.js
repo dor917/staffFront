@@ -41,10 +41,11 @@ const Check = () => {
                 <label key = {item.id} className = "innerBox">
                     <input
                     type="checkbox"
+                    className="checkbox-size"
                     value={item.language}
                     onChange={(e) => checkHandler(e)}
                 />
-                <div>{item.language}</div>
+                <div className="ml-10">{item.language}</div>
                 </label>
             ))}
             </div>

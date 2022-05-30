@@ -10,7 +10,7 @@ import '../css/editProfile.css';
 
 const editProfile = () => {
     return(
-        <div class="container">
+        <div class="re-container">
 		<div class="main-body">
 			<div class="row">
 				<div class="col-lg-4">
@@ -66,52 +66,54 @@ const editProfile = () => {
                 <div className="col-sm-2">
                     <h6 className="mb-0">FirstName</h6>
                 </div>
-                <input type="text" class="form-controling" value="호연"></input>
+                <input type="text" class="form-controling width-32" value="호연"></input>
                 <div className="col-sm-2">
                     <h6 className="mb-0">LastName</h6>
                 </div>
-                <input type="text" class="form-controling" value="나"></input>
+                <input type="text" class="form-controling width-32" value="나"></input>
                 </div>
                 <div className="row">
                 </div>
                 <hr></hr>
                 <div className="row">
-                <div className="col-sm-3">
-                    <h6 className="mb-0">E-mail</h6>
-                </div>
-                <input type="text" class="form-controling" value="nahy0107@naver.com"></input>
-                </div>
-                <hr></hr>
-                <div className="row">
-                <div className="col-sm-3">
-                    <h6 className="mb-0">Phone</h6>
-                </div>
-                <input type="text" class="form-controling" value="010-9775-7034"></input>
+                    <div className="col-sm-2">
+                        <h6 className="mb-0">E-mail</h6>
+                    </div>
+                    <input type="text" class="form-controling width-81" value="nahy0107@naver.com"></input>
                 </div>
                 <hr></hr>
                 <div className="row">
-                <div className="col-sm-3">
-                    <h6 className="mb-0">Country</h6>
-                </div>
-                <input type="text" class="form-controling" value="Korea"></input>
+                    <div className="col-sm-2">
+                        <h6 className="mb-0">Phone</h6>
+                    </div>
+                    <input type="text" class="form-controling width-81" value="010-9775-7034"></input>
                 </div>
                 <hr></hr>
                 <div className="row">
-                <div className="col-sm-3">
-                    <h6 className="mb-0">Address</h6>
-                </div>
-                <input type="text" class="form-controling" value="내덕동82-18"></input>
+                    <div className="col-sm-2">
+                        <h6 className="mb-0">Country</h6>
+                    </div>
+                    <input type="text" class="form-controling width-81" value="Korea"></input>
                 </div>
                 <hr></hr>
-                <div className="col-9">
-                <div className="col-sm-3 about-me">
-                    <h6 className="mb-1">About me</h6>
+                <div className="row">
+                    <div className="col-sm-2">
+                        <h6 className="mb-0">Address</h6>
+                    </div>
+                    <input type="text" class="form-controling width-81" value="내덕동82-18"></input>
                 </div>
-                <input type="text" class="form-size" value="챌린저 원딜 1378점"></input>
+                <hr></hr>
+                <div className="width-100">
+                    <div className="mb-15">
+                        <h6 className="mb-1">About me</h6>
+                    </div>
+                    <textarea type="text" class="form-size width-100"></textarea>
                 </div>
-                <Link to="/editProfile">
-                <a className="btn btn-info editButton" target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Update Profile</a>
-                </Link>
+                <div className='ptb-15'>
+                    <Link to="/editProfile">
+                        <a className="btn btn-info editButton" target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Update Profile</a>
+                    </Link>
+                </div>
             </div>
         </div>
     </div>

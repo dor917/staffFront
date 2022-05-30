@@ -13,11 +13,11 @@ const Create = () =>{
     const chatTextarea = {
         resize: 'none',
         paddingRight: '80px',
-     };
+    };
 
 
     return(
-        <div className="row">
+        <div className="col-12 row mg-0 pd-15">
             <div className="col-5 col-3-border">
                 <div className="createUser">나호연(nahy0107)
                     <div className="createList">
@@ -77,32 +77,48 @@ const Create = () =>{
                     </div>
                 </div>
             </div>
-            <div className="col-7 ">
-                <div className="makeProject">&nbsp;&nbsp;
+            <div className="col-7 makeProjectSec">
+                <div className="makeProject pd-15">&nbsp;&nbsp;
                     <h1 className="titleProject">Project
-                        <div className="nameProject">Project name
-                            <div className="nameProjecting"></div>
-                        <div className="nameProject">Project period
-                            <div className="periodProject">
-                                <input type="date" />~
-                                <input type="date" />
+                        <div className="nameProject">
+                            {/* <div className="nameProjecting"></div> */}
+                            <div className='col-12 pd-0 pb-20'>
+                                Project name
                             </div>
-                        <div className="nameProject">Project progress
+                            <input type="text" className='width-100 pd-15'></input>
+                        <div className="nameProject">
+                            Project period
+                            <div className="periodProject">
+                                <input type="date" className='pd-10 calender-font' />~
+                                <input type="date" className='pd-10 calender-font' />
+                            </div>
+                        <div className="nameProject">
+                            <div className='col-12 pd-0 pb-20'>
+                                Project progress
+                            </div>
                             <div className="progressProject">
                                 80/100
                             </div>
                         </div>
-                        <div className="nameProject">Language
+                        <div className="nameProject">
+                            <div className='col-12 pd-0 pb-20'>
+                                Language
+                            </div>
                             <div className="stackProject">
                                 {<Check/>}
                             </div>
                         </div>
-                        <div className="nameProject">Project purpose
-                            <div className="proposeProject">
+                        <div className="nameProject pb-20">
+                            <div className='col-12 pd-0 pb-20'>
+                                Project purpose
+                            </div>
+                            <div className="proposeProject pb-20">
 
                             </div>
                         </div>
-                        <button className="btn btn-info" style={{float:"right"}}>save</button>
+                        <div>
+                            <button className="btn btn-info" style={{float:"right"}}>save</button>
+                        </div>
                         </div>
                         </div>
                     </h1>

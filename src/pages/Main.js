@@ -29,7 +29,6 @@ function Main() {
       
       <div style={maincontent}>
         <BrowserRouter>
-          <Sidebar />
           <Route exact path="/main" component={Profile} />
           <Route exact path="/Chat" component={Chat} />
           <Route exact path="/FileList" component={FileList} />

@@ -331,8 +331,29 @@ textarea {
 .col-11 {-ms-flex: 0 0 91.666667%;flex: 0 0 91.666667%;max-width: 91.666667%;}
 .col-12 {-ms-flex: 0 0 100%;flex: 0 0 100%;max-width: 100%;}
 
-.width-78 {width: 78% !important;}
+.re-container{
+    width: 80%;
+    margin: 20px auto;
+}
+
+.mg-0{margin: 0 !important;}
+.pd-0{padding: 0 !important;}
+
+.pd-custom{padding: 10px 15px !important;}
+.ptb-15{padding: 15px 0 !important;}
+.pd-10{padding: 10px;}
+.pd-15{padding: 15px;}
+.pb-20{padding-bottom: 20px !important;}
+
+.font-size-custom{font-size: 3.75rem;}
+
+.mb-15{margin-bottom: 15px !important;}
+
+.width-78{width: 78% !important;}
+.width-100{width: 100% !important;}
+
 .row>* {width: auto !important; padding: 10px 20px;}
+
 .section-id-list {border: 1px solid #1e1e1e; padding: 5px 15px;}
 .bg-e0 {background: #e0e0e0;}
 .reset-basic-set{
