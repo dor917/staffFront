@@ -57,7 +57,7 @@ function FileList() {
         <Sidebar />
       </div>
     </div>
-      <div>
+      <div className="fileList-container">
          <div className='col-12 row bg-e0 reset-basic-set'>
          </div>
             <ul className="list-group list-group-fileList">
@@ -132,7 +132,7 @@ function FileList() {
             </div>
             <CodeView readCode = {readCode}/>
             &nbsp;&nbsp;
-            <button className="btn btn-info" style={{float:"right"}}>change</button>
+            <button className="btn btn-info change" >change</button>
             
          </div>
          </div>

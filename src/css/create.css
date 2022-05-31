@@ -84,6 +84,7 @@
     width:200px;
     justify-content: center;
     padding-bottom: 20px;
+    text-align: center;
 }
 .proposeProject{
     border: 2px solid lightgray;

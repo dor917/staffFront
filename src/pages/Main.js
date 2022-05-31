@@ -15,7 +15,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 function Main() {
   const maincontent = {
-    marginLeft: "70px"
+    marginLeft: "70px",
   }
 
   const userId = getCookie("USERID");
@@ -24,7 +24,7 @@ function Main() {
   // delCookie_by_name("USERNO");
   // delCookie_by_name("USERID");
   return (
-    <div>
+    <div style={{overflowX: "hidden"}}>
       <Header userId={userId}/>
       
       <div style={maincontent}>
@@ -52,18 +52,18 @@ function getCookie(name) {
   var nameOfCookie = name + "=";
   var x = 0;
   while (x <= document.cookie.length) {
-       var y = (x + nameOfCookie.length);
-       if (document.cookie.substring(x, y) == nameOfCookie) { 
-          var endOfCookie = document.cookie.indexOf(";", y);
-            if ( endOfCookie == -1)  {
-                 endOfCookie = document.cookie.length;
-            }
-            return unescape(document.cookie.substring(y, endOfCookie));
-       }
-       x = document.cookie.indexOf(" ", x) + 1; 
-       if (x == 0) {
-            break;
+      var y = (x + nameOfCookie.length);
+      if (document.cookie.substring(x, y) == nameOfCookie) { 
+        var endOfCookie = document.cookie.indexOf(";", y);
+          if ( endOfCookie == -1)  {
+                endOfCookie = document.cookie.length;
+          }
+          return unescape(document.cookie.substring(y, endOfCookie));
       }
+      x = document.cookie.indexOf(" ", x) + 1; 
+      if (x == 0) {
+          break;
+    }
   }
 
 

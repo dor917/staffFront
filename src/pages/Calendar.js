@@ -12,7 +12,7 @@ import { left } from "@popperjs/core";
 import '../js/sidebar.event.js';
 import Header from "./Header.js";
 import Sidebar from './Sidebar.js';
-
+import '../css/Calendar.css'
 
 
 
@@ -82,6 +82,7 @@ function Calendar() {
         <Sidebar />
       </div>
     </div>
+
     <div className="Calendar">     
       <button className="add-button" onClick={() => setModalIsOpen(true)}>일정추가</button>
       <FullCalendar

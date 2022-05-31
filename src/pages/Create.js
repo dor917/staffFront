@@ -17,7 +17,7 @@ const Create = () =>{
 
 
     return(
-        <div className="col-12 row mg-0 pd-15">
+        <div className="col-12 row mg-0 pd-15 " style={{overflowY:"none"}}>
             <div className="col-5 col-3-border">
                 <div className="createUser">나호연(nahy0107)
                     <div className="createList">
@@ -96,9 +96,7 @@ const Create = () =>{
                             <div className='col-12 pd-0 pb-20'>
                                 Project progress
                             </div>
-                            <div className="progressProject">
-                                80/100
-                            </div>
+                            <input type="text" className="progressProject" value="/ 100"></input>
                         </div>
                         <div className="nameProject">
                             <div className='col-12 pd-0 pb-20'>
@@ -112,9 +110,7 @@ const Create = () =>{
                             <div className='col-12 pd-0 pb-20'>
                                 Project purpose
                             </div>
-                            <div className="proposeProject pb-20">
-
-                            </div>
+                            <input type="text" className="proposeProject pb-20"></input>
                         </div>
                         <div>
                             <button className="btn btn-info" style={{float:"right"}}>save</button>

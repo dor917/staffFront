@@ -7,6 +7,8 @@ import { fa1 } from '@fortawesome/free-solid-svg-icons';
 import { flexibleCompare } from '@fullcalendar/react';
 import '../js/sidebar.event.js';
 import '../css/profile.css';
+import FileList from './FileList.js';
+import Header from "./Header.js";
 
 const publicBtn = {
   color: 'black',
@@ -19,7 +21,10 @@ const publicBtn = {
   borderRadius: '12px'
 }
 const Profile = () =>{
+  
   return(
+    
+    
     <div class="re-container">
       <div class="main-body">
         <div class="row">
@@ -192,14 +197,17 @@ const Profile = () =>{
 
         <div className='col-5'>
           <div className='card h-100'>
-            <div className="card-body">
+            <button className="card-body">
               <div className="fa-5x text-center font-size-custom">
-                <FontAwesomeIcon icon = {faPlus}/>
+                <Link to ="/Project">
+                  <FontAwesomeIcon icon = {faPlus}/>
+                </Link>
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </div>
+      
 
     
     {/* <div className="row gutters-sm">
