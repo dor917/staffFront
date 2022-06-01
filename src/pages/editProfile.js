@@ -8,7 +8,7 @@ import { flexibleCompare } from '@fullcalendar/react';
 import '../js/sidebar.event.js';
 import '../css/editProfile.css';
 
-const editProfile = () => {
+function editProfile() {
     return(
         <div class="re-container">
 		<div class="main-body">
