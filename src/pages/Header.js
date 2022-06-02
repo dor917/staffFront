@@ -27,7 +27,7 @@ function Header(props) {
 
     return (
         <div className="page-header" style={Header}>
-            <Link to="/main">
+            <Link to="/Main">
                 <h1 style={header_title}>Staff</h1>
             </Link>    
             <ul className = "header-user-id">              

@@ -4,8 +4,6 @@ import '../css/create.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { ProjectFilled } from '@ant-design/icons';
-import '../js/sidebar.event.js';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Check from './Check';
 

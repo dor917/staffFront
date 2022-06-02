@@ -64,24 +64,58 @@ function Calendar() {
             <form onsubmit="return false" action="/Calendar.add" method="post">
               <AddContainer>
                     <InputBox>
+                    
                     <h2>새로운 일정</h2>
                     <h3>type</h3>
-                    <input type="checkbox"id="bug"className="issue"/>bug
-                    <input type="checkbox"id="wonfix"className="issue"/>wonfix
-                    <input type="checkbox"id="question"className="issue"/>question
-                    <input type="checkbox"id="help"className="issue"/>help                       
-                    <input type="checkbox"id="conference"className="schedule"/>conference
-                    <input type="checkbox"id="start"className="schedule"/>start
-                    <input type="checkbox"id="end"className="schedule"/>end
-                    <input type="checkbox"id="vacation"className="schedule"/>vacation     
+                    <div className="issue_cb">
+                    <div className="flexBox">
+                      <input type="checkbox"id="bug"className="issue"/>
+                      <p className="pTag">bug</p>
+                    </div>
+                    <div className="flexBox">
+                      <input type="checkbox"id="wonfix"className="issue"/>
+                      <p className="pTag">wonfix</p>
+                    </div>
+                    <div className="flexBox">
+                      <input type="checkbox"id="question"className="issue"/>
+                      <p className="pTag">question</p>
+                    </div>
+                    <div className="flexBox">
+                      <input type="checkbox"id="help"className="issue"/>
+                      <p className="pTag">help</p>
+                    </div>
+                    </div>
+                    <div className="schedule">
+                    <div className="flexBox">
+                      <input type="checkbox"id="conference"className="issue"/>
+                      <p className="pTag">conference</p>
+                    </div>
+                    <div className="flexBox">
+                      <input type="checkbox"id="start"className="issue"/>
+                      <p className="pTag">start</p>
+                    </div>
+                    <div className="flexBox">
+                      <input type="checkbox"id="end"className="issue"/>
+                      <p className="pTag">end</p>
+                    </div>
+                    <div className="flexBox">
+                      <input type="checkbox"id="end"className="issue"/>
+                      <p className="pTag">end</p>
+                    </div>
+                    <div className="flexBox">
+                      <input type="checkbox"id="vacation"className="issue"/>
+                      <p className="pTag">vacation</p>
+                    </div>
+                    </div>    
                     <h4>Title</h4>
-                    <input type="text" id="scheduleInput" style={{height:5+'%'}}></input>
+                    <input className="wideInput" type="text" id="scheduleInput" style={{height:5+'%'}}></input>
                     <h4>Content</h4>
-                    <input type="textarea" id="scheduleInput" max="9999-12-31" style={{height:20+'%'}}></input>
+                    <input className="wideInput" type="textarea" id="scheduleInput" max="9999-12-31" style={{height:20+'%'}}></input>
                     <h4>Start</h4>
-                    <input type="datetime-local" id="startDate"></input>
+                    <input className="wideInput" type="datetime-local" id="startDate"></input>
                     <h4>End</h4>
-                    <input type="datetime-local" id="endeDate"></input>
+                    <input className="wideInput" type="datetime-local" id="endeDate"></input>
+                    
                     </InputBox>
                     <BtnBox>
                     <button onClick={() => setModalIsOpen(false)}>뒤로</button><button>저장</button>
@@ -124,14 +158,15 @@ align-items:center;
     margin:0;
    }
 & input{
-    width:70%;
     border-radius: 5px;
     border: 3px solid ;
     &:focus {
       border: 1px solid #a673ff;
     }
-    
-}
+  }
+  .wideInput{
+    width:70%;
+  }
 `;
 const BtnBox = styled.div`
 
