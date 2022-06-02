@@ -1,10 +1,10 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../css/sidebar.css';
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import '../js/sidebar.event.js';
+import '../css/sidebar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
    faCalendar,

@@ -8,12 +8,12 @@ function login() {
       <div className="login-body-back">
          <div className="login-body">
             <main className="form-signin">
-               <form action="/login.do" method="post">
+               <form action="/gologin.staff" method="post">
                   <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
                   <div className="form-floating">
                      <input
-                        name="id"
+                        name="mbr_email"
                         type="id"
                         className="form-control"
                         id="floatingInput"
@@ -23,8 +23,8 @@ function login() {
                   </div>
                   <div className="form-floating">
                      <input
-                        name="password"
-                        type="password"
+                        name="mbr_pw"
+                        type="password" x2
                         className="form-control"
                         id="floatingPassword"
                         placeholder="Password"

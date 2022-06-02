@@ -6,6 +6,12 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import MessageList from './MessageList.js';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
+import Header from "./Header.js";
+import Sidebar from './Sidebar.js';
+
+
+
 function Chat() {
    var userId = sessionStorage.getItem('userId');
 
@@ -72,6 +78,14 @@ function Chat() {
    };
 
    return (
+      <div>
+      <div>
+         <Header userId={userId}/>
+         
+         <div>
+            <Sidebar />
+         </div>
+      </div>
       <div className='col-12 row'>
       <div className='col-2'></div> {/*왼쪽빈칸 */}
       <div className="col-8 page-content page-container" id="page-content">
@@ -95,6 +109,7 @@ function Chat() {
                         <time datetime="2018">23:58</time>
                      </p>
                   </div>
+            
                </div>
                <div className="media media-meta-day">Today</div>
                   <div style={chatBox}>
@@ -193,7 +208,8 @@ function Chat() {
             </div>
          </div>
       </div>
-     </div>
+</div>
+</div>
    );
 }
 

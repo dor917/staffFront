@@ -10,7 +10,9 @@ import '../css/Calendar1.css'
 import $ from 'jquery';
 import { left } from "@popperjs/core";
 import '../js/sidebar.event.js';
-
+import Header from "./Header.js";
+import Sidebar from './Sidebar.js';
+import '../css/Calendar.css'
 
 
 
@@ -35,8 +37,52 @@ Modal.setAppElement('#root')
 function Calendar() {
   const[checkeditems, setcheckeditems] = useState(new Set());
 
+  const userId = getCookie("USERID");
+  sessionStorage.setItem("userNo", getCookie("USERNO"));
+  sessionStorage.setItem("userId", userId);
+
   const [modalIsOpen, setModalIsOpen] = useState(false)
+
+  function delCookie_by_name(name){
+    let date = new Date();
+    date.setDate(date.getDate() - 100);
+    let Cookie = `${name}=;Expires=${date.toUTCString()}`
+    document.cookie = Cookie;
+    }
+    function getCookie(name) {
+    var nameOfCookie = name + "=";
+    var x = 0;
+    while (x <= document.cookie.length) {
+          var y = (x + nameOfCookie.length);
+          if (document.cookie.substring(x, y) == nameOfCookie) { 
+          var endOfCookie = document.cookie.indexOf(";", y);
+             if ( endOfCookie == -1)  {
+                   endOfCookie = document.cookie.length;
+             }
+             return unescape(document.cookie.substring(y, endOfCookie));
+          }
+          x = document.cookie.indexOf(" ", x) + 1; 
+          if (x == 0) {
+             break;
+       }
+    }
+ 
+ 
+ 
+    return ""; 
+ 
+    }
+
   return (   
+    <div>
+    <div>
+      <Header userId={userId}/>
+      
+      <div>
+        <Sidebar />
+      </div>
+    </div>
+
     <div className="Calendar">     
       <button className="add-button" onClick={() => setModalIsOpen(true)}>일정추가</button>
       <FullCalendar
@@ -107,6 +153,9 @@ function Calendar() {
                       <p className="pTag">vacation</p>
                     </div>
                     </div>    
+
+            
+
                     <h4>Title</h4>
                     <input className="wideInput" type="text" id="scheduleInput" style={{height:5+'%'}}></input>
                     <h4>Content</h4>
@@ -126,7 +175,7 @@ function Calendar() {
         </div>
         
       </div>
-      
+      </div>
     );
 }
 export default Calendar;
@@ -192,6 +241,5 @@ cursor: pointer;
 outline: none;
 }
 `;
-
 
 

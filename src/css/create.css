@@ -1,10 +1,6 @@
 .col-3-border {
-    /* height: 100%; */
     justify-content: center;
     border: 2px solid lightgray;
-    margin-left: 15px;
-    margin-right: -15px;
-    margin-top: 10px;
     
 }
 .createUser{
@@ -40,7 +36,7 @@
 
 .searchName {
     height: 45px;
-    width: 739px;
+    width: 100%;
     border: 1px solid lightgray;
     align-items: center;
     margin: 0px;
@@ -49,10 +45,12 @@
     background-color:white;
 }
 .makeProject {
-    border: 2px solid lightgray;
-    width: 1360px;
+    width: 1060px;
     height: 865px;
     display:flex;
+}
+.makeProjectSec {
+    border: 2px solid lightgray;
 }
 .nameProject{
     font-size:20px;
@@ -72,10 +70,10 @@
     font-size:20px;
     padding-top:20px;
 }
-
+/* 
 .stackProject{
     padding-top:20px;
-}
+} */
 .progressProject {
     border: 2px solid lightgray;
     height: 40px;
@@ -86,6 +84,7 @@
     width:200px;
     justify-content: center;
     padding-bottom: 20px;
+    text-align: center;
 }
 .proposeProject{
     border: 2px solid lightgray;
@@ -99,11 +98,11 @@
 }
 .contStyle{
     border-radius: 0.35rem;
-    width: 3rem;
-    height: 15rem;
+    width: 80%;
     display: grid;
-    gap: 5px;
+    gap: 20px;
     grid-template-columns: repeat(3, 1fr);
+    font-size: 15px !important;
     
 }
 .innerBox{
@@ -114,3 +113,12 @@
 .checkBox{
     justify-content: center;
 }
+.checkbox-size{
+    width: 20px;
+    height: 20px;
+}
+
+.pd-15{padding: 15px !important;}
+.mg-0{margin: 0 !important;}
+.ml-10{margin-left: 10px;}
+.calender-font{font-size: 1rem;}

@@ -7,16 +7,57 @@ import { faFile, faTrash, faPlus } from '@fortawesome/free-solid-svg-icons';
 import CodeView from './CodeView.js';
 import { Link } from 'react-router-dom';
 import '../js/sidebar.event.js';
-
-
+import Header from "./Header.js";
+import Sidebar from './Sidebar.js';
 
 
 function FileList() {
 
    const [readCode, setReadCode] = useState("src");
+   const userId = getCookie("USERID");
+   sessionStorage.setItem("userNo", getCookie("USERNO"));
+   sessionStorage.setItem("userId", userId);
+
+   function delCookie_by_name(name){
+   let date = new Date();
+   date.setDate(date.getDate() - 100);
+   let Cookie = `${name}=;Expires=${date.toUTCString()}`
+   document.cookie = Cookie;
+   }
+   function getCookie(name) {
+   var nameOfCookie = name + "=";
+   var x = 0;
+   while (x <= document.cookie.length) {
+         var y = (x + nameOfCookie.length);
+         if (document.cookie.substring(x, y) == nameOfCookie) { 
+         var endOfCookie = document.cookie.indexOf(";", y);
+            if ( endOfCookie == -1)  {
+                  endOfCookie = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(y, endOfCookie));
+         }
+         x = document.cookie.indexOf(" ", x) + 1; 
+         if (x == 0) {
+            break;
+      }
+   }
+
+
+
+   return ""; 
+
+   }
    
    return (
       <div>
+      <div>
+      <Header userId={userId}/>
+      
+      <div>
+        <Sidebar />
+      </div>
+    </div>
+      <div className="fileList-container">
          <div className='col-12 row bg-e0 reset-basic-set'>
          </div>
             <ul className="list-group list-group-fileList">
@@ -26,7 +67,9 @@ function FileList() {
                <li className="list-group-item d-flex justify-content-between align-items-center" onClick={()=>{setReadCode("src")}}>
                   <span className="list-group-item-name">
                      <FontAwesomeIcon icon={faFile}></FontAwesomeIcon>
-                     <button onClick={CodeView}>src</button>
+                     <Link to ="CodeView/">
+                        <span className="CodeName"> Src</span>
+                     </Link>
                   </span>
                   <span className="badge">4일 전</span>   
                </li>
@@ -89,8 +132,9 @@ function FileList() {
             </div>
             <CodeView readCode = {readCode}/>
             &nbsp;&nbsp;
-            <button className="btn btn-info" style={{float:"right"}}>change</button>
+            <button className="btn btn-info change" >change</button>
             
+         </div>
          </div>
       
    );

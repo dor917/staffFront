@@ -13,7 +13,7 @@ function CodeView(props){
    //    contents: ''
       
    // }
-   const codeContent = ["srcasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfassdhffdhfdhdfhdfhdhfdhdfhdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf", "asdf", "kfdg", "sdfag", "qwrqwt", "asfgg", "asdf", "qwrtt", "qethh", "sdklgjkl", "asdjgkd", "sjdfkjg", "asdgjw", "asjgjep", "ajsdigje", "ajsdigje", "ajsdigje", "ajsdigje", "ajsdigje"];
+   const codeContent = ["srcasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfassdhffdhfdhdfhdfhdhfdhdfhdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf", "asdf", "kfdg", "sdfag", "qwrqwt", "asfgg", "asdf", "qwrtt", "qethh", "sdklgjkl", "asdjgkd", "sjdfkjg", "asdgjw", "asjgjep", "ajsdigje", "ajsdigje", "ajsdigje", "ajsdigje", "ajsdigje","ajsdigjhhhh"];
    const codeContents = ["asdfasdf", "hgdsfjh", "asfdhjkl", "ssjtasdf", "oiuiouo", "werhth", "cvnn", "hjhjr", "sfoijhoi", "hjqwf", "sfhrhr", "hjkd", "jyjwer", "oijhoi", "ofjre"]
 
    const render = () => {
