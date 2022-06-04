@@ -7,11 +7,6 @@ import { Link } from 'react-router-dom';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Check from './Check';
 
-const staff=[
-    {id:1,
-    projectname:staff,
-    }
-]
 function Create() {
     const Create = () =>{
     const chatTextarea = {

@@ -9,6 +9,7 @@ import axios from 'axios';
 
 function projectAdapter(props) {
 
+const prj_mbr_vo=[];
 
   axios({
     method: 'post',
@@ -21,7 +22,8 @@ function projectAdapter(props) {
     }
   })
     .then(function (response) {
-      for (var a = 0; a < response.data.length; a++) {
+      for (var a = 0; a < response.data.length; a++)
+ {
         console.log(response.data[a]);
         const newItem = {
           prj_no: response.data[a].prj_no,
@@ -41,8 +43,8 @@ function projectAdapter(props) {
 
   const rendering = () => {
     const result = [];
-    for (var a = 0; a < prj_mbr_vo.length; a++) {
-      result.push(
+    for (var a = 0; a < prj_mbr_vo.length; a++){
+       result.push(
         <div>
           <div className='col-5'>
             <div className='card h-100'>

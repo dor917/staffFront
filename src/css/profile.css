@@ -164,7 +164,7 @@ body{
 .editButton{
     float:right;
 }
-.every {
+.every {    
     padding-left:40px;
     padding-top:10px;
 }
@@ -172,4 +172,7 @@ body{
     justify-content: center;
     text-align: right;
     padding-left: 15px;
+}
+.edit_btn{
+    margin: top 3rem;
 }
