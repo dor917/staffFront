@@ -6,8 +6,10 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import MessageList from './MessageList.js';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 import Header from "./Header.js";
 import Sidebar from './Sidebar.js';
+
 
 
 function Chat() {
@@ -34,8 +36,7 @@ function Chat() {
          'Content-Type': 'application/x-www-form-urlencoded',
       },
    };
-   
-   
+  
    // const sendChat
    const container = {
       overflowY: 'scroll !important',
@@ -202,16 +203,15 @@ function Chat() {
                            style={chatsendIcon} 
                         />
                      </span>
+                     <button type="button" onClick="window.location.reload('/Chat');">Close</button>
+                   
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <div className='col-2 no-padding'>
-         
-      </div>
-      </div>
-      </div>
+</div>
+</div>
    );
 }
 

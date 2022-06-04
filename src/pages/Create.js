@@ -4,16 +4,16 @@ import '../css/create.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { ProjectFilled } from '@ant-design/icons';
-import '../js/sidebar.event.js';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Check from './Check';
 
-const Create = () =>{
+function Create() {
+    const Create = () =>{
     const chatTextarea = {
         resize: 'none',
         paddingRight: '80px',
     };
+    }
 
 
     return(
@@ -86,7 +86,7 @@ const Create = () =>{
                             <div className='col-12 pd-0 pb-20'>
                                 Project name
                             </div>
-                            <input type="text" className='width-100 pd-15'></input>
+                            <input type="text" id="projectname"className='width-100 pd-15'></input>
                         <div className="nameProject">
                             Project period
                             <div className="periodProject">
@@ -123,6 +123,5 @@ const Create = () =>{
             </div>
         </div>
     );
-}
-
+};
 export default Create;

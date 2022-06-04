@@ -26,11 +26,30 @@
   position: absolute;
   z-index: 3;
 }
-.section{
- float:right;
-}
-.label{
+
+label{
   display:inline-block;
-  width:100px;
+  width:100%;
   line-height:50px;
+}
+
+.pTag{
+  margin: 0;
+
+}
+.work{
+  font-size:15px;
+  margin-left:11rem; 
+  text-align: initial !important;
+}
+
+
+.flexBox{
+  width:100px;
+  display: flex;
+  text-align: center;
+}
+
+.issue{
+  margin-right:4rem;
 }

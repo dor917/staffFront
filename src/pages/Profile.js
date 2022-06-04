@@ -8,7 +8,8 @@ import axios from 'axios';
 
 
 function projectAdapter(props) {
-  const prj_mbr_vo = [];
+
+const prj_mbr_vo=[];
 
   axios({
     method: 'post',
@@ -21,7 +22,8 @@ function projectAdapter(props) {
     }
   })
     .then(function (response) {
-      for (var a = 0; a < response.data.length; a++) {
+      for (var a = 0; a < response.data.length; a++)
+ {
         console.log(response.data[a]);
         const newItem = {
           prj_no: response.data[a].prj_no,
@@ -41,9 +43,14 @@ function projectAdapter(props) {
 
   const rendering = () => {
     const result = [];
+<<<<<<< HEAD
+    for (var a = 0; a < prj_mbr_vo.length; a++){
+       result.push(
+=======
     console.log(prj_mbr_vo.length);
     for (var a = 0; a < prj_mbr_vo.length; a++) {
       result.push(
+>>>>>>> 970bca5cb842f3f0b4d03e4520e0f50d856970a0
         <div>
           <div className='col-5'>
             <div className='card h-100'>
