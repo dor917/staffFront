@@ -48,8 +48,9 @@ function CodeView(props){
                <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1">
                   138 lines (126 sloc)
                   <span className="slash">|</span>
-                     <span className="file-info-divider"></span>
-                     6.19 KB
+                     <span className="file-info-divider"> 6.19 KB</span>
+                        <span className="commitUser">(나호연)</span>
+                           <span className="commitDate">2022-06-04</span>
                </div>
             </div>
                <div className="js-check-bidi blob-code-content">
@@ -67,8 +68,10 @@ function CodeView(props){
             <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1">
                138 lines (126 sloc)
                <span class="slash">|</span>
-                  <span class="file-info-divider"></span>
-                  6.19 KB
+                  <span class="file-info-divider">6.19KB</span>
+                     <span className="commitUser">(나호연)</span>
+                        
+                           <span className="commitDate">2022-06-04</span>
             </div>
          </div>
             <div className="js-check-bidi blob-code-content">
