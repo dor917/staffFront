@@ -56,21 +56,18 @@ function Calendar() {
           var y = (x + nameOfCookie.length);
           if (document.cookie.substring(x, y) == nameOfCookie) { 
           var endOfCookie = document.cookie.indexOf(";", y);
-             if ( endOfCookie == -1)  {
-                   endOfCookie = document.cookie.length;
-             }
-             return unescape(document.cookie.substring(y, endOfCookie));
+            if ( endOfCookie == -1)  {
+                  endOfCookie = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(y, endOfCookie));
           }
           x = document.cookie.indexOf(" ", x) + 1; 
           if (x == 0) {
-             break;
-       }
+            break;
+      }
     }
- 
- 
- 
-    return ""; 
- 
+return ""; 
+
     }
 
   return (   

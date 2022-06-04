@@ -72,6 +72,9 @@
 .col-12 {-ms-flex: 0 0 100%;flex: 0 0 100%;max-width: 100%;}
 
 .width-78 {width: 78% !important;}
+
+.mtr-20-10{margin: 20px 10px 0 0;}
+
 .row>* {width: auto !important; padding: 10px 20px;}
 .section-id-list {border: 1px solid #1e1e1e; padding: 5px 15px;}
 .bg-e0 {background: #e0e0e0;}

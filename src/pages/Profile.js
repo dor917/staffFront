@@ -41,6 +41,7 @@ function projectAdapter(props) {
 
   const rendering = () => {
     const result = [];
+    console.log(prj_mbr_vo.length);
     for (var a = 0; a < prj_mbr_vo.length; a++) {
       result.push(
         <div>
@@ -213,7 +214,7 @@ function Profile(props) {
               <a className="btn btn-info editButton" target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
             </Link>
           </div>
-          {/* {projectAdapter()} */}
+          {projectAdapter(props)}
 
           
         </div>
