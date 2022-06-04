@@ -43,14 +43,8 @@ const prj_mbr_vo=[];
 
   const rendering = () => {
     const result = [];
-<<<<<<< HEAD
     for (var a = 0; a < prj_mbr_vo.length; a++){
        result.push(
-=======
-    console.log(prj_mbr_vo.length);
-    for (var a = 0; a < prj_mbr_vo.length; a++) {
-      result.push(
->>>>>>> 970bca5cb842f3f0b4d03e4520e0f50d856970a0
         <div>
           <div className='col-5'>
             <div className='card h-100'>
