@@ -132,7 +132,7 @@ function FileList() {
             </div>
             <CodeView readCode = {readCode}/>
             &nbsp;&nbsp;
-            <button className="btn btn-info change" >change</button>
+            <button className="btn btn-info change mtr-20-10" >change</button>
             
          </div>
          </div>

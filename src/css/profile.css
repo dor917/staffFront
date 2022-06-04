@@ -89,7 +89,6 @@ body{
     line-height: 8px;
     display:flex;
 }
-
 .ali_right {
     display: flex !important;
     justify-content: right !important;

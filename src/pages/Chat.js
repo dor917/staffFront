@@ -116,12 +116,22 @@ function Chat() {
                         <div className="width-78 publisher bt-1 border-light"> 
                            <textarea className="publisher-input" type="text" placeholder="Write something" style={chatTextarea}/> 
                            <button onClick={()=> 
-                              axios.post('/sendChat.do', {
-                                 // userId={userId},
-                              // message={} 
+                             axios({
+                              method: 'post',
+                              url: 'http://localhost:8080/sendChat.staff',
+                              params: {
+                                 prj_no: "9",
+                                 mbr_email: "테스트계정",
+                                 message:"테스트 메시지"
+                              }
+                            })
+                              .then(function (response) {
+                               console.log("response================>" + response);
                               })
-                              .then((result)=>{ console.log(result.data) }) // 요청 성공시 실행코드
-                              .catch(()=>{  }) // 요청 실패시 실행코드
+                              .catch(function (error) {
+                                console.log("error================>" + error);
+                              })
+
                            }> 
                               <span className="publisher-btn file-group chatsend-btn" style={chatsendBtn}> 
                               <FontAwesomeIcon icon={faPaperPlane} style={chatsendIcon}/>
@@ -167,29 +177,21 @@ function Chat() {
                   <div
                      onClick={
                         () =>
-                           axios
-                              .post(
-                                 '/sendChat.do',
-                                 {
-                                    userId: { userId },
-                                    message: { message },
-                                 },
-                                 { axiosConfig }
-                              )
-                              .then((result) => {
-                                 sendMessage({userId}, result.getItem('message'));
-                              //   sendChatResult.put(
-                              //    {
-                              //       userId:{userId},
-                              //       message:result.getItem('message')
-                              //    }
-
-                              
-                              //   )
-                                 console.log(messages);
-                                 console.log(result);
-                                }) // 요청 성공시 실행코드
-                              .catch(() => {}) // 요청 실패시 실행코드
+                        axios({
+                           method: 'post',
+                           url: 'http://localhost:8080/sendChat.staff',
+                           params: {
+                              prj_no: "9",
+                              mbr_email: "테스트계정213213123",
+                              message:"테스트 메시지21321321"
+                           }
+                         })
+                           .then(function (response) {
+                            console.log("response================>" + response);
+                           })
+                           .catch(function (error) {
+                             console.log("error================>" + error);
+                           }) // 요청 실패시 실행코드
                      }
                   >
                      <span

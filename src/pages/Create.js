@@ -17,7 +17,7 @@ function Create() {
 
 
     return(
-        <div className="col-12 row mg-0 pd-15 " style={{overflowY:"none"}}>
+        <div className="col-12 row mg-0 pd-15 ">
             <div className="col-5 col-3-border">
                 <div className="createUser">나호연(nahy0107)
                     <div className="createList">
@@ -28,9 +28,10 @@ function Create() {
                         />    
                     </div>
                 </div>
-                <button className="searchName">&nbsp;&nbsp;
+                <div className="searchName">&nbsp;&nbsp;
                     <FontAwesomeIcon icon={faSearch} />
-                </button>
+                    <input type="text" class="searchName"></input>
+                </div>
                 <div className="createProfile">
                     <img
                         className="avatar"
