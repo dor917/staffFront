@@ -5,112 +5,87 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import '../js/sidebar.event.js';
 import '../css/profile.css';
 import axios from 'axios';
+import { render } from '@testing-library/react';
 
 
-function projectAdapter(props) {
 
-const prj_mbr_vo=[];
+
+function prjList(props) {
+  const result = [];
 
   axios({
-    method: 'post',
-    url: 'http://localhost:8080/getMbrProjectList.staff',
-    header: {
-      'Accept': 'application/json',
-    },
-    params: {
-      mbr_no: props.userInfo.mbr_no
-    }
-  })
-    .then(function (response) {
-      for (var a = 0; a < response.data.length; a++)
- {
-        console.log(response.data[a]);
-        const newItem = {
-          prj_no: response.data[a].prj_no,
-          prj_prog: response.data[a].prj_prog,
-          prj_nm: response.data[a].prj_nm,
-          prj_expl: response.data[a].prj_expl,
-          prj_start_date: response.data[a].prj_start_date,
-          prj_end_Date: response.data[a].prj_end_Date,
-          sys_reg_date: response.data[a].sys_reg_date
-        };
-        prj_mbr_vo.push(newItem);
+      method: 'post',
+      url: 'http://localhost:8080/getMbrProjectList.staff',
+      params: {
+          mbr_no: props.userInfo.mbr_no
       }
-    })
-    .catch(function (error) {
-      console.log("error================>" + error);
-    });
-
-  const rendering = () => {
-    const result = [];
-<<<<<<< HEAD
-    for (var a = 0; a < prj_mbr_vo.length; a++){
-       result.push(
-=======
-    console.log(prj_mbr_vo.length);
-    for (var a = 0; a < prj_mbr_vo.length; a++) {
+  })
+  .then(function (response) {
+    alert(response.data.length);
+      for (var a = 0; a < response.data.length; a++) {
+          result.push(
+              <div>
+                  <div className='col-5'>
+                      <div className='card h-100'>
+                          <div className="card-body">
+                              <h6 className="d-flex align-items-center mb-3"><i className="material-icons text-info mr-2">{response.data[a].prj_nm}</i>
+                              </h6>
+                              <div className="progress mb-3" style={{ height: "5px" }}>
+                                  <div className="progress-bar bg-primary" role="progressbar" style={{ width: "80%" }} aria-valuenow="80"
+                                      aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <div className="progress mb-3" style={{ height: "5px" }}>
+                                  <div className="progress-bar bg-primary" role="progressbar" style={{ width: "66%" }} aria-valuenow="66"
+                                      aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <div className="circle">
+                                  <div className="text">java</div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div className='col-2'></div>
+              </div>
+          );
+          return ({ result });
+      }
       result.push(
->>>>>>> 970bca5cb842f3f0b4d03e4520e0f50d856970a0
-        <div>
           <div className='col-5'>
-            <div className='card h-100'>
-                <div className="card-body">
-                    <h6 className="d-flex align-items-center mb-3"><i className="material-icons text-info mr-2">prj_mbr_vo.[a].prj_nm</i>
-                    </h6>
-                    <div className="progress mb-3" style={{ height: "5px" }}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{ width: "80%" }} aria-valuenow="80"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <div className="progress mb-3" style={{ height: "5px" }}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{ width: "66%" }} aria-valuenow="66"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <div className="circle">
-                        <div className="text">java</div>
-                    </div>
-                </div>
-            </div>
+              <div className='card h-100'>
+                  <button className="card-body">
+                      <div className="fa-5x text-center font-size-custom">
+                          <Link to="/Project">
+                              <FontAwesomeIcon icon={faPlus} />
+                          </Link>
+                      </div>
+                  </button>
+              </div>
           </div>
-          <div className='col-2'></div>
-        </div>
-      
       );
-    }
-    result.push(
-      <div className='col-5'>
-        <div className='card h-100'>
-          <button className="card-body">
-            <div className="fa-5x text-center font-size-custom">
-              <Link to="/Project">
-                <FontAwesomeIcon icon={faPlus} />
-              </Link>
-            </div>
-          </button>
-        </div>
-      </div>
-    );
-    return result;
-  }
+      console.log("error================>" + {result});
+ 
+    })
+
+  .catch(function (error) {
+      console.log("error================>" + error);
+  });
+  console.log("error================>" + result);
+ 
+
+
   return (
-    <div>
-      {rendering()}
-    </div>
+      <div>
+        https://velopert.com/2597
+          asdasdasasdas
+          {result}
+      </div>
+
   )
+
+
 }
 
-
 function Profile(props) {
-  const publicBtn = {
-    color: 'black',
-    padding: '3px 10px',
-    textAlign: 'center',
-    textDecoration: 'none',
-    fontSize: '16px',
-    float: 'right',
-    margin: '1px 1px',
-    borderRadius: '12px'
-  }
- 
 
   return (
     <div className="re-container">
@@ -221,9 +196,7 @@ function Profile(props) {
               <a className="btn btn-info editButton" target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
             </Link>
           </div>
-          {projectAdapter(props)}
-
-          
+          {prjList(props)}
         </div>
       </div>
     </div>
