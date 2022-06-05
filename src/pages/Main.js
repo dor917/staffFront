@@ -66,7 +66,7 @@ function getCookie(name) {
           if (endOfCookie == -1) {
               endOfCookie = document.cookie.length;
           }
-          return unescape(document.cookie.substring(y, endOfCookie));
+          return  decodeURIComponent(document.cookie.substring(y, endOfCookie));
       }
       x = document.cookie.indexOf(" ", x) + 1;
       if (x == 0) {

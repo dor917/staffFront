@@ -13,7 +13,7 @@ import $ from 'jquery';
 
 
 function Profile(props) {
-  // $(".reposity").removeChild();
+
     axios({
     method: 'post',
     url: 'http://localhost:8080/getMbrProjectList.staff',
@@ -22,30 +22,49 @@ function Profile(props) {
     }
   })
     .then(function (response) {
+      //  $(".reposity .reposityBox").removeChild();
       for (var a = 0; a < response.data.length; a++) {
         if(a%2 == 0) {
-          alert(a);
           $(".reposity .reposityBox").append("<div className='col-2'></div>");
         }
         $(".reposity .reposityBox").append(
-          "<div className='col-5'>" +
-            "<div className='card h-100'>" +
-              "<div className='card-body'>" +
-                "<h6 className='d-flex align-items-center mb-3'><i className='material-icons text-info mr-2'>"+response.data[a].prj_nm+"</i></h6>" +
-                "<div className='progress mb-3' style={{ height: '5px' }}>" +
-                  "<div className='progress-bar bg-primary' role='progressbar' style={{ width: '80%' }} aria-valuenow='80' aria-valuemin='0' aria-valuemax='100'></div>" +
-                "</div>" +
-                "<div className='progress mb-3' style={{ height: '5px' }}>" +
-                  "<div className='progress-bar bg-primary' role='progressbar' style={{ width: '66%' }} aria-valuenow='66' aria-valuemin='0' aria-valuemax='100'></div>" +
-                "</div>" +
-                "<div className='circle'>" +
-                  "<div className='text'>java</div>" +
+          "<a href='/FileList?prj_no"+response.data[a].prj_no+"'>"+
+            "<div class='col-5 profileBox'>" +
+              "<div class='card h-100'>" +
+                "<div class='card-body'>" +
+                  "<h6 class='d-flex align-items-center mb-3'><i class='material-icons text-info mr-2'>"+response.data[a].prj_nm+"</i></h6>" +
+                  "<div class='progress mb-3' style='height: 5px;'>" +
+                    "<div class='progress-bar bg-primary' role='progressbar' style='width: 80%;' aria-valuenow='80' aria-valuemin='0' aria-valuemax='100'></div>" +
+                  "</div>" +
+                  "<div class='progress mb-3' style='height: 5px;'>" +
+                    "<div class='progress-bar bg-primary' role='progressbar' style='width: 66%;' aria-valuenow='66' aria-valuemin='0' aria-valuemax='100'></div>" +
+                  "</div>" +
+                  "<div class='circle'>" +
+                    "<div class='text'>java</div>" +
+                  "</div>" +
                 "</div>" +
               "</div>" +
             "</div>" +
-          "</div>" 
+          "</a>"
         )
+        if(a + 1 == response.data.length) {
+          $(".reposity .reposityBox").append(
+          "<div class='col-5 profileBox'>"+
+          "<div class='card h-100'>"+
+          "<button class='card-body'>"+
+          "<div class='fa-5x text-center font-size-custom'>"+
+          "<a href='/Project'>"+
+          "<svg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='plus' class='svg-inline--fa fa-plus fa-w-14 ' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'>"+
+          "<path fill='currentColor' d='M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z'>"+
+          "</path>"+
+          "</svg>"+
+          "</a>"+
+          "</div>"+
+          "</button>"+
+          "</div>"+
+          "</div>");
         }
+      }
      })
     .catch(function (error) {
       console.log("error================>" + error);
@@ -66,9 +85,6 @@ function Profile(props) {
                     <h4>{props.userInfo.mbr_nm}</h4>
                     <p className="text-secondary mb-1"></p>
                     <p className="text-muted font-size-sm">{props.userInfo.mbr_addr} {props.userInfo.mbr_cont}</p>
-                    <Link to="/Chat">
-                      <button className="btn btn-outline-primary">Message</button>
-                    </Link>
                   </div>
                 </div>
                 <hr></hr>
@@ -154,9 +170,9 @@ function Profile(props) {
           </div>
           <div className="reposity">
             <div className='reposityBox'>
-
+            
             </div>
-
+           
           </div>
 
         </div>

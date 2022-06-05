@@ -178,11 +178,16 @@ body{
 .reposity{
     padding:40px;
     margin:5px;
-    margin-left:70px;
-    
     display:flex;
 }
 .profileSize{
     width:400px;
-    
+}
+.profileSize span{
+    width: 350px;
+}
+.profileBox{
+    float: left;
+    margin: 10px;
+    margin-left: 50px;
 }
