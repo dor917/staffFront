@@ -12,6 +12,14 @@ import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { faUserGear } from "@fortawesome/free-solid-svg-icons";
 import { faUsersGear } from "@fortawesome/free-solid-svg-icons";
 import { createPortal } from 'react-dom';
+import {
+    faCalendar,
+    faComment,
+    faFile,
+    
+    
+    
+ } from '@fortawesome/free-solid-svg-icons';
 
 function Header(props) {
     const [alarm, setAlarm] = useState("alarmNone");
@@ -24,37 +32,70 @@ function Header(props) {
 
     const CreateAlarm = () =>
         <div className ={`alarm ${alarm}`}>
-            <div className="alarmContent">김돈하 아이언4 달성!!!
-                <li className="alarmList">김돈하 피파 개못해</li>
-                <li className="alarmList">김돈하 호연이한테 피파 2:0 짐 충격</li>
-                <li className="alarmList">김돈하는 알파카</li>
-                <li className="alarmList">김돈하는 감자</li>
-                <li className="alarmList">김돈하 블츠 장인</li>
-                <li className="alarmList">김돈하 데스그랩으로</li>
-                <li className="alarmList">윤종현 개빡침</li>
-                <li className="alarmList">김돈하 여캠</li>
-                <li className="alarmList">맨날봄</li>
-                <li className="alarmList">피파 순위</li>
-                <li className="alarmList">위부터 잘하는 거예요</li>
-                <li className="alarmList">나호연</li>
-                <li className="alarmList">원준혁</li>
-                <li className="alarmList">조재현</li>
-                <li className="alarmList">김돈하</li>
-                <li className="alarmList">최민수</li>
-                <li className="alarmList">닥치고</li>
-                <li className="alarmList">꼴등은</li>
-                <li className="alarmList">지.현.구</li>
-                <li className="alarmList">위부터 잘하는 거예요</li>
-                <li className="alarmList">나호연</li>
-                <li className="alarmList">원준혁</li>
-                <li className="alarmList">조재현</li>
-                <li className="alarmList">김돈하</li>
-                <li className="alarmList">최민수</li>
-                <li className="alarmList">닥치고</li>
-                <li className="alarmList">꼴등은</li>
-                <li className="alarmList">지.현.구</li>
-            </div>
+            {/* <div className="alarmContent">김돈하 아이언4 달성!!!
+            <hr></hr> */}
+            <span className="alarmContent">Alarm-content</span>
+            <button className="aria-label" type='button'>X</button>
+            <hr></hr>
+            <FontAwesomeIcon icon={faFile} />
+            <span className="alarmList">김돈하 호연이한테 피파 2:0 짐 충격</span>
+            <button className="aria-label" type='button'>X</button>
+            <hr></hr>
+            <FontAwesomeIcon icon={faCalendar} />
+            <span className="alarmList">김돈하는 알파카</span>
+            <button className="aria-label" type='button'>X</button>
+            <hr></hr>
+            <FontAwesomeIcon icon={faComment} />
+            <span className="alarmList">김돈하는 감자</span>
+            <button className="aria-label" type='button'>X</button>
+            <hr></hr>
+            <FontAwesomeIcon icon={faFile} />
+            <span className="alarmList">김돈하 블츠 장인</span>
+            <button className="aria-label" type='button'>X</button>
+            <hr></hr>
+            <FontAwesomeIcon icon={faCalendar} />
+            <span className="alarmList">김돈하 데스그랩으로</span>
+            <button className="aria-label" type='button'>X</button>
+            <hr></hr>
+            <FontAwesomeIcon icon={faCalendar} />
+            <span className="alarmList">윤종현 개빡침</span>
+            <button className="aria-label" type='button'>X</button>
+            <hr></hr>
+            <FontAwesomeIcon icon={faFile} />
+            <span className="alarmList">김돈하 여캠</span>
+            <button className="aria-label" type='button'>X</button>
+            <hr></hr>
+            <FontAwesomeIcon icon={faComment} />
+            <span className="alarmList">맨날봄</span>
+            <button className="aria-label" type='button'>X</button>
+            <hr></hr>
+            <FontAwesomeIcon icon={faFile} />
+            <span className="alarmList">피파 순위</span>
+            <button className="aria-label" type='button'>X</button>
+            <hr></hr>
+            <FontAwesomeIcon icon={faFile} />
+            <span className="alarmList">위부터 잘하는 거예요</span>
+            <button className="aria-label" type='button'>X</button>
+            <hr></hr>
+            <FontAwesomeIcon icon={faCalendar} />
+            <span className="alarmList">나호연</span>
+            <button className="aria-label" type='button'>X</button>
+            <hr></hr>
+            <FontAwesomeIcon icon={faCalendar} />
+            <span className="alarmList">원준혁</span>
+            <button className="aria-label" type='button'>X</button>
+            <hr></hr>
+            <FontAwesomeIcon icon={faFile} />
+            <span className="alarmList">조재현</span>
+            <button className="aria-label" type='button'>X</button>
+            <hr></hr>
+            <FontAwesomeIcon icon={faCalendar} />
+            <span className="alarmList">김돈하 여캠</span>
+            <button className="aria-label" type='button'>X</button>
+            <hr></hr>
+            
         </div>
+        
     
     const changeAlarm = () =>{
         console.log(alarm)
