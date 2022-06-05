@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Check = () => {
+const CalendarBox = () => {
     const formData = [
     { id : 1, language: "Java"},
     { id : 2, language: "Python"},
@@ -36,7 +36,7 @@ const Check = () => {
     };
 
     return(
-        <div className="contStyle">
+        <div className="conttStyle">
             {formData.map((item) => (
                 <label key = {item.id} className = "innerBox">
                     <input
@@ -85,4 +85,4 @@ const Check = () => {
     //     );
     // };
 
-export default Check;
+export default CalendarBox;

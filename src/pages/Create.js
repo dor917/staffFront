@@ -29,8 +29,9 @@ function Create() {
                     </div>
                 </div>
                 <div className="searchName">&nbsp;&nbsp;
-                    <FontAwesomeIcon icon={faSearch} />
-                    <input type="text" class="searchName"></input>
+                    <FontAwesomeIcon icon={faSearch} />&nbsp;&nbsp;
+                    <input type="text" class="searchName">
+                    </input>
                 </div>
                 <div className="createProfile">
                     <img

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -13,6 +13,7 @@ import '../js/sidebar.event.js';
 import Header from "./Header.js";
 import Sidebar from './Sidebar.js';
 import '../css/Calendar.css'
+import CalendarBox from './CalendarBox';
 
 
 
@@ -35,7 +36,7 @@ const events = [
 Modal.setAppElement('#root')
 
 function Calendar() {
-  const[checkeditems, setcheckeditems] = useState(new Set());
+  const [checkeditems, setcheckeditems] = useState(new Set());
 
   const userId = getCookie("USERID");
   sessionStorage.setItem("userNo", getCookie("USERNO"));
@@ -43,137 +44,143 @@ function Calendar() {
 
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
-  function delCookie_by_name(name){
+  function delCookie_by_name(name) {
     let date = new Date();
     date.setDate(date.getDate() - 100);
     let Cookie = `${name}=;Expires=${date.toUTCString()}`
     document.cookie = Cookie;
-    }
-    function getCookie(name) {
+  }
+  function getCookie(name) {
     var nameOfCookie = name + "=";
     var x = 0;
     while (x <= document.cookie.length) {
-          var y = (x + nameOfCookie.length);
-          if (document.cookie.substring(x, y) == nameOfCookie) { 
-          var endOfCookie = document.cookie.indexOf(";", y);
-            if ( endOfCookie == -1)  {
-                  endOfCookie = document.cookie.length;
-            }
-            return unescape(document.cookie.substring(y, endOfCookie));
-          }
-          x = document.cookie.indexOf(" ", x) + 1; 
-          if (x == 0) {
-            break;
+      var y = (x + nameOfCookie.length);
+      if (document.cookie.substring(x, y) == nameOfCookie) {
+        var endOfCookie = document.cookie.indexOf(";", y);
+        if (endOfCookie == -1) {
+          endOfCookie = document.cookie.length;
+        }
+        return unescape(document.cookie.substring(y, endOfCookie));
+      }
+      x = document.cookie.indexOf(" ", x) + 1;
+      if (x == 0) {
+        break;
       }
     }
-return ""; 
+    return "";
 
-    }
+  }
 
-  return (   
+  return (
     <div>
-    <div>
-      <Header userId={userId}/>
-      
       <div>
-        <Sidebar />
-      </div>
-    </div>
+        <Header userId={userId} />
 
-    <div className="Calendar">     
-      <button className="add-button" onClick={() => setModalIsOpen(true)}>일정추가</button>
-      <FullCalendar
-        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-        initialView="dayGridMonth" 
-        events={events}
-        eventColor="blue"
-        nowIndicator 
-      />
+        <div>
+          <Sidebar />
+        </div>
+      </div>
+
+      <div className="Calendar">
+        <button className="add-button" onClick={() => setModalIsOpen(true)}>일정추가</button>
+        <FullCalendar
+          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+          initialView="dayGridMonth"
+          events={events}
+          eventColor="blue"
+          nowIndicator
+        />
         <div className="Calendar-modal">
           <Modal isOpen={modalIsOpen}
-          onequestClose={()=>setModalIsOpen(false)}
-          style={
-            {                   
-            content:{
-              color:'black',
-              
-              left:'1150px',
-              top:'110px',
-              width:'700px',
-              height:'785px',
-            },
-            }
-          }>
+            onequestClose={() => setModalIsOpen(false)}
+            style={
+              {
+                content: {
+                  color: 'black',
+
+                  left: '1150px',
+                  top: '110px',
+                  width: '700px',
+                  height: '785px',
+                },
+              }
+            }>
             <form onsubmit="return false" action="/Calendar.add" method="post">
               <AddContainer>
-                    <InputBox>
-                    
-                    <h2>새로운 일정</h2>
-                    <h3>type</h3>
+                <InputBox>
+
+                  <h2>새로운 일정</h2>
+                  <h3>type</h3>
+                  <div className="sideCenter">
                     <div className="issue_cb">
-                    <div className="flexBox">
-                      <input type="checkbox"id="bug"className="issue"/>
-                      <p className="pTag">bug</p>
+                      <div className="flexBox issueTypeBox">
+                        <input type="checkbox" id="bug" className="issue" />
+                        <p className="pTag">bug</p>
+                      </div>
+                      <div className="flexBox issueTypeBox">
+                        <input type="checkbox" id="wonfix" className="issue" />
+                        <p className="pTag">wonfix</p>
+                      </div>
+                      <div className="flexBox issueTypeBox">
+                        <input type="checkbox" id="question" className="issue" />
+                        <p className="pTag">question</p>
+                      </div>
+                      <div className="flexBox issueTypeBox">
+                        <input type="checkbox" id="help" className="issue" />
+                        <p className="pTag">help</p>
+                      </div>
+                      <div className="flexBox issueTypeBox">
+                        <input type="checkbox" id="wonfix" className="issue" />
+                        <p className="pTag">document</p>
+                      </div>
                     </div>
-                    <div className="flexBox">
-                      <input type="checkbox"id="wonfix"className="issue"/>
-                      <p className="pTag">wonfix</p>
+                    <div className="schedule ">
+                      <div className="flexBox issueTypeBox">
+                        <input type="checkbox" id="conference" className="issue" />
+                        <p className="pTag">conference</p>
+                      </div>
+                      <div className="flexBox issueTypeBox">
+                        <input type="checkbox" id="start" className="issue" />
+                        <p className="pTag">start</p>
+                      </div>
+                      <div className="flexBox issueTypeBox">
+                        <input type="checkbox" id="end" className="issue" />
+                        <p className="pTag">end</p>
+                      </div>
+                      <div className="flexBox issueTypeBox">
+                        <input type="checkbox" id="end" className="issue" />
+                        <p className="pTag">end</p>
+                      </div>
+                      <div className="flexBox issueTypeBox">
+                        <input type="checkbox" id="vacation" className="issue" />
+                        <p className="pTag">vacation</p>
+                      </div>
                     </div>
-                    <div className="flexBox">
-                      <input type="checkbox"id="question"className="issue"/>
-                      <p className="pTag">question</p>
-                    </div>
-                    <div className="flexBox">
-                      <input type="checkbox"id="help"className="issue"/>
-                      <p className="pTag">help</p>
-                    </div>
-                    </div>
-                    <div className="schedule">
-                    <div className="flexBox">
-                      <input type="checkbox"id="conference"className="issue"/>
-                      <p className="pTag">conference</p>
-                    </div>
-                    <div className="flexBox">
-                      <input type="checkbox"id="start"className="issue"/>
-                      <p className="pTag">start</p>
-                    </div>
-                    <div className="flexBox">
-                      <input type="checkbox"id="end"className="issue"/>
-                      <p className="pTag">end</p>
-                    </div>
-                    <div className="flexBox">
-                      <input type="checkbox"id="end"className="issue"/>
-                      <p className="pTag">end</p>
-                    </div>
-                    <div className="flexBox">
-                      <input type="checkbox"id="vacation"className="issue"/>
-                      <p className="pTag">vacation</p>
-                    </div>
-                    </div>    
+                  </div>
 
-            
 
-                    <h4>Title</h4>
-                    <input className="wideInput" type="text" id="scheduleInput" style={{height:5+'%'}}></input>
-                    <h4>Content</h4>
-                    <input className="wideInput" type="textarea" id="scheduleInput" max="9999-12-31" style={{height:20+'%'}}></input>
-                    <h4>Start</h4>
-                    <input className="wideInput" type="datetime-local" id="startDate"></input>
-                    <h4>End</h4>
-                    <input className="wideInput" type="datetime-local" id="endeDate"></input>
-                    
-                    </InputBox>
-                    <BtnBox>
-                    <button onClick={() => setModalIsOpen(false)}>뒤로</button><button>저장</button>
-                    </BtnBox>
-              </AddContainer>     
-            </form>       
+
+                  <h4>Title</h4>
+                  <input className="wideInput" type="text" id="scheduleInput" style={{ height: 5 + '%' }}></input>
+                  <h4>Content</h4>
+                  <input className="wideInput" type="textarea" id="scheduleInput" max="9999-12-31" style={{ height: 20 + '%' }}></input>
+                  <h4>Start</h4>
+                  <input className="wideInput" type="datetime-local" id="startDate"></input>
+                  <h4>End</h4>
+                  <input className="wideInput" type="datetime-local" id="endeDate"></input>
+
+                </InputBox>
+                <BtnBox>
+                  <button onClick={() => setModalIsOpen(false)}>뒤로</button><button>저장</button>
+                </BtnBox>
+              </AddContainer>
+            </form>
           </Modal>
         </div>
-        
+
       </div>
-      </div>
-    );
+    </div>
+  );
 }
 export default Calendar;
 

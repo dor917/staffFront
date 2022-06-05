@@ -111,14 +111,14 @@ function Profile(props) {
       <div className="main-body">
         <div className="row">
           <div className="col-lg-4">
-            <div className="card">
-              <div className="card-body">
+            <div className="card profileSize">
+              <div className="card-body profileSize">
                 <div className="d-flex flex-column align-items-center text-center">
                   <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" className="rounded-circle p-1 bg-primary" width="110"></img>
                   <div className="mt-3">
                     <h4>{props.userInfo.mbr_nm}</h4>
-                    <p className="text-secondary mb-1">Full Stack Developer</p>
-                    <p className="text-muted font-size-sm">{props.userInfo.mbr_addr}, {props.userInfo.mbr_cont}</p>
+                    <p className="text-secondary mb-1"></p>
+                    <p className="text-muted font-size-sm">{props.userInfo.mbr_addr} {props.userInfo.mbr_cont}</p>
                     <Link to="/Chat">
                       <button className="btn btn-outline-primary">Message</button>
                     </Link>
@@ -156,15 +156,9 @@ function Profile(props) {
           <div className="explainUser col-12 col-sm-3">
             <div className="row">
               <div className="col-sm-2">
-                <h6 className="mb-0">FirstName</h6>
+                <h6 className="mb-0">Name</h6>
               </div>
               <div className="col-sm-4 text-secondary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                {props.userInfo.mbr_nm}
-              </div>
-              <div className="col-sm-2">
-                <h6 className="mb-0">LastName</h6>
-              </div>
-              <div className="col-sm-4 text-secondary">
                 {props.userInfo.mbr_nm}
               </div>
             </div>
@@ -211,8 +205,32 @@ function Profile(props) {
               <a className="btn btn-info editButton" target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
             </Link>
           </div>
-          {projectAdapter(props)}
-
+          <div className="reposity">
+            <div>
+          <div className='col-5'>
+            <div className='card h-100'>
+                <div className="card-body">
+                    <h6 className="d-flex align-items-center mb-3"><i className="material-icons text-info mr-2">prj_mbr_vo.[a].prj_nm</i>
+                    </h6>
+                    <div className="progress mb-3" style={{ height: "5px" }}>
+                        <div className="progress-bar bg-primary" role="progressbar" style={{ width: "80%" }} aria-valuenow="80"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div className="progress mb-3" style={{ height: "5px" }}>
+                        <div className="progress-bar bg-primary" role="progressbar" style={{ width: "66%" }} aria-valuenow="66"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div className="circle">
+                        <div className="text">java</div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div className='col-2'></div>
+        </div>
+          {projectAdapter(props)} 
+          
+          </div>
           
         </div>
       </div>

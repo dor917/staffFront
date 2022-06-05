@@ -1,0 +1,9 @@
+.conttStyle{
+    border-radius: 0.35rem;
+    width: 80%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 15px !important;
+    
+}

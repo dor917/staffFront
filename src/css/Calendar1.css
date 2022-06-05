@@ -34,7 +34,9 @@ label{
 }
 
 .pTag{
-  margin: 0;
+  margin-left: 5px;
+  text-align: top;
+  font-size:20px;
 
 }
 .work{
@@ -50,6 +52,23 @@ label{
   text-align: center;
 }
 
-.issue{
-  margin-right:4rem;
+.sideCenter{
+  border-radius: 0.35rem;
+  width: 80%;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 15px !important;
+  float:center;
+  
+}
+
+.issueTypeBox {
+  height: 20px;
+  padding: 5px;
+  
+}
+.issueTypeBox p {
+  text-align: center;
+  line-height: 10px;
 }

@@ -175,3 +175,14 @@ body{
 .edit_btn{
     margin: top 3rem;
 }
+.reposity{
+    padding:40px;
+    margin:5px;
+    margin-left:70px;
+    
+    display:flex;
+}
+.profileSize{
+    width:400px;
+    
+}

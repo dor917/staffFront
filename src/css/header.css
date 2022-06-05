@@ -5,7 +5,7 @@
 .header-user-id{
     position: absolute;
     top: 12px;
-    left:6rem;
+    left:-10rem;
     list-style-type: none;
     position:left;
 }
@@ -24,14 +24,43 @@
     float: right;
 }
 .log{
+    display: flex;
     float:right;
-    margin-left:103rem;
+    margin-left:112rem;
     margin-top:0rem;
 }
 /* .login{
     margin-left:-3.5rem;
     margin-top: 1.5rem;
 } */
+.alarm{
+    float:right;
+    display:flex;
+    width:340px;
+    height:913px;
+    background-color:#f5d682;
+    border-radius: 20px;
+    text-align: left;
+    justify-content: center;
+    padding:10px;
+    
+}
+.alarmContent{
+    
+}
+.alarmList{
+    
+}
 
+.onClicked{
+    cursor: pointer;
+}
+.alarmBlock{
+    z-index: 999;
+    display: block;
+}
+.alarmNone{
+    z-index: 999;
 
-
+    display: none;
+}   
