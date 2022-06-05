@@ -6,88 +6,54 @@ import '../js/sidebar.event.js';
 import '../css/profile.css';
 import axios from 'axios';
 import { render } from '@testing-library/react';
+import Header from "./Header.js";
+import $ from 'jquery';
 
 
 
-
-function prjList(props) {
-  const result = [];
-
-  axios({
-      method: 'post',
-      url: 'http://localhost:8080/getMbrProjectList.staff',
-      params: {
-          mbr_no: props.userInfo.mbr_no
-      }
-  })
-  .then(function (response) {
-    alert(response.data.length);
-      for (var a = 0; a < response.data.length; a++) {
-          result.push(
-              <div>
-                  <div className='col-5'>
-                      <div className='card h-100'>
-                          <div className="card-body">
-                              <h6 className="d-flex align-items-center mb-3"><i className="material-icons text-info mr-2">{response.data[a].prj_nm}</i>
-                              </h6>
-                              <div className="progress mb-3" style={{ height: "5px" }}>
-                                  <div className="progress-bar bg-primary" role="progressbar" style={{ width: "80%" }} aria-valuenow="80"
-                                      aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                              <div className="progress mb-3" style={{ height: "5px" }}>
-                                  <div className="progress-bar bg-primary" role="progressbar" style={{ width: "66%" }} aria-valuenow="66"
-                                      aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                              <div className="circle">
-                                  <div className="text">java</div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div className='col-2'></div>
-              </div>
-          );
-          return ({ result });
-      }
-      result.push(
-          <div className='col-5'>
-              <div className='card h-100'>
-                  <button className="card-body">
-                      <div className="fa-5x text-center font-size-custom">
-                          <Link to="/Project">
-                              <FontAwesomeIcon icon={faPlus} />
-                          </Link>
-                      </div>
-                  </button>
-              </div>
-          </div>
-      );
-      console.log("error================>" + {result});
- 
-    })
-
-  .catch(function (error) {
-      console.log("error================>" + error);
-  });
-  console.log("error================>" + result);
- 
-
-
-  return (
-      <div>
-        https://velopert.com/2597
-          asdasdasasdas
-          {result}
-      </div>
-
-  )
-
-
-}
 
 function Profile(props) {
+  // $(".reposity").removeChild();
+    axios({
+    method: 'post',
+    url: 'http://localhost:8080/getMbrProjectList.staff',
+    params: {
+      mbr_no: props.userInfo.mbr_no
+    }
+  })
+    .then(function (response) {
+      for (var a = 0; a < response.data.length; a++) {
+        if(a%2 == 0) {
+          alert(a);
+          $(".reposity .reposityBox").append("<div className='col-2'></div>");
+        }
+        $(".reposity .reposityBox").append(
+          "<div className='col-5'>" +
+            "<div className='card h-100'>" +
+              "<div className='card-body'>" +
+                "<h6 className='d-flex align-items-center mb-3'><i className='material-icons text-info mr-2'>"+response.data[a].prj_nm+"</i></h6>" +
+                "<div className='progress mb-3' style={{ height: '5px' }}>" +
+                  "<div className='progress-bar bg-primary' role='progressbar' style={{ width: '80%' }} aria-valuenow='80' aria-valuemin='0' aria-valuemax='100'></div>" +
+                "</div>" +
+                "<div className='progress mb-3' style={{ height: '5px' }}>" +
+                  "<div className='progress-bar bg-primary' role='progressbar' style={{ width: '66%' }} aria-valuenow='66' aria-valuemin='0' aria-valuemax='100'></div>" +
+                "</div>" +
+                "<div className='circle'>" +
+                  "<div className='text'>java</div>" +
+                "</div>" +
+              "</div>" +
+            "</div>" +
+          "</div>" 
+        )
+        }
+     })
+    .catch(function (error) {
+      console.log("error================>" + error);
+    });
 
-  return (
+
+  return(
+
     <div className="re-container">
       <div className="main-body">
         <div className="row">
@@ -117,7 +83,7 @@ function Profile(props) {
                     <span className="text-secondary">{props.userInfo.mbr_web}</span>
                   </li>
                   <hr></hr>
-                  
+
                   <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                     <h6 className="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-instagram me-2 icon-inline text-danger"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>Instagram</h6>
                     <span className="text-secondary">{props.userInfo.mbr_insta}</span>
@@ -187,32 +153,12 @@ function Profile(props) {
             </Link>
           </div>
           <div className="reposity">
-            <div>
-          <div className='col-5'>
-            <div className='card h-100'>
-                <div className="card-body">
-                    <h6 className="d-flex align-items-center mb-3"><i className="material-icons text-info mr-2">prj_mbr_vo.[a].prj_nm</i>
-                    </h6>
-                    <div className="progress mb-3" style={{ height: "5px" }}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{ width: "80%" }} aria-valuenow="80"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <div className="progress mb-3" style={{ height: "5px" }}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{ width: "66%" }} aria-valuenow="66"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <div className="circle">
-                        <div className="text">java</div>
-                    </div>
-                </div>
-            </div>
-          </div>
-          <div className='col-2'></div>
-        </div>
+            <div className='reposityBox'>
 
-          
+            </div>
+
           </div>
-          
+
         </div>
       </div>
     </div>

@@ -45,7 +45,7 @@ function Main() {
              render={() => <Profile userInfo={userInfo} />} />
           <Route exact path="/Chat" 
                render={() => <Chat userInfo={userInfo} />}/>
-          <Route exact path="/FileList" component={FileList}  userInfo = {userInfo}/>
+          <Route exact path="/FileList" component={FileList}  userInfo = {userInfo} />
           <Route exact path="/Calendar" component={Calendar}  userInfo = {userInfo}/>
           <Route exact path="/editEventCalendar" component={editEvent}  userInfo = {userInfo}/>
           <Route exact path="/Project" component={Create}  userInfo = {userInfo}/>
