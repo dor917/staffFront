@@ -18,6 +18,8 @@
     margin: 0px;
     display: flex;
     justify-content: left;
+    position: absolute;
+    width: 91.5%;
 }
 
 .row {display: -ms-flexbox;display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap;}
@@ -43,7 +45,10 @@
     display: flex;
     justify-content: left;
     background-color:white;
+    outline:none;
+    
 }
+
 .makeProject {
     width: 1060px;
     height: 865px;
@@ -76,14 +81,15 @@
 } */
 .progressProject {
     border: 2px solid lightgray;
-    height: 40px;
+    height: 20px;
     align-items: center;
     margin: 0px;
-    display: flex;
+    display: inline-block;
     padding-top: 20px;
-    width:200px;
+    width: 80px;
+    margin-right: 5px;
     justify-content: center;
-    padding-bottom: 20px;
+    padding: 15px;
     text-align: center;
 }
 .proposeProject{
@@ -125,3 +131,17 @@
     line-height: 1;
 }
 .calender-font{font-size: 1rem;}
+
+.proSidebar{
+    margin-left:200px  
+}
+.aria-labeling{
+    float:left;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size:5px;
+    font-weight:10px;
+    border:gray;
+    
+}

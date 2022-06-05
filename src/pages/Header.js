@@ -35,7 +35,6 @@ function Header(props) {
             {/* <div className="alarmContent">김돈하 아이언4 달성!!!
             <hr></hr> */}
             <span className="alarmContent">Alarm-content</span>
-            <button className="aria-label" type='button'>X</button>
             <hr></hr>
             <FontAwesomeIcon icon={faFile} />
             <span className="alarmList">김돈하 호연이한테 피파 2:0 짐 충격</span>

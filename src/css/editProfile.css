@@ -69,3 +69,8 @@
 */
 .width-32{width: 32% !important;}
 .width-81{width: 81% !important;}
+
+.editSize{
+    padding-top:25px !important;
+    padding-bottom:25px !important;
+}
