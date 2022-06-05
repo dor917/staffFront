@@ -10,32 +10,47 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Header from "./Header.js";
 import Sidebar from './Sidebar.js';
 
+function getchatHist() {
+   const result = [];
+   axios({
+      method: 'post',
+      url: 'http://localhost:8080/getChatHistory.staff',
+      header: {
+         'Accept-Control-Allow-Origin': '*',
+        'Accept': 'application/json',
+      },
+      params: {
+          prj_no: 9
+      }
+    })
+      .then(function (response) {
+         
+         for(var i = 0 ; i < response.data.length ; i ++ ){
+            console.log(response.data[i].date)
+            for(var j = 0 ; j < response.data[i].chatList.length ; j ++ ){
+               console.log(response.data[i].chatList[j])
+            }
+         }
+      })
+      .catch(function (error) {
+        console.log("error================>" + error);      
+      });
 
+      const rendering = () => {
+
+      }
+
+
+      return (
+         <div>
+           {rendering()}
+         </div>
+       )
+}
 
 function Chat() {
-   var userId = sessionStorage.getItem('userId');
+   
 
-   const [message, messageText] = useState('');
-   const [messages, setMessage] = useState([
-
-   ]);
-   const sendMessage = (sendUserId, sendMessageText) => {
-      const message = {
-         id: {sendUserId},
-         sendMessageText: {sendMessageText},
-      };
-      setMessage(messages.concat(message));
-     
-
-    };
-   const changeMessage = (e) => {
-      messageText(e.target.value);
-   };
-   const axiosConfig = {
-      headers: {
-         'Content-Type': 'application/x-www-form-urlencoded',
-      },
-   };
   
    // const sendChat
    const container = {
@@ -80,7 +95,7 @@ function Chat() {
    return (
       <div>
       <div>
-         <Header userId={userId}/>
+         {/* <Header userId={userId}/> */}
          
          <div>
             <Sidebar />
@@ -90,64 +105,14 @@ function Chat() {
       <div className='col-2'></div> {/*왼쪽빈칸 */}
       <div className="col-8 page-content page-container" id="page-content">
          <div className="chatSize chatSize-bordered">
+            {getchatHist()}
             <div
                className="ps-container ps-theme-default ps-active-y"
                id="chat-content"
                style={container}
             >
-               <div className="media media-chat">
-                  <img
-                     className="avatar"
-                     src="https://img.icons8.com/color/36/000000/administrator-male.png"
-                     alt="..."
-                  />
-                  <div className="media-body">
-                     <p>Hi</p>
-                     <p>How are you ...</p>
-
-                     <p className="meta">
-                        <time datetime="2018">23:58</time>
-                     </p>
-                  </div>
-            
-               </div>
-               <div className="media media-meta-day">Today</div>
-                  <div style={chatBox}>
-                        <div className="width-78 publisher bt-1 border-light"> 
-                           <textarea className="publisher-input" type="text" placeholder="Write something" style={chatTextarea}/> 
-                           <button onClick={()=> 
-                             axios({
-                              method: 'post',
-                              url: 'http://localhost:8080/sendChat.staff',
-                              params: {
-                                 prj_no: "9",
-                                 mbr_email: "테스트계정",
-                                 message:"테스트 메시지"
-                              }
-                            })
-                              .then(function (response) {
-                               console.log("response================>" + response);
-                              })
-                              .catch(function (error) {
-                                console.log("error================>" + error);
-                              })
-
-                           }> 
-                              <span className="publisher-btn file-group chatsend-btn" style={chatsendBtn}> 
-                              <FontAwesomeIcon icon={faPaperPlane} style={chatsendIcon}/>
-                              </span> 
-                           </button>
-                        </div>
-                  </div> 
-               <div className="media media-chat media-chat-reverse">
-                  <div className="media-body">
-                     <p>Okay then see you on sunday!!</p>
-                     <p className="meta">
-                        <time datetime="2018">00:12</time>
-                     </p>
-                  </div>
-               </div>
-               <MessageList props={messages} />
+               
+               {/* <MessageList props={messages} /> */}
                <div className="ps-scrollbar-x-rail" style={scrollbar_x_rail}>
                   <div
                      className="ps-scrollbar-x"
@@ -163,12 +128,11 @@ function Chat() {
                   ></div>
                </div>
             </div>
-
             <div style={chatBox}>
                <div className="publisher bt-1 border-light">
                   <textarea
-                     onChange={changeMessage}
-                     value={message}
+                     // onChange={changeMessage}
+                     // value={message}
                      className="publisher-input"
                      type="text"
                      placeholder="Write something"
@@ -203,7 +167,6 @@ function Chat() {
                            style={chatsendIcon} 
                         />
                      </span>
-                     <button type="button" onClick="window.location.reload('/Chat');">Close</button>
                    
                   </div>
                </div>
