@@ -34,44 +34,50 @@ function Main() {
     mbr_brd: getCookie("mbr_brd"),
     sys_reg_date: getCookie("sys_reg_date")
   }
- 
+
+
   return (
-    <div style={{overflowX: "hidden"}}>
-      <Header userInfo = {userInfo}/>
-      
+    <div style={{ overflowX: "hidden" }}>
+      <Header userInfo={userInfo} />
+
       <div style={maincontent}>
         <BrowserRouter>
-          <Route exact path="/main" 
-             render={() => <Profile userInfo={userInfo} />} />
-          <Route exact path="/Chat" 
-               render={() => <Chat userInfo={userInfo} />}/>
-          <Route exact path="/FileList" component={FileList}  userInfo = {userInfo} />
-          <Route exact path="/Calendar" component={Calendar}  userInfo = {userInfo}/>
-          <Route exact path="/editEventCalendar" component={editEvent}  userInfo = {userInfo}/>
-          <Route exact path="/Project" component={Create}  userInfo = {userInfo}/>
-          <Route exact path="/editProfile" component={editProfile}  userInfo = {userInfo}/>
+          <Route exact path="/main"
+            render={() => <Profile userInfo={userInfo} />} />
+          <Route exact path="/Chat"
+            render={() => <Chat userInfo={userInfo} />} />
+          <Route exact path="/FileList"
+            render={() => <FileList userInfo={userInfo} />} />
+          <Route exact path="/Calendar"
+            render={() => <Calendar userInfo={userInfo} />} />
+          <Route exact path="/editEventCalendar"
+            render={() => <editEvent userInfo={userInfo} />} />
+          <Route exact path="/Project"
+            render={() => <Create userInfo={userInfo} />} />
+          <Route exact path="/editProfile"
+            render={() => <editProfile userInfo={userInfo} />} />
         </BrowserRouter>
       </div>
     </div>
-    
+
   );
 }
 function getCookie(name) {
   var nameOfCookie = name + "=";
   var x = 0;
   while (x <= document.cookie.length) {
-      var y = (x + nameOfCookie.length);
-      if (document.cookie.substring(x, y) == nameOfCookie) {
-          var endOfCookie = document.cookie.indexOf(";", y);
-          if (endOfCookie == -1) {
-              endOfCookie = document.cookie.length;
-          }
-          return  decodeURIComponent(document.cookie.substring(y, endOfCookie));
+    var y = (x + nameOfCookie.length);
+    if (document.cookie.substring(x, y) == nameOfCookie) {
+      var endOfCookie = document.cookie.indexOf(";", y);
+      if (endOfCookie == -1) {
+        endOfCookie = document.cookie.length;
       }
-      x = document.cookie.indexOf(" ", x) + 1;
-      if (x == 0) {
-          break;
-      }
+      return decodeURIComponent(document.cookie.substring(y, endOfCookie));
+    }
+    x = document.cookie.indexOf(" ", x) + 1;
+    if (x == 0) {
+      break;
+    }
   }
 
   return "";

@@ -22,8 +22,26 @@ import {
  } from '@fortawesome/free-solid-svg-icons';
 
 function Header(props) {
-    const [alarm, setAlarm] = useState("alarmNone");
+    const userInfo = {
+        mbr_no: getCookie("mbr_no"),
+        mbr_nm: getCookie("mbr_nm"),
+        mbr_email: getCookie("mbr_email"),
+        mbr_pw: getCookie("mbr_pw"),
+        mbr_phone: getCookie("mbr_phone"),
+        mbr_cont: getCookie("mbr_cont"),
+        mbr_addr: getCookie("mbr_addr"),
+        mbr_web: getCookie("mbr_web"),
+        mbr_twit: getCookie("mbr_twit"),
+        mbr_insta: getCookie("mbr_insta"),
+        mbr_face: getCookie("mbr_face"),
+        mbr_brd: getCookie("mbr_brd"),
+        sys_reg_date: getCookie("sys_reg_date")
+      }
 
+    const [alarm, setAlarm] = useState("alarmNone");
+    const mbr_nm ='';
+
+  
     const Portals = () => {
         return( 
           createPortal(<CreateAlarm /> , document.getElementById("touchme")) 
@@ -39,59 +57,6 @@ function Header(props) {
             <FontAwesomeIcon icon={faFile} />
             <span className="alarmList">김돈하 호연이한테 피파 2:0 짐 충격</span>
             <button className="aria-label" type='button'>X</button>
-            <hr></hr>
-            <FontAwesomeIcon icon={faCalendar} />
-            <span className="alarmList">김돈하는 알파카</span>
-            <button className="aria-label" type='button'>X</button>
-            <hr></hr>
-            <FontAwesomeIcon icon={faComment} />
-            <span className="alarmList">김돈하는 감자</span>
-            <button className="aria-label" type='button'>X</button>
-            <hr></hr>
-            <FontAwesomeIcon icon={faFile} />
-            <span className="alarmList">김돈하 블츠 장인</span>
-            <button className="aria-label" type='button'>X</button>
-            <hr></hr>
-            <FontAwesomeIcon icon={faCalendar} />
-            <span className="alarmList">김돈하 데스그랩으로</span>
-            <button className="aria-label" type='button'>X</button>
-            <hr></hr>
-            <FontAwesomeIcon icon={faCalendar} />
-            <span className="alarmList">윤종현 개빡침</span>
-            <button className="aria-label" type='button'>X</button>
-            <hr></hr>
-            <FontAwesomeIcon icon={faFile} />
-            <span className="alarmList">김돈하 여캠</span>
-            <button className="aria-label" type='button'>X</button>
-            <hr></hr>
-            <FontAwesomeIcon icon={faComment} />
-            <span className="alarmList">맨날봄</span>
-            <button className="aria-label" type='button'>X</button>
-            <hr></hr>
-            <FontAwesomeIcon icon={faFile} />
-            <span className="alarmList">피파 순위</span>
-            <button className="aria-label" type='button'>X</button>
-            <hr></hr>
-            <FontAwesomeIcon icon={faFile} />
-            <span className="alarmList">위부터 잘하는 거예요</span>
-            <button className="aria-label" type='button'>X</button>
-            <hr></hr>
-            <FontAwesomeIcon icon={faCalendar} />
-            <span className="alarmList">나호연</span>
-            <button className="aria-label" type='button'>X</button>
-            <hr></hr>
-            <FontAwesomeIcon icon={faCalendar} />
-            <span className="alarmList">원준혁</span>
-            <button className="aria-label" type='button'>X</button>
-            <hr></hr>
-            <FontAwesomeIcon icon={faFile} />
-            <span className="alarmList">조재현</span>
-            <button className="aria-label" type='button'>X</button>
-            <hr></hr>
-            <FontAwesomeIcon icon={faCalendar} />
-            <span className="alarmList">김돈하 여캠</span>
-            <button className="aria-label" type='button'>X</button>
-            <hr></hr>
             
         </div>
         
@@ -114,7 +79,6 @@ function Header(props) {
         marginLeft:"10px"
     }
 
-
     return (
         <div>
             <div className="page-header" style={Header}>
@@ -124,7 +88,7 @@ function Header(props) {
                 {/* <span >{props.userInfo.mbr_nm}</span> */}
                 <ul className = "header-user-id">            
                     <div className = "log">
-                        <span>nahy0107님</span>&nbsp;&nbsp;&nbsp;
+                        <span>{userInfo.mbr_nm}</span>&nbsp;&nbsp;&nbsp;
                         <div className="onClicked" onClick={changeAlarm}>
                             <FontAwesomeIcon icon = {faBell}/>
                         </div>
@@ -138,6 +102,26 @@ function Header(props) {
         </div>
     );
 }
- 
-
+function getCookie(name) {
+    var nameOfCookie = name + "=";
+    var x = 0;
+    while (x <= document.cookie.length) {
+      var y = (x + nameOfCookie.length);
+      if (document.cookie.substring(x, y) == nameOfCookie) {
+        var endOfCookie = document.cookie.indexOf(";", y);
+        if (endOfCookie == -1) {
+          endOfCookie = document.cookie.length;
+        }
+        return decodeURIComponent(document.cookie.substring(y, endOfCookie));
+      }
+      x = document.cookie.indexOf(" ", x) + 1;
+      if (x == 0) {
+        break;
+      }
+    }
+  
+    return "";
+  
+  }
+  
 export default Header;

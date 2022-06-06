@@ -48,7 +48,7 @@ function getchatHist() {
        )
 }
 
-function Chat() {
+function Chat(props) {
    
 
   
@@ -95,7 +95,7 @@ function Chat() {
    return (
       <div>
       <div>
-         {/* <Header userId={userId}/> */}
+      <Header userInfo = {props.userInfo}/>
          
          <div>
             <Sidebar />

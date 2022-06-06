@@ -35,7 +35,7 @@ const events = [
 
 Modal.setAppElement('#root')
 
-function Calendar() {
+function Calendar(props) {
   const [checkeditems, setcheckeditems] = useState(new Set());
 
   const userId = getCookie("USERID");
@@ -74,7 +74,7 @@ function Calendar() {
   return (
     <div>
       <div>
-        <Header userId={userId} />
+      <Header userInfo = {props.userInfo}/>
 
         <div>
           <Sidebar />
