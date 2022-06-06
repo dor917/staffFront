@@ -7,7 +7,7 @@ import Calendar from "./Calendar.js";
 import editEvent from "./editEventCalendar.js";
 import Profile from "./Profile.js";
 import Create from "./Create.js";
-import editProfile from "./editProfile.js";
+import EditProfile from "./EditProfile.js";
 import '../js/sidebar.event.js';
 
 
@@ -54,8 +54,7 @@ function Main() {
             render={() => <editEvent userInfo={userInfo} />} />
           <Route exact path="/Project"
             render={() => <Create userInfo={userInfo} />} />
-          <Route exact path="/editProfile"
-            render={() => <editProfile userInfo={userInfo} />} />
+          <Route exact path="/EditProfile" component={EditProfile}/>
         </BrowserRouter>
       </div>
     </div>
