@@ -28,7 +28,7 @@ function Profile(props) {
         //   $(".reposity .reposityBox").append("<div className='col-2'></div>");
         // }
         $(".reposity .reposityBox").append(
-          "<a href='/FileList?prj_no"+response.data[a].prj_no+"'>"+
+          "<a href='/FileList?prj_no="+response.data[a].prj_no+"'>"+
             "<div class='col-5 profileBox'>" +
               "<div class='card h-100'>" +
                 "<div class='card-body'>" +

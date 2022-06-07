@@ -19,9 +19,11 @@
     margin-top:-1.5rem;
 }
 .logout{
-    margin-right:-7rem;
+    margin-right:-9rem;
     margin-top:0rem; 
     float: right;
+    color:white;
+    font-size:14px;
 }
 .log{
     display: flex;
