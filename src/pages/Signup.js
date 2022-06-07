@@ -22,16 +22,7 @@ function Signup() {
                      />
                      <label for="floatingInput">Username</label>
                   </div>
-                  <div className="form-floating">
-                  <input
-                        name="form-control"
-                        type="cofrim id"
-                        className="form-control"
-                        id="floatingverify id"
-                        placeholder="cofrim id"
-                     />
-                     <label for="floatingInput">Id</label>
-                  </div>
+                
                   <div className="form-floating">
                       <input
                         name="password!"

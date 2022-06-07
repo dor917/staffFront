@@ -92,11 +92,14 @@ function Create(props) {
                         />    
                     </div>
                 </div>
+
                 <div className="searchName">&nbsp;&nbsp;
                     <FontAwesomeIcon icon={faSearch} />&nbsp;&nbsp;
                     <input type="text" class="searchName">
                     </input>
                 </div>
+
+                
                 <div className="createProfile">
                     <img
                         className="avatar"
