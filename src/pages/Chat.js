@@ -85,6 +85,9 @@ function Chat(props) {
       window.location.href = "http://localhost:3000/Main";
    }
    getchatHist(prj_no, userInfo);
+   setInterval(function() {
+      getchatHist(prj_no, userInfo);
+   }, 1000);
 
    // const sendChat
    const container = {
