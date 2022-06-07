@@ -10,7 +10,7 @@ function Signup() {
       <div className="signup-body-back">
          <div className="signup-body">
             <main className="form-signup">
-               <form action="/Signup.do" method="post">
+               <form action="http://localhost:8080//insertMbrInfo.staff" method="post">
                   <h1 className="h3 mb-3 fw-normal">Sign up</h1>
                   <div className="form-floating">
                      <input
@@ -18,7 +18,7 @@ function Signup() {
                         type="name"
                         className="form-control"
                         id="floatingInput"
-                        placeholder="username"
+                        placeholder="text"
                      />
                      <label for="floatingInput">Username</label>
                   </div>
