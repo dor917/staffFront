@@ -12,34 +12,33 @@ function Signup() {
             <main className="form-signup">
                <form action="/Signup.do" method="post">
                   <h1 className="h3 mb-3 fw-normal">Sign up</h1>
-
                   <div className="form-floating">
                      <input
                         name="id"
-                        type="email"
+                        type="name"
                         className="form-control"
                         id="floatingInput"
-                        placeholder="name@example.com"
+                        placeholder="username"
                      />
                      <label for="floatingInput">Username</label>
                   </div>
                   <div className="form-floating">
-                     <input
-                        name="password"
-                        type="password"
-                        className="form-control"
-                        id="floatingPassword"
-                        placeholder="Password"
-                     />
-                     <label for="floatingInput">Id</label>
-                  </div>
-                  <div className="form-floating">
-                     <input
+                  <input
                         name="form-control"
                         type="cofrim id"
                         className="form-control"
                         id="floatingverify id"
                         placeholder="cofrim id"
+                     />
+                     <label for="floatingInput">Id</label>
+                  </div>
+                  <div className="form-floating">
+                      <input
+                        name="password!"
+                        type="signuppassword"
+                        className="form-control"
+                        id="floatingpassword"
+                        placeholder="Password"
                      />
                      <label for="floatingInput">Password</label>
                   </div>
@@ -59,7 +58,7 @@ function Signup() {
                         type="email"
                         className="form-control"
                         id="floatingemail"
-                        placeholder="email"
+                        placeholder="name@email.com"
                      />
                      <label for="floatingInput">Email</label>
                   </div>
