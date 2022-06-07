@@ -9,7 +9,8 @@ import FileList from './pages/FileList.js';
 import Create from './pages/Create.js';
 import Chat from './pages/Chat.js';
 import Header from "./pages/Header.js";
-
+import EditProfile from './pages/EditProfile.js';
+import Profile from './pages/Profile.js';
 function App() {
    // const [message, setMessage] = useState([]);
    // useEffect(() => {
@@ -35,6 +36,8 @@ function App() {
             <Route exact path="/Chat" component={Chat} />
             <Route exact path="/FileList" component={FileList} />
             <Route exact path="/Project" component={Create} />
+            <Route exact path="/EditProfile" component={EditProfile} />
+            <Route exact path="/Profile" component={Profile} />
          </BrowserRouter>
          
       </div>

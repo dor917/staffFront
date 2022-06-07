@@ -7,7 +7,7 @@ import Calendar from "./Calendar.js";
 import editEvent from "./editEventCalendar.js";
 import Profile from "./Profile.js";
 import Create from "./Create.js";
-import EditProfile from "./EditProfile.js";
+import EditProfile from "./EditProfile.js"
 import '../js/sidebar.event.js';
 
 
