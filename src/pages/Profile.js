@@ -24,9 +24,9 @@ function Profile(props) {
     .then(function (response) {
       //  $(".reposity .reposityBox").removeChild();
       for (var a = 0; a < response.data.length; a++) {
-        if(a%2 == 0) {
-          $(".reposity .reposityBox").append("<div className='col-2'></div>");
-        }
+        // if(a%2 == 0) {
+        //   $(".reposity .reposityBox").append("<div className='col-2'></div>");
+        // }
         $(".reposity .reposityBox").append(
           "<a href='/FileList?prj_no"+response.data[a].prj_no+"'>"+
             "<div class='col-5 profileBox'>" +
@@ -47,6 +47,7 @@ function Profile(props) {
             "</div>" +
           "</a>"
         )
+
         if(a + 1 == response.data.length) {
           $(".reposity .reposityBox").append(
           "<div class='col-5 profileBox'>"+

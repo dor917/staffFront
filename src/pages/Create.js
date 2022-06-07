@@ -28,6 +28,21 @@ function Save(e) {
 //     SavedForm.submit();
 // }
 function Create(props) {
+    const userInfo = {
+        mbr_no: getCookie("mbr_no"),
+        mbr_nm: getCookie("mbr_nm"),
+        mbr_email: getCookie("mbr_email"),
+        mbr_pw: getCookie("mbr_pw"),
+        mbr_phone: getCookie("mbr_phone"),
+        mbr_cont: getCookie("mbr_cont"),
+        mbr_addr: getCookie("mbr_addr"),
+        mbr_web: getCookie("mbr_web"),
+        mbr_twit: getCookie("mbr_twit"),
+        mbr_insta: getCookie("mbr_insta"),
+        mbr_face: getCookie("mbr_face"),
+        mbr_brd: getCookie("mbr_brd"),
+        sys_reg_date: getCookie("sys_reg_date")
+      }
     const Create = () =>{
     const chatTextarea = {
         resize: 'none',
@@ -70,6 +85,7 @@ function Create(props) {
          </div>
         <div className="col-12 row mg-0 pd-15 ">
             <form id='SaveForm' method='post' action='http://localhost:8080/insertProjectInfo.staff'>
+                <input type="hidden" name='mbr_no' value={userInfo.mbr_no}/>
                 <input type="hidden" name='prj_no'/>
                 <input type="hidden" name='prj_nm'/>
                 <input type="hidden" name='prj_expl'/>
