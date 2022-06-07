@@ -8,6 +8,7 @@ import { flexibleCompare } from '@fullcalendar/react';
 import '../js/sidebar.event.js';
 import '../css/editProfile.css';
 import $ from 'jquery';
+
 function updateProfile(e) {
     var updateProfileForm = document.forms[0];
     updateProfileForm.elements.mbr_pw.value = getCookie("mbr_pw");
@@ -57,23 +58,26 @@ function EditProfile() {
         if (e.target.className.indexOf('updateProfile_mbr_email')> -1) {
             set_mbr_email_text(e.target.value);
         }
-        if (e.target.className.indexOf('updateProfile_mbr_email')> -1) {
-            set_mbr_email_text(e.target.value);
+        if (e.target.className.indexOf('updateProfile_mbr_phone')> -1) {
+            set_mbr_phone_text(e.target.value);
         }
-        if (e.target.className.indexOf('updateProfile_mbr_email')> -1) {
-            set_mbr_email_text(e.target.value);
+        if (e.target.className.indexOf('updateProfile_mbr_cont')> -1) {
+            set_mbr_cont_text(e.target.value);
         }
-        if (e.target.className.indexOf('updateProfile_mbr_email')> -1) {
-            set_mbr_email_text(e.target.value);
+        if (e.target.className.indexOf('updateProfile_mbr_addr')> -1) {
+            set_mbr_addr_text(e.target.value);
         }
-        if (e.target.className.indexOf('updateProfile_mbr_email')> -1) {
-            set_mbr_email_text(e.target.value);
+        if (e.target.className.indexOf('updateProfile_mbr_web')> -1) {
+            set_mbr_web_text(e.target.value);
         }
-        if (e.target.className.indexOf('updateProfile_mbr_email')> -1) {
-            set_mbr_email_text(e.target.value);
+        if (e.target.className.indexOf('updateProfile_mbr_twit')> -1) {
+            set_mbr_twit_text(e.target.value);
         }
-        if (e.target.className.indexOf('updateProfile_mbr_email')> -1) {
-            set_mbr_email_text(e.target.value);
+        if (e.target.className.indexOf('updateProfile_mbr_insta')> -1) {
+            set_mbr_insta_text(e.target.value);
+        }
+        if (e.target.className.indexOf('updateProfile_mbr_face')> -1) {
+            set_mbr_face_text(e.target.value);
         }
         
     };
@@ -111,22 +115,22 @@ function EditProfile() {
 							<ul className="list-group list-group-flush">
 								<li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
 									<h6 className="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-globe me-2 icon-inline"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Website</h6>
-									<input type="text" className="form-introduce  updateProfile_mbr_web" value={userInfo.mbr_web}></input>
+									<input type="text" className="form-introduce  updateProfile_mbr_web" value={mbr_web_text} onChange={onChange}></input>
 								</li>
                                 <hr></hr>
 								<li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
 									<h6 className="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-github me-2 icon-inline"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>Github</h6>
-									<input type="text" className="form-introduce  updateProfile_mbr_twit" value={userInfo.mbr_twit}></input>
+									<input type="text" className="form-introduce  updateProfile_mbr_twit" value={mbr_twit_text} onChange={onChange}></input>
 								</li>
                                 <hr></hr>
 								<li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
 									<h6 className="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-instagram me-2 icon-inline text-danger"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>Instagram</h6>
-									<input type="text" className="form-introduce  updateProfile_mbr_insta" value={userInfo.mbr_insta}></input>
+									<input type="text" className="form-introduce  updateProfile_mbr_insta" value={mbr_insta_text} onChange={onChange}></input>
 								</li>
                                 <hr></hr>
 								<li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
 									<h6 className="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-facebook me-2 icon-inline text-primary"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Facebook</h6>
-									<input type="text" className="form-introduce updateProfile_mbr_face" value={userInfo.mbr_face}></input>
+									<input type="text" className="form-introduce updateProfile_mbr_face" value={mbr_face_text} onChange={onChange}></input>
 								</li>
                                 <hr></hr>
 							</ul>
@@ -159,21 +163,21 @@ function EditProfile() {
                     <div className="col-sm-2">
                         <h6 className="mb-0">Phone</h6>
                     </div>
-                    <input type="text" className="form-controling width-81  updateProfile_mbr_phone" value={userInfo.mbr_phone}></input>
+                    <input type="text" className="form-controling width-81  updateProfile_mbr_phone" value={mbr_phone_text} onChange={onChange}></input>
                 </div>
                 <hr></hr>
                 <div className="row editSize">
                     <div className="col-sm-2">
                         <h6 className="mb-0">Country</h6>
                     </div>
-                    <input type="text" className="form-controling width-81  updateProfile_mbr_cont" value={userInfo.mbr_cont}></input>
+                    <input type="text" className="form-controling width-81  updateProfile_mbr_cont" value={mbr_cont_text} onChange={onChange}></input>
                 </div>
                 <hr></hr>
                 <div className="row editSize">
                     <div className="col-sm-2">
                         <h6 className="mb-0">Address</h6>
                     </div>
-                    <input type="text" className="form-controling width-81  updateProfile_mbr_addr" value={userInfo.mbr_addr}></input>
+                    <input type="text" className="form-controling width-81  updateProfile_mbr_addr" value={mbr_addr_text} onChange={onChange}></input>
                 </div>
                 <hr></hr>
                 {/* <div className="width-100">
