@@ -14,8 +14,19 @@ import { faUsersGear } from "@fortawesome/free-solid-svg-icons";
 import { createPortal } from 'react-dom';
 import {faCalendar,faComment,faFile} from '@fortawesome/free-solid-svg-icons';
 import $ from 'jquery';
+import axios from 'axios';
 
 function Header(props) {
+    const logout =() => {
+        var doc = document,
+      domain = domain || doc.domain,
+      path = path || '/',
+      cookies = doc.cookie.split(';'),
+      now = +(new Date);
+    for (var i = cookies.length - 1; i >= 0; i--) {
+    doc.cookie = cookies[i].split('=')[0] + '=; expires=' + now + '; domain=' + 'localhost' + '; path=' + '/';
+  }
+    }
     const userInfo = {
         mbr_no: getCookie("mbr_no"),
         mbr_nm: getCookie("mbr_nm"),
@@ -44,13 +55,6 @@ function Header(props) {
 
     const CreateAlarm = () =>
         <div className ={`alarm ${alarm}`}>
-            {/* <div className="alarmContent">김돈하 아이언4 달성!!!
-            <hr></hr> */}
-            <span className="alarmContent">Alarm-content</span>
-            <hr></hr>
-            <FontAwesomeIcon icon={faFile} />
-            <span className="alarmList">김돈하 호연이한테 피파 2:0 짐 충격</span>
-            <button className="aria-label" type='button'>X</button>
             
         </div>
         
@@ -59,6 +63,29 @@ function Header(props) {
         console.log(alarm)
         if (alarm === "alarmNone"){
             setAlarm("alarmBlock");
+            axios({
+                method: 'post',
+                url: 'http://localhost:8080/getPrjAlarmList.staff',
+                params: {
+                  prj_no: getCookie('prj_no')
+                }
+              })
+                .then(function (response) {
+                    console.log(response)
+                    $('.alarm').empty();
+                    $('.alarm').append(  "<span class='alarmContent'>Alarm-content</span><hr></hr>")
+                    for(var i = 0 ; i<response.data.length; i ++) {
+                        $('.alarm').append("<a href='/FileList?prj_no="+response.data[i].prj_no+"'><svg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='file' class='svg-inline--fa fa-file fa-w-12 ' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'><path fill='currentColor' d='M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm160-14.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z'></path></svg>"+
+                        "<span class='alarmList'>"+response.data[i].alarm_cont+"</span>"+
+                        "<br/><br/></a>");
+                    }
+                  
+                   
+                 })
+                .catch(function (error) {
+                  console.log("error================>" + error);
+                });
+
         }else{
             setAlarm("alarmNone")
         }
@@ -72,7 +99,9 @@ function Header(props) {
         margin: "0",
         marginLeft:"10px"
     }
-
+    // if(window.location.href.indexOf('Main') > 0 || window.location.href.indexOf('main') > 0 || window.location.href.indexOf('/Project') > 0 ) {
+    //     $('.onClicked').css('display','none');
+    // }
     return (
         <div>
             <div className="page-header" style={Header}>
@@ -87,7 +116,7 @@ function Header(props) {
                             <FontAwesomeIcon icon = {faBell}/>
                         </div>
                             <Link to = "/Login">
-                                <li className = "logout">로그아웃</li>
+                                <li className = "logout" onClick={logout}>로그아웃</li>
                             </Link>
                     </div>
                 </ul>    

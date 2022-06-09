@@ -7,7 +7,7 @@ import Calendar from "./Calendar.js";
 import editEvent from "./editEventCalendar.js";
 import Profile from "./Profile.js";
 import Create from "./Create.js";
-import EditProfile from "./EditProfile.js"
+import EditProfile from "./EditProfile"
 import '../js/sidebar.event.js';
 
 
@@ -33,6 +33,9 @@ function Main() {
     mbr_face: getCookie("mbr_face"),
     mbr_brd: getCookie("mbr_brd"),
     sys_reg_date: getCookie("sys_reg_date")
+  }
+  if ( getCookie("mbr_no") == null || getCookie("mbr_no") == '') {
+    window.location.href = "http://localhost:3000/Login";
   }
 
 

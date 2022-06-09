@@ -18,8 +18,8 @@
     margin: 0px;
     display: flex;
     justify-content: left;
-    position: absolute;
-    width: 91.5%;
+
+    width: 100%;
 }
 
 .row {display: -ms-flexbox;display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap;}
@@ -144,4 +144,15 @@
     font-weight:10px;
     border:gray;
     
+}
+#userSearchList {
+    background-color: #fff;
+    list-style:none;
+    padding-left: 0px;
+
+}
+.userSearchListItem{
+    background-color: #fff;
+    height: 50px;
+
 }

@@ -22,31 +22,55 @@ function Profile(props) {
     }
   })
     .then(function (response) {
-      //  $(".reposity .reposityBox").removeChild();
+       $(".reposity .reposityBox").empty();
+      var todayDate = new Date();   
+      var year = todayDate.getFullYear() * 365; // 년도
+      var month = (todayDate.getMonth() + 1)  * 30;  // 월
+      var date = todayDate.getDate();  // 날짜
+      // alert(today.getFullYear() * 30)
+      var today = year + month + date;
       for (var a = 0; a < response.data.length; a++) {
-        // if(a%2 == 0) {
-        //   $(".reposity .reposityBox").append("<div className='col-2'></div>");
-        // }
+        var startDate = Number(response.data[a].prj_start_date.substring(0,4) * 365) + Number(response.data[a].prj_start_date.substring(5,7) * 30) + Number(response.data[a].prj_start_date.substring(8,10)+0)
+        var endtDate =  Number(response.data[a].prj_end_date.substring(0,4) * 365) + Number(response.data[a].prj_end_date.substring(5,7) * 30) + Number(response.data[a].prj_end_date.substring(8,10)+0)
+        var prog = ((today - startDate) / (endtDate - startDate))*100
+
+        if(prog < 0) {
+          prog *= -1;
+        }
+
         $(".reposity .reposityBox").append(
+          
           "<a href='/FileList?prj_no="+response.data[a].prj_no+"'>"+
             "<div class='col-5 profileBox'>" +
               "<div class='card h-100'>" +
                 "<div class='card-body'>" +
                   "<h6 class='d-flex align-items-center mb-3'><i class='material-icons text-info mr-2'>"+response.data[a].prj_nm+"</i></h6>" +
                   "<div class='progress mb-3' style='height: 5px;'>" +
-                    "<div class='progress-bar bg-primary' role='progressbar' style='width: 80%;' aria-valuenow='80' aria-valuemin='0' aria-valuemax='100'></div>" +
+                    "<div class='progress-bar bg-primary' role='progressbar' style='width: "+response.data[a].prj_prog+"%;' aria-valuenow="+response.data[a].prj_prog+"aria-valuemin='0' aria-valuemax='100'></div>" +
                   "</div>" +
                   "<div class='progress mb-3' style='height: 5px;'>" +
-                    "<div class='progress-bar bg-primary' role='progressbar' style='width: 66%;' aria-valuenow='66' aria-valuemin='0' aria-valuemax='100'></div>" +
+                    "<div class='progress-bar bg-primary' role='progressbar' style='width: "+prog+"%;' aria-valuenow="+prog+" aria-valuemin='0' aria-valuemax='100'></div>" +
                   "</div>" +
-                  "<div class='circle'>" +
-                    "<div class='text'>java</div>" +
-                  "</div>" +
+                  "<div class='langbox-"+a+"'></div>" +
+                
                 "</div>" +
               "</div>" +
             "</div>" +
           "</a>"
         )
+        var langBoxClass = ".langbox-"+a;
+        for(var i = 0 ; i<response.data[a].languages.length; i++) {
+          console.log(response.data[a].languages[i]);
+          $(langBoxClass).append(
+            "<div style='width: 70px; float: left;''>" + 
+            "<div class='circle'>" +
+              "<div class='text' style='display: inline-block;'>"+response.data[a].languages[i].lan_nm+"</div>"  +
+            "</div>" +
+            "</div>"
+              
+            )
+        }  
+        
 
         if(a + 1 == response.data.length) {
           $(".reposity .reposityBox").append(
