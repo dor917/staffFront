@@ -16,6 +16,7 @@ function Save(e) {
     SaveForm.elements.prj_nm.value = $('.Save_prj_nm').val();
     SaveForm.elements.prj_expl.value = $('.Save_prj_expl').val();
     SaveForm.elements.prj_prog.value = $('.Save_prj_prog').val();
+    SaveForm.elements.prj_lan_nm.value = $('.Save_prj_lan_nm').val();
     SaveForm.elements.prj_start_date.value = $('.Save_prj_start_date').val();
     SaveForm.elements.prj_end_date.value = $('.Save_prj_end_date').val();
     SaveForm.submit();
@@ -42,7 +43,7 @@ function Create(props) {
         mbr_face: getCookie("mbr_face"),
         mbr_brd: getCookie("mbr_brd"),
         sys_reg_date: getCookie("sys_reg_date")
-      }
+    }
     const Create = () =>{
     const chatTextarea = {
         resize: 'none',
@@ -59,6 +60,7 @@ function Create(props) {
         prj_nm: getCookie("prj_nm"),
         prj_expl: getCookie("prj_expl"),
         prj_prog: getCookie("prj_prog"),
+        prj_lan_nm : getCookie("prj_lan_nm"),
         prj_start_date: getCookie("prj_start_date"),
         prj_end_date: getCookie("prj_end_date"),
         sys_reg_date: getCookie("sys_reg_date")
@@ -68,6 +70,7 @@ function Create(props) {
     const [prj_nm_text, set_prj_nm_text] = useState(ProjectInfo.prj_nm);
     const [prj_expl_text, set_prj_expl_text] = useState(ProjectInfo.prj_expl);
     const [prj_prog_text, set_prj_prog_text] = useState(ProjectInfo.prj_prog);
+    const [prj_lan_nm_text, set_prj_lan_nm_text] = useState(ProjectInfo.prj_lan_nm);
     const [prj_start_date_text, set_prj_start_date_text] = useState(ProjectInfo.prj_start_date);
     const [prj_end_date_text, set_prj_end_date_text] = useState(ProjectInfo.prj_end_date);
 
@@ -88,6 +91,7 @@ function Create(props) {
                 <input type="hidden" name='mbr_no' value={userInfo.mbr_no}/>
                 <input type="hidden" name='prj_no'/>
                 <input type="hidden" name='prj_nm'/>
+                <input type="hidden" name='prj_lan_nm'/>
                 <input type="hidden" name='prj_expl'/>
                 <input type="hidden" name='prj_prog'/>
                 <input type="hidden" name='prj_start_date'/>
@@ -145,7 +149,7 @@ function Create(props) {
                                 <input type="date" className='pd-10 calender-font Save_prj_end_date' style={{border: "2px solid lightgray"}} />
                             </div>
                         <div className="nameProject">
-                            <div className='col-12 pd-0 pb-20'>
+                            <div className='col-12 pd-0 psb-20'>
                                 Project progress
                             </div>
                         <input type="text" className="progressProject Save_prj_prog"/><span>/ 100</span>

@@ -12,14 +12,8 @@ import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { faUserGear } from "@fortawesome/free-solid-svg-icons";
 import { faUsersGear } from "@fortawesome/free-solid-svg-icons";
 import { createPortal } from 'react-dom';
-import {
-    faCalendar,
-    faComment,
-    faFile,
-    
-    
-    
- } from '@fortawesome/free-solid-svg-icons';
+import {faCalendar,faComment,faFile} from '@fortawesome/free-solid-svg-icons';
+import $ from 'jquery';
 
 function Header(props) {
     const userInfo = {

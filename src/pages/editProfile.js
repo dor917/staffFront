@@ -18,7 +18,7 @@ function updateProfile(e) {
     updateProfileForm.elements.mbr_addr.value = $('.updateProfile_mbr_addr').val();
     updateProfileForm.elements.mbr_web.value = $('.updateProfile_mbr_web').val();
     updateProfileForm.elements.mbr_twit.value = $('.updateProfile_mbr_twit').val();
-    updateProfileForm.elements.mbr_insta.value = $('.updateProfile_mbr_insta').val();
+    updateProfileForm.elements.mbr_insta.value = $ ('.updateProfile_mbr_insta').val();
     updateProfileForm.elements.mbr_face.value = $('.updateProfile_mbr_face').val();
     updateProfileForm.elements.mbr_phone.value = $('.updateProfile_mbr_phone').val();
     updateProfileForm.elements.mbr_cont.value = $('.updateProfile_mbr_cont').val();
