@@ -22,15 +22,57 @@ const events = [
     id: 1,
     title: 'event 1',
     start: '2021-10-14T10:00:00',
-    end: '2021-10-14T12:00:00',
+    end: '2021-10-15T12:00:00',
+    color : "#FF0000",
+    textColor : "#FFFF00",
   },
   {
     id: 2,
     title: 'event 2',
     start: '2021-10-16T13:00:00',
     end: '2021-10-17T18:00:00',
+    color: "#ffe23",
+    textColor: "FFFF1"
   },
   { id: 3, title: 'event 3', start: '2021-10-17', end: '2021-10-20' },
+  {
+    id: 4,
+    title: '호연이랑 여행',
+    start: '2021-10-25T10:00:00',
+    end: '2021-10-31T12:00:00',
+  },
+  {
+    id: 5,
+    title: '지영이와 오붓한 하룻밤',
+    start: '2022-09-05T10:00:00',
+    end: '2022-09-09T12:00:00',
+    color : "#FF0000",
+    textColor : "#FFFF00",
+  },
+  {
+    id: 6,
+    title: '재현이와 하룻밤도 괜찮을지도?',
+    start: '2022-09-12T10:00:00',
+    end: '2022-09-16T12:00:00',
+    color : "FFFF01",
+    textColor : "pink",
+  },
+  {
+    id: 7,
+    title: '아니다 돈하가 나을듯(My Love Donha)',
+    start: '2022-09-19T10:00:00',
+    end: '2022-09-23T12:00:00',
+    color : "green",
+    textColor : "black",
+  },
+  {
+    id: 8,
+    title: '인생은 혼자다 나홀로 하룻밤',
+    start: '2022-09-26T10:00:00',
+    end: '2022-09-30T12:00:00',
+    color : "darkgray",
+    textColor : "purple",
+  },
 ];
 
 Modal.setAppElement('#root')
@@ -87,7 +129,7 @@ function Calendar(props) {
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
           initialView="dayGridMonth"
           events={events}
-          eventColor="blue"
+          eventColor="orange"
           nowIndicator
         />
         <div className="Calendar-modal">
@@ -97,7 +139,6 @@ function Calendar(props) {
               {
                 content: {
                   color: 'black',
-
                   left: '1150px',
                   top: '110px',
                   width: '700px',
@@ -105,7 +146,7 @@ function Calendar(props) {
                 },
               }
             }>
-            <form onsubmit="return false" action="/Calendar.add" method="post">
+            <form onsubmit="return false" action="/Calendar" method="post">
               <AddContainer>
                 <InputBox>
 

@@ -59,17 +59,17 @@ function Profile(props) {
           "</a>"
         )
         var langBoxClass = ".langbox-"+a;
-        for(var i = 0 ; i<response.data[a].languages.length; i++) {
-          console.log(response.data[a].languages[i]);
-          $(langBoxClass).append(
-            "<div style='width: 70px; float: left;''>" + 
-            "<div class='circle'>" +
-              "<div class='text' style='display: inline-block;'>"+response.data[a].languages[i].lan_nm+"</div>"  +
-            "</div>" +
-            "</div>"
+        // for(var i = 0 ; i<response.data[a].languages.length; i++) {
+        //   console.log(response.data[a].languages[i]);
+        //   $(langBoxClass).append(
+        //     "<div style='width: 70px; float: left;''>" + 
+        //     "<div class='circle'>" +
+        //       "<div class='text' style='display: inline-block;'>"+response.data[a].languages[i].lan_nm+"</div>"  +
+        //     "</div>" +
+        //     "</div>"
               
-            )
-        }  
+        //     )
+        // }  
         
 
         if(a + 1 == response.data.length) {
@@ -108,7 +108,7 @@ function Profile(props) {
         "</div>"+
         "</div>");
       }
-     })
+    })
     .catch(function (error) {
       console.log("error================>" + error);
     });

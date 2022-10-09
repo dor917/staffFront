@@ -19,7 +19,7 @@ function editEvent() {
             <Link to="/Calendar"><button>뒤로</button></Link><Link to="/Calendar"><button>저장</button></Link>
             </BtnBox>
         </AddContainer>
-      
+    
     );
 }
   

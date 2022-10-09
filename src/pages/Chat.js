@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/chat.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,12 +6,15 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import MessageList from './MessageList.js';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
+import { faClipboardCheck } from '@fortawesome/free-solid-svg-icons';
 import $ from 'jquery';
 import Header from "./Header.js";
 import Sidebar from './Sidebar.js';
 
 function getchatHist(prj_no, userInfo) {
 
+   
 
    axios({
       method: 'post',
@@ -85,9 +88,25 @@ function Chat(props) {
       window.location.href = "http://localhost:3000/Main";
    }
    getchatHist(prj_no, userInfo);
-   setInterval(function() {
+
+
+   //채팅서버 켰다 껐다
+   const increment = useRef(null);
+   const handleStart = () => {
+      increment.current = setInterval(() => {
       getchatHist(prj_no, userInfo);
-   }, 1000);
+      console.log("채팅서버가 돌아가고있습니다!")
+   }, 1000)};
+
+   const handleEnd = () => { 
+      clearInterval(increment.current)
+      console.log("채팅서버가 꺼졌습니다!")
+   }
+
+
+   
+   
+   
 
    // const sendChat
    const container = {
@@ -139,10 +158,14 @@ function Chat(props) {
             </div>
          </div>
          <div className='col-12 row'>
+            
             <div className='col-2'></div> {/*왼쪽빈칸 */}
+               
+               <button className = "startButton" onClick={handleStart}>Start</button>
+               <button className = "endButton"onClick={handleEnd}>Stop</button>
             <div className="col-8 page-content page-container" id="page-content">
                <div className="chatSize chatSize-bordered" style={{ 'overflowY': 'scroll' }}>
-
+               
                   <div
                      className="ps-container ps-theme-default ps-active-y"
                      id="chat-content"
@@ -163,6 +186,7 @@ function Chat(props) {
                            placeholder="Write something"
                            style={chatTextarea}
                         />
+                        
                         <div
                            onClick={
                               () => {
@@ -171,7 +195,6 @@ function Chat(props) {
                                     method: 'GET',
                                     url: 'http://localhost:8080/sendChat.staff',
                                     params: {
-
                                        'prj_no': prj_no,
                                        mbr_email: userInfo.mbr_email,
                                        message: $('#sendMessageBox').val()
@@ -197,9 +220,11 @@ function Chat(props) {
                                  icon={faPaperPlane}
                                  style={chatsendIcon}
                               />
+                              
                            </span>
-
                         </div>
+                        
+                        
                      </div>
                   </div>
                </div>
