@@ -49,18 +49,38 @@ function Calendar(props) {
     setContent(e.target.value)
   }, [])
 
-  // useEffect(() => {
-  //   fetch("/insertCalendarInfo.staff")
-  //   .then((res) => {
-  //     return res.json();
-  //   })
-  //   .then((data) => {
-  //     setEvents(data)
-  //     console.log(data)
-  //   })
-  // }, [])
+  useEffect(() => {
+    // const prj_no = getCookie('prj_no')
+    fetch(`/getPrjCalendarList.staff`)
+    .then((res) => {
+      return res.json();
+      console.log(res)
+    })
+    .then((data) => {
+      // setEvents(data)
+      // console.log(data)
+      let calendarData = data.map(function(el) {
+        // console.log(el)
+        let temp = {
+          "id": el.issue_no,
+          "title": el.issue_tit,
+          "start": el.issue_start_date,
+          "end": el.issue_end_date,
+          "color": "#ffe23",
+          "textColor": "FFFF1"
+        }
+        console.log(temp)
+        return temp
+      })
+      console.log(calendarData)
+      setEvents(calendarData)
+    }) 
+  }, [])
 
-
+  // calendar 접속 시 데이터 보내주는게 있어야해
+  // 안그러면 우리가 데이터 삭제하거나 추가할때 말고 데이터를 못봄
+  // 초기 렌더링때 데이터 아무것도 없어
+  // 초기 렌더링때 데이터 보내주는 get 함숙 ㅏ있어야함
 
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
@@ -83,7 +103,7 @@ function Calendar(props) {
       }
     }
     return "";
-
+    console.log(getCookie)
   }
 
   
@@ -103,11 +123,12 @@ function Calendar(props) {
         issue_tit : input,
         issue_start_date : start,
         issue_end_date : end,
-        issue_cont : 'test',
+        issue_cont : content,
         issue_type : '1'
       }
-    }).then(function (response) {
-      console.log("response================>" + response);
+    }).then((response) => {
+      window.location.href = "http://localhost:3000/Calendar";
+      
     }).catch(function (error) {
       console.log("error================>" + error);
     });
@@ -205,13 +226,10 @@ function Calendar(props) {
                       </div>
                     </div>
                   </div>
-
-
-
                   <h4>Title</h4>
                   <input className="wideInput" type="text" id="scheduleInput" style={{ height: 5 + '%' }} onChange = {onChange}></input>
                   <h4>Content</h4>
-                  <input className="wideInput" type="textarea" id="scheduleInput" max="9999-12-31" style={{ height: 20 + '%' }} onChange = {onChange}></input>
+                  <input className="wideInput" type="textarea" id="scheduleInput" max="9999-12-31" style={{ height: 20 + '%' }} onChange = {onContent}></input>
                   <h4>Start</h4>
                   <input className="wideInput" type="datetime-local" id="startDate" onChange = {onStart}></input>
                   <h4>End</h4>
