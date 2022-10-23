@@ -1,66 +1,65 @@
 import React, { useState } from "react";
-import $ from 'jquery';
+import $ from "jquery";
 
 const Check = () => {
-    const formData = [
-    { id : 3, language: "Node.js"},
-    { id : 4, language: "Java"},
-    { id : 7, language: "C#"},
-    { id : 5, language: "C++"},
-    { id : 8, language: "C"},
-    { id : 1, language: "Python"},
-    { id : 9, language: "TypeScript"},
-    { id : 2, language: "Ruby"},
-    { id : 6, language: "Swift"},
-    ];
+  const formData = [
+    { id: 1, language: "Node.js" },
+    { id: 2, language: "Java" },
+    { id: 3, language: "C#" },
+    { id: 4, language: "C++" },
+    { id: 5, language: "C" },
+    { id: 6, language: "Python" },
+    { id: 7, language: "TypeScript" },
+    { id: 8, language: "Ruby" },
+    { id: 9, language: "Swift" },
+  ];
 
-    var select_lang_list = []
-    var check_list = $('.Save_prj_lan_nm')
-    for(var i=0; i < check_list.length; i ++) {
-        if(check_list[i].checked) {
-            select_lang_list.push(check_list[i].value)
-        }
+  var select_lang_list = [];
+  var check_list = $(".Save_prj_lan_nm");
+  for (var i = 0; i < check_list.length; i++) {
+    if (check_list[i].checked) {
+      select_lang_list.push(check_list[i].value);
     }
-    
-    console.log(select_lang_list)
-    
-    const [isChecked, setIsChecked] = useState(false);
-    const [checkedItems, setCheckedItems] = useState(new Set());
+  }
 
-    const checkHandler = ({ target }) => {
-        setIsChecked(!isChecked);
-        checkeditemHandler(target.parentNode, target.value, target.checked);
-    };
+  console.log(select_lang_list);
 
-    const checkeditemHandler = (box, id, isChecked) => {
-        if (isChecked) {
-            checkedItems.add(id);
-            setCheckedItems(checkedItems);
-            box.style.backgroundColor = "";
-        }
-        else if (!isChecked && checkedItems.has(id)){
-        checkedItems.delete(id);
-        setCheckedItems(checkedItems);
-        box.style.backgroundColor = "";
-        }
+  const [isChecked, setIsChecked] = useState(false);
+  const [checkedItems, setCheckedItems] = useState(new Set());
+
+  const checkHandler = ({ target }) => {
+    setIsChecked(!isChecked);
+    checkeditemHandler(target.parentNode, target.value, target.checked);
+  };
+
+  const checkeditemHandler = (box, id, isChecked) => {
+    if (isChecked) {
+      checkedItems.add(id);
+      setCheckedItems(checkedItems);
+      box.style.backgroundColor = "";
+    } else if (!isChecked && checkedItems.has(id)) {
+      checkedItems.delete(id);
+      setCheckedItems(checkedItems);
+      box.style.backgroundColor = "";
+    }
     return checkedItems;
-    };
+  };
 
-    return(
-        <div className="contStyle">
-            {formData.map((item) => (
-                <label key = {item.id} className = "innerBox">
-                    <input
-                    type="checkbox"
-                    name="lan_nm"
-                    className="Save_prj_lan_nm"
-                    value={item.language}
-                    onChange={(e) => checkHandler(e)}
-                />
-                <div className="ml-10">{item.language}</div>
-                </label>
-            ))}
-        </div>
-    );
+  return (
+    <div className="contStyle">
+      {formData.map((item) => (
+        <label key={item.id} className="innerBox">
+          <input
+            type="checkbox"
+            name="lan_nm"
+            className="Save_prj_lan_nm"
+            value={item.language}
+            onChange={(e) => checkHandler(e)}
+          />
+          <div className="ml-10">{item.language}</div>
+        </label>
+      ))}
+    </div>
+  );
 };
 export default Check;
