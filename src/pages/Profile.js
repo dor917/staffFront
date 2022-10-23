@@ -20,9 +20,9 @@ function Profile(props) {
     params: {
       mbr_no: props.userInfo.mbr_no
     }
-  })
+    })
     .then(function (response) {
-       $(".reposity .reposityBox").empty();
+      $(".reposity .reposityBox").empty();
       var todayDate = new Date();   
       var year = todayDate.getFullYear() * 365; // 년도
       var month = (todayDate.getMonth() + 1)  * 30;  // 월
@@ -71,7 +71,6 @@ function Profile(props) {
         //     )
         // }  
         
-
         if(a + 1 == response.data.length) {
           $(".reposity .reposityBox").append(
           "<div class='col-5 profileBox'>"+
