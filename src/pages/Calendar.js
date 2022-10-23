@@ -100,18 +100,24 @@ function Calendar(props) {
       params:{
         prj_no: getCookie('prj_no'), 
         mbr_no: getCookie('mbr_no'),
-        "title" : input,
-        "start" : start,
-        "end" : end,
+        issue_tit : input,
+        issue_start_date : start,
+        issue_end_date : end,
+        issue_cont : 'test',
+        issue_type : '1'
       }
-    })
-    let data = {
-      "title" : input,
-      "start" : start,
-      "end" : end,
-      "color": calendarColor[checkeditems]
-    }
-    fetchCreate("http://localhost:3001/events", data, "calendar")
+    }).then(function (response) {
+      console.log("response================>" + response);
+    }).catch(function (error) {
+      console.log("error================>" + error);
+    });
+    // let data = {
+    //   "title" : input,
+    //   "start" : start,
+    //   "end" : end,
+    //   "color": calendarColor[checkeditems]
+    // }
+    // fetchCreate("http://localhost:3001/events", data, "calendar")
   }
 
   return (
