@@ -19,6 +19,7 @@ import axios from 'axios';
 
 
 
+
 Modal.setAppElement('#root')
 
 function Calendar(props) {
@@ -84,7 +85,20 @@ function Calendar(props) {
 
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
+  // const dateClick = (dateClickInfo) => {
+  //   // looks like multi-selection
+  //   const gray = "#787878";
+    
+  //   if (dateClickInfo.dayEl.style.backgroundColor) {
+  //     dateClickInfo.dayEl.style.backgroundColor = "";
+  //   } else {
+  //     dateClickInfo.dayEl.style.backgroundColor = gray;
+  //   }
+  // }  
+
   
+  
+
   function getCookie(name) {
     var nameOfCookie = name + "=";
     var x = 0;
@@ -140,7 +154,19 @@ function Calendar(props) {
     // }
     // fetchCreate("http://localhost:3001/events", data, "calendar")
   }
-
+    
+    const handleDateClick = (arg) => { // bind with an arrow function
+      console.log(arg)
+      alert("클릭")
+    }
+  
+    // 클릭 시 이벤트 정보 받아옴
+    const handleEventClick = (clickInfo) => {
+      console.log(clickInfo.event.id) // id 값 나옴    
+      $("#delModBtn").text("삭제");
+      setModalIsOpen(true);
+    }
+  
   return (
     <div>
       <div>
@@ -158,6 +184,8 @@ function Calendar(props) {
           initialView="dayGridMonth"
           events={events}
           eventColor="orange"
+          dateClick={handleDateClick}
+          eventClick={handleEventClick}
           nowIndicator
         />
         <div className="Calendar-modal">
@@ -177,8 +205,8 @@ function Calendar(props) {
             <form onSubmit="return false" action="/Calendar" method="post">
               <AddContainer>
                 <InputBox>
-
                   <h2>새로운 일정</h2>
+                  
                   <h3>type</h3>
                   <div className="sideCenter">
                     <div className="issue_cb">
@@ -237,7 +265,7 @@ function Calendar(props) {
 
                 </InputBox>
                 <BtnBox>
-                  <button onClick={() => setModalIsOpen(false)}>뒤로</button>
+                  <button id = 'delModBtn' onClick={() => setModalIsOpen(false)}>수정</button>
                   <button onClick = {createCalendar}>저장</button>
                 </BtnBox>
               </AddContainer>
@@ -289,7 +317,6 @@ align-items:center;
   }
 `;
 const BtnBox = styled.div`
-
 box-sizing:border-box;
 display:flex;
 width:70%;
@@ -312,5 +339,3 @@ cursor: pointer;
 outline: none;
 }
 `;
-
-
