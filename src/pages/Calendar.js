@@ -126,47 +126,67 @@ function Calendar(props) {
     
   }
 
-  const createCalendar = (e) => {
-    e.preventDefault();
-    axios({
-      method: 'post',
-      url: "/insertCalendarInfo.staff",
-      params:{
-        prj_no: getCookie('prj_no'), 
-        mbr_no: getCookie('mbr_no'),
-        issue_tit : input,
-        issue_start_date : start,
-        issue_end_date : end,
-        issue_cont : content,
-        issue_type : '1'
-      }
-    }).then((response) => {
-      window.location.href = "http://localhost:3000/Calendar";
-      
-    }).catch(function (error) {
-      console.log("error================>" + error);
-    });
-    // let data = {
-    //   "title" : input,
-    //   "start" : start,
-    //   "end" : end,
-    //   "color": calendarColor[checkeditems]
-    // }
-    // fetchCreate("http://localhost:3001/events", data, "calendar")
-  }
     
     const handleDateClick = (arg) => { // bind with an arrow function
       console.log(arg)
       alert("클릭")
     }
-  
-    // 클릭 시 이벤트 정보 받아옴
-    const handleEventClick = (clickInfo) => {
-      console.log(clickInfo.event.id) // id 값 나옴    
-      $("#delModBtn").text("삭제");
-      setModalIsOpen(true);
+
+  const openNewIssueModal = (clickInfo) => {  
+    $("#delBtn").text("닫기");
+    $("#modBtn").text("생성");
+    setModalIsOpen(true);
+  }
+    
+  // 클릭 시 이벤트 정보 받아옴
+  const handleEventClick = (clickInfo) => {
+    console.log(clickInfo.event.id) // id 값 나옴    
+    $("#delBtn").text("삭제");
+    $("#modBtn").text("수정");
+    setModalIsOpen(true);
+  }
+    
+  const createCalendar = (e) => {
+    e.preventDefault();
+    if ($("#delModBtn").text() == '수정') {
+      modCalendar();
+    } else {
+      axios({
+        method: 'post',
+        url: "/insertCalendarInfo.staff",
+        params:{
+          prj_no: getCookie('prj_no'), 
+          mbr_no: getCookie('mbr_no'),
+          issue_tit : input,
+          issue_start_date : start,
+          issue_end_date : end,
+          issue_cont : content,
+          issue_type : '1'
+        }
+      }).then((response) => {
+        window.location.href = "http://localhost:3000/Calendar";
+        
+      }).catch(function (error) {
+        console.log("error================>" + error);
+      });
+      setModalIsOpen(false);
     }
   
+   
+  }
+  // 삭제 or 닫기 클릭 시 이벤트 
+  const modCalendar = (clickInfo) => {
+    setModalIsOpen(false);
+  }
+   // 삭제 or 닫기 클릭 시 이벤트 
+   const delCalendar = (clickInfo) => {
+    if( $("#delModBtn").text() == '삭제' ) {
+      //삭제 동작 => 페이지 리로드 동작 실행
+    }
+    setModalIsOpen(false);
+  }
+    
+    
   return (
     <div>
       <div>
@@ -178,7 +198,7 @@ function Calendar(props) {
       </div>
 
       <div className="Calendar">
-        <button className="add-button" onClick={() => setModalIsOpen(true)}>일정추가</button>
+        <button className="add-button" onClick={() => openNewIssueModal(true)}>일정추가</button>
         <FullCalendar
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
           initialView="dayGridMonth"
@@ -265,8 +285,8 @@ function Calendar(props) {
 
                 </InputBox>
                 <BtnBox>
-                  <button id = 'delModBtn' onClick={() => setModalIsOpen(false)}>수정</button>
-                  <button onClick = {createCalendar}>저장</button>
+                  <button id = 'delBtn' onClick={() => delCalendar()}>닫기</button>
+                  <button id = 'modBtn' onClick = {createCalendar}>생성</button>
                 </BtnBox>
               </AddContainer>
             </form>
