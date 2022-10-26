@@ -97,19 +97,25 @@ function FileList(props) {
        
        const dropFile = new DropFile("drop-file", "files");
     }, [])
+    
+   let getParameter = (key) => {
+      return new URLSearchParams(window.location.search).get(key);
+   };
 
    var prj_no = '';
-    if( getParameter("prj_no") == null) {
-       if (getCookie("prj_no") != '' && getCookie("prj_no") != null) {
+   if( getParameter("prj_no") == null) {
+      if (getCookie("prj_no") != '' && getCookie("prj_no") != null) {
          prj_no = getCookie("prj_no");
-       } else {
+      } else {
          window.location.href = "http://localhost:3000/Main";
-       }
-    } else {
-
+      }
+   } else {
       prj_no = getParameter("prj_no");
       setCookie("prj_no", prj_no, 1);
-    }
+   }
+
+   
+
    const [readCode, setReadCode] = useState("src");
    return (
       <div>
@@ -119,7 +125,7 @@ function FileList(props) {
                <Sidebar />
             </div>
          </div>
-        
+
          <div className="fileList-container">
             
             <ul className='fileList-container-ul'>

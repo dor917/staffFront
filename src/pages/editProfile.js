@@ -82,7 +82,6 @@ function EditProfile() {
         
     };
     
-   
     return(
     <div className="re-container">
         <form id='updateProfileForm' method='post' action='http://localhost:8080/updateMbrInfo.staff'>

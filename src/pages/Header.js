@@ -105,7 +105,7 @@ function Header(props) {
     return (
         <div>
             <div className="page-header" style={Header}>
-                <Link to="/Main" style={{textDecoration: 'none', color:'#fff'}}>
+                <Link className = "logoArea" to="/Main" style={{textDecoration: 'none', color:'#fff'}}>
                     <h1 style={header_title}>Staff</h1>
                 </Link>    
                 {/* <span >{props.userInfo.mbr_nm}</span> */}

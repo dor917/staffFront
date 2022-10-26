@@ -29,6 +29,7 @@ function Calendar(props) {
   const [start, setStart] = useState('')
   const [end, setEnd] = useState('')
   const [content, setContent] = useState('')
+  
 
   const onCheck = () => {
     setcheckeditems(!checkeditems)
@@ -49,6 +50,7 @@ function Calendar(props) {
   const onContent = useCallback(e => {
     setContent(e.target.value)
   }, [])
+
 
   useEffect(() => {
     // const prj_no = getCookie('prj_no')
@@ -129,21 +131,24 @@ function Calendar(props) {
     
     const handleDateClick = (arg) => { // bind with an arrow function
       console.log(arg)
-      alert("클릭")
+      
     }
 
   const openNewIssueModal = (clickInfo) => {  
+    setModalIsOpen(false);
+    setModalIsOpen(true);
     $("#delBtn").text("닫기");
     $("#modBtn").text("생성");
-    setModalIsOpen(true);
   }
     
   // 클릭 시 이벤트 정보 받아옴
   const handleEventClick = (clickInfo) => {
-    console.log(clickInfo.event.id) // id 값 나옴    
+    console.log(clickInfo.event.id)
+    setModalIsOpen(false); // id 값 나옴    
+    setModalIsOpen(true);
     $("#delBtn").text("삭제");
     $("#modBtn").text("수정");
-    setModalIsOpen(true);
+    
   }
     
   const createCalendar = (e) => {
@@ -172,20 +177,46 @@ function Calendar(props) {
       setModalIsOpen(false);
     }
   
-   
   }
-  // 삭제 or 닫기 클릭 시 이벤트 
+  // 수정  클릭 시 이벤트 
   const modCalendar = (clickInfo) => {
+    axios({
+      method: 'patch',
+      url: "/updateCalendarInfo.staff",
+      params:{
+
+      }
+    })
+    .then((response) => {
+      window.location.href = "http://localhost:3000/Calendar";
+
+    }).catch(function (error) {
+      console.log("error================>" + error);
+    });
     setModalIsOpen(false);
-  }
-   // 삭제 or 닫기 클릭 시 이벤트 
-   const delCalendar = (clickInfo) => {
-    if( $("#delModBtn").text() == '삭제' ) {
-      //삭제 동작 => 페이지 리로드 동작 실행
-    }
-    setModalIsOpen(false);
-  }
     
+  }
+   // 삭제  클릭 시 이벤트 
+  const delCalendar = (clickInfo) => {
+    if( $("#delModBtn").text() == '삭제' ) {
+      console.log(clickInfo.event.id)
+      axios({
+        method: 'delete',
+        url: "/deleteCalendarInfo.staff",
+        params:{
+          issue_no : clickInfo.event.id
+        }
+        
+      })
+      .then((response) => {
+        window.location.href = "http://localhost:3000/Calendar";
+
+      }).catch(function (error) {
+        console.log("error================>" + error);
+      });
+    setModalIsOpen(false);
+    }
+  }   
     
   return (
     <div>
@@ -292,7 +323,7 @@ function Calendar(props) {
             </form>
           </Modal>
         </div>
-
+        
       </div>
     </div>
   );

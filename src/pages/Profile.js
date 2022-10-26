@@ -44,8 +44,8 @@ function Profile(props) {
             "<div class='col-5 profileBox'>" +
               "<div class='card h-100'>" +
                 "<div class='card-body'>" +
-                  "<h6 class='d-flex align-items-center mb-3'><i class='material-icons text-info mr-2'>"+response.data[a].prj_nm+"</i></h6>" +
-                  "<button className ='delButton'>" + "삭제" + "</button>" +
+                  "<h6 class='d-flex align-items-center mb-3'><i class='material-icons text-info mr-2'>"+response.data[a].prj_nm+" </i></h6>" +
+                  "<button class ='delButton'>" + "삭제" + "</button>" +
                   "<div class='progress mb-3' style='height: 5px;'>" +
                     "<div class='progress-bar bg-primary' role='progressbar' style='width: "+response.data[a].prj_prog+"%;' aria-valuenow="+response.data[a].prj_prog+"aria-valuemin='0' aria-valuemax='100'></div>" +
                   "</div>" +
