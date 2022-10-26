@@ -12,7 +12,7 @@ import $ from 'jquery';
 
 function Save(e) {
     var SaveForm = document.forms[0];
-    SaveForm.elements.prj_no.value = $('.prj_no').val();
+    SaveForm.elements.prj_no.value = getCookie("prj_no");
     SaveForm.elements.prj_nm.value = $('.Save_prj_nm').val();
     SaveForm.elements.prj_expl.value = $('.Save_prj_expl').val();
     SaveForm.elements.prj_prog.value = $('.Save_prj_prog').val();
@@ -26,22 +26,49 @@ function Save(e) {
     //     alert($("#addMbrBox li:nth-child("+i+")").html());
         
     // }
-
+    if(getCookie("prj_no") != null && getCookie("prj_no") != '') {
+        SaveForm.action = 'http://localhost:8080/updateProjectInfo.staff';
+    } else {
+        SaveForm.action = 'http://localhost:8080/insertProjectInfo.staff';
+    }
     SaveForm.submit();
 }
-
 function Create(props) {
+    if(getCookie("prj_no") != null && getCookie("prj_no") != '') {
+        axios({
+            method: 'post',
+            url: 'http://localhost:8080/getProjectInfo.staff',
+            params: {
+                prj_no: getCookie("prj_no")
+            }
+        })
+        .then(function (response) {
+            $("#projectname").val(response.data.prj_nm);
+            $(".Save_prj_start_date").val(response.data.str_prj_start_date);
+            $(".Save_prj_end_date").val(response.data.str_prj_end_date);
+            $(".Save_prj_prog").val(response.data.prj_prog);
+            $(".Save_prj_expl").val(response.data.prj_expl);
+            console.log(response.data.languages);
+            for(var i = 0 ; i < response.data.languages.length; i++) {
+                $(".contStyle label:nth-child("+response.data.languages[i].lan_no+")>input").prop('checked', true);;
+            }
+        })
+        .catch(function (error) {
+            console.log('error------------------>' + error);
+        });
+    }
+    
     const Check = () => {
         const formData = [
+            { id: 1, language: "Python" },
+            { id: 2, language: "Ruby" },
             { id: 3, language: "Node.js" },
             { id: 4, language: "Java" },
-            { id: 7, language: "C#" },
             { id: 5, language: "C++" },
-            { id: 8, language: "C" },
-            { id: 1, language: "Python" },
-            { id: 9, language: "TypeScript" },
-            { id: 2, language: "Ruby" },
             { id: 6, language: "Swift" },
+            { id: 7, language: "C#" },
+            { id: 8, language: "C" },
+            { id: 9, language: "TypeScript" },  
         ];
 
         var select_lang_list = []
@@ -134,7 +161,9 @@ function Create(props) {
     const [prj_lan_nm_text, set_prj_lan_nm_text] = useState(ProjectInfo.prj_lan_nm);
     const [prj_start_date_text, set_prj_start_date_text] = useState(ProjectInfo.prj_start_date);
     const [prj_end_date_text, set_prj_end_date_text] = useState(ProjectInfo.prj_end_date);
-  
+
+        
+    
 
   
     const getUser = (e) => {
@@ -167,7 +196,6 @@ function Create(props) {
     }
     $('#root').on("click",'.userSearchListItem', function (e) {
         $('#userSearchList').empty();
-        console.log(e.target)
         $("#addMbrBox").append(
             e.target
         )
@@ -254,7 +282,7 @@ function Create(props) {
                                         <input type="text" className="proposeProject pb-20 Save_prj_expl"></input>
                                     </div>
                                     <div>
-                                        <button className="btn btn-info" onClick={Save} style={{ float: "right" }}>save</button>
+                                        <button id='btnCreMod' className="btn btn-info" onClick={Save} style={{ float: "right" }}>save</button>
                                     </div>
                                 </div>
                             </div>
@@ -263,27 +291,27 @@ function Create(props) {
                 </div>
             </div>
         </div>
-    );
-    function getCookie(name) {
-        var nameOfCookie = name + "=";
-        var x = 0;
-        while (x <= document.cookie.length) {
-            var y = (x + nameOfCookie.length);
-            if (document.cookie.substring(x, y) == nameOfCookie) {
-                var endOfCookie = document.cookie.indexOf(";", y);
-                if (endOfCookie == -1) {
-                    endOfCookie = document.cookie.length;
-                }
-                return decodeURIComponent(document.cookie.substring(y, endOfCookie));
-            }
-            x = document.cookie.indexOf(" ", x) + 1;
-            if (x == 0) {
-                break;
-            }
-        }
-
-        return "";
-
-    }
+    ); 
 };
+function getCookie(name) {
+    var nameOfCookie = name + "=";
+    var x = 0;
+    while (x <= document.cookie.length) {
+        var y = (x + nameOfCookie.length);
+        if (document.cookie.substring(x, y) == nameOfCookie) {
+            var endOfCookie = document.cookie.indexOf(";", y);
+            if (endOfCookie == -1) {
+                endOfCookie = document.cookie.length;
+            }
+            return decodeURIComponent(document.cookie.substring(y, endOfCookie));
+        }
+        x = document.cookie.indexOf(" ", x) + 1;
+        if (x == 0) {
+            break;
+        }
+    }
+
+    return "";
+
+}
 export default Create;

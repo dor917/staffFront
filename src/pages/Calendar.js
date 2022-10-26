@@ -153,7 +153,7 @@ function Calendar(props) {
     
   const createCalendar = (e) => {
     e.preventDefault();
-    if ($("#delModBtn").text() == '수정') {
+    if ($("#modBtn").text() == '수정') {
       modCalendar();
     } else {
       axios({

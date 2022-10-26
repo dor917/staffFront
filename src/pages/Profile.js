@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
@@ -9,11 +9,7 @@ import { render } from '@testing-library/react';
 import Header from "./Header.js";
 import $ from 'jquery';
 
-
-
-
 function Profile(props) {
-
     axios({
     method: 'post',
     url: 'http://localhost:8080/getMbrProjectList.staff',
@@ -39,25 +35,25 @@ function Profile(props) {
         }
 
         $(".reposity .reposityBox").append(
-          
-          "<a href='/FileList?prj_no="+response.data[a].prj_no+"'>"+
-            "<div class='col-5 profileBox'>" +
-              "<div class='card h-100'>" +
-                "<div class='card-body'>" +
-                  "<h6 class='d-flex align-items-center mb-3'><i class='material-icons text-info mr-2'>"+response.data[a].prj_nm+" </i></h6>" +
-                  "<button class ='delButton'>" + "삭제" + "</button>" +
-                  "<div class='progress mb-3' style='height: 5px;'>" +
-                    "<div class='progress-bar bg-primary' role='progressbar' style='width: "+response.data[a].prj_prog+"%;' aria-valuenow="+response.data[a].prj_prog+"aria-valuemin='0' aria-valuemax='100'></div>" +
+          "<div class='prj-info-box'>"+
+            "<a href='/FileList?prj_no="+response.data[a].prj_no+"'>"+
+              "<div class='col-5 profileBox'>" +
+                "<div class='card h-100'>" +
+                  "<div class='card-body'>" +
+                    "<h6 class='d-flex align-items-center mb-3'><i class='material-icons text-info mr-2'>"+response.data[a].prj_nm+" </i></h6>" +
+                    "<div class='progress mb-3' style='height: 5px;'>" +
+                      "<div class='progress-bar bg-primary' role='progressbar' style='width: "+response.data[a].prj_prog+"%;' aria-valuenow="+response.data[a].prj_prog+"aria-valuemin='0' aria-valuemax='100'></div>" +
+                    "</div>" +
+                    "<div class='progress mb-3' style='height: 5px;'>" +
+                      "<div class='progress-bar bg-primary' role='progressbar' style='width: "+prog+"%;' aria-valuenow="+prog+" aria-valuemin='0' aria-valuemax='100'></div>" +
+                    "</div>" +
+                    "<div class='langbox-"+a+"'></div>" +
                   "</div>" +
-                  "<div class='progress mb-3' style='height: 5px;'>" +
-                    "<div class='progress-bar bg-primary' role='progressbar' style='width: "+prog+"%;' aria-valuenow="+prog+" aria-valuemin='0' aria-valuemax='100'></div>" +
-                  "</div>" +
-                  "<div class='langbox-"+a+"'></div>" +
-                
                 "</div>" +
               "</div>" +
-            "</div>" +
-          "</a>"
+            "</a>" +
+            "<a class ='delButton'  href='http://localhost:8080/deleteProjectInfo.staff?prj_no="+response.data[a].prj_no+"'>삭제</a>" +
+          "</div>"
         )
         var langBoxClass = ".langbox-"+a;
         for(var i = 0 ; i<response.data[a].languages.length; i++) {
@@ -112,10 +108,9 @@ function Profile(props) {
     .catch(function (error) {
       console.log("error================>" + error);
     });
-
-
+    
+    
   return(
-
     <div className="re-container">
       <div className="main-body">
         <div className="row">

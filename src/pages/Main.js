@@ -9,12 +9,11 @@ import Profile from "./Profile.js";
 import Create from "./Create.js";
 import EditProfile from "./EditProfile"
 import '../js/sidebar.event.js';
-
-
-
 import { BrowserRouter, Route } from 'react-router-dom';
 
+
 function Main() {
+  document.cookie = 'prj_no' + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
   const maincontent = {
     marginLeft: "70px",
   }
