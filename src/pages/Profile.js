@@ -59,7 +59,7 @@ function Profile(props) {
         for(var i = 0 ; i<response.data[a].languages.length; i++) {
           console.log(response.data[a].languages[i]);
           $(langBoxClass).append(
-            "<div style='width: 70px; float: left;''>" + 
+            "<div style='width: 80px; float: left;''>" + 
             "<div class='circle'>" +
               "<div class='text' style='display: inline-block;'>"+response.data[a].languages[i].lan_nm+"</div>"  +
             "</div>" +
