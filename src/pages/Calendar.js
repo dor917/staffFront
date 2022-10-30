@@ -429,6 +429,54 @@ function Calendar(props) {
             </form>
           </Modal>
         </div>
+        <div className = "typeTemplate">
+          <div className = "typeExplain">
+            <ul className = "typeSort">
+              <li>
+                <div className = "typeColor colorIssue"></div>
+                fix : 버그를 고친 경우
+              </li> 
+              <li>
+                <div className = "typeColor2 colorIssue"></div>
+                design : CSS 등 사용자 UI 디자인 변경
+              </li>
+              <li>
+                <div className = "typeColor3 colorIssue"></div>
+                !BREAKING CHANGE : 큰 API 변경이 있을 경우
+              </li>
+              <li>
+                <div className = "typeColor4 colorIssue"></div>
+                !HOTFIX : 급하게 치명적인 버그를 고친 경우
+              </li>
+              <li>
+                <div className = "typeColor5 colorIssue"></div>
+                style : 코드 포맷 변경, 세미 콜론 누락, 코드 수정이 없는 경우
+              </li>
+            </ul>
+            <ul className = "typeSort2">
+              <li>
+                <div className = "typeColor6 colorIssue"></div>
+                refactor : 프로덕션 코드 리팩토링
+              </li>
+              <li>
+                <div className = "typeColor7 colorIssue"></div>
+                comment : 필요한 주석 추가 및 변경
+              </li>
+              <li>
+                <div className = "typeColor8 colorIssue"></div>
+                docs : 문서를 수정한 경우
+              </li>
+              <li>
+                <div className = "typeColor9 colorIssue"></div>
+                test : 테스트 추가, 테스트 리팩토링(프로덕션 코드 변경 x)
+              </li>
+              <li>
+                <div className = "typeColor10 colorIssue"></div>
+                rename : 파일 혹은 폴더명을 수정하거나 옮기는 작업인 경우
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -446,52 +494,52 @@ justify-content:center;
 flex-direction:column;
 `;
 const InputBox = styled.div`
-  margin-top: 15px;
-  width: 70%;
-  height: 85%;
-  background-color: #fff;
-  border-radius: 7px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  & h2 {
-    margin: 0;
-  }
-  & h4 {
-    margin: 0;
-  }
-  & input {
+margin-top:15px;
+width:70%;
+height:85%;
+background-color:#fff;
+border-radius:7px;
+display:flex;
+flex-direction:column;
+justify-content:space-evenly;
+align-items:center;
+& h2{
+ margin:0;
+}
+& h4{
+    margin:0;
+   }
+& input{
     border-radius: 5px;
-    border: 3px solid;
+    border: 3px solid ;
     &:focus {
       border: 1px solid #a673ff;
     }
   }
-  .wideInput {
-    width: 70%;
+  .wideInput{
+    width:70%;
   }
 `;
 const BtnBox = styled.div`
-  box-sizing: border-box;
-  display: flex;
-  width: 70%;
-  height: 13%;
-  justify-content: space-evenly;
-  align-items: center;
-  & button {
+box-sizing:border-box;
+display:flex;
+width:70%;
+height:13%;
+justify-content:space-evenly;
+align-items:center;
+& button{
     box-shadow: 0 1px 2px 0 #777;
-    width: 35%;
-    min-width: 150px;
-    max-width: 150px;
-    height: 30px;
-    margin: auto 0px;
-    background-color: #fff;
-    border: none;
-    border-radius: 20px;
-    font-weight: 600;
-    color: #4d4887;
-    cursor: pointer;
-    outline: none;
-  }
+width:35%;
+min-width:150px;
+max-width:150px;
+height:30px;
+margin: auto 0px;
+background-color:#fff;
+border:none;
+border-radius:20px;
+font-weight:600;
+color:#4D4887;
+cursor: pointer;
+outline: none;
+}
 `;
