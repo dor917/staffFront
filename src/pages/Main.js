@@ -7,16 +7,15 @@ import Calendar from "./Calendar.js";
 import editEvent from "./editEventCalendar.js";
 import Profile from "./Profile.js";
 import Create from "./Create.js";
-import EditProfile from "./EditProfile"
-import '../js/sidebar.event.js';
-import { BrowserRouter, Route } from 'react-router-dom';
-
+import EditProfile from "./EditProfile";
+import "../js/sidebar.event.js";
+import { BrowserRouter, Route } from "react-router-dom";
 
 function Main() {
-  document.cookie = 'prj_no' + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  document.cookie = "prj_no" + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
   const maincontent = {
     marginLeft: "70px",
-  }
+  };
 
   const userInfo = {
     mbr_no: getCookie("mbr_no"),
@@ -31,12 +30,11 @@ function Main() {
     mbr_insta: getCookie("mbr_insta"),
     mbr_face: getCookie("mbr_face"),
     mbr_brd: getCookie("mbr_brd"),
-    sys_reg_date: getCookie("sys_reg_date")
-  }
-  if ( getCookie("mbr_no") == null || getCookie("mbr_no") == '') {
+    sys_reg_date: getCookie("sys_reg_date"),
+  };
+  if (getCookie("mbr_no") == null || getCookie("mbr_no") == "") {
     window.location.href = "http://localhost:3000/Login";
   }
-
 
   return (
     <div style={{ overflowX: "hidden" }}>
@@ -44,30 +42,47 @@ function Main() {
 
       <div style={maincontent}>
         <BrowserRouter>
-          <Route exact path="/main"
-            render={() => <Profile userInfo={userInfo} />} />
-          <Route exact path="/Chat"
-            render={() => <Chat userInfo={userInfo} />} />
-          <Route exact path="/FileList"
-            render={() => <FileList userInfo={userInfo} />} />
-          <Route exact path="/Calendar"
-            render={() => <Calendar userInfo={userInfo} />} />
-          <Route exact path="/editEventCalendar"
-            render={() => <editEvent userInfo={userInfo} />} />
-          <Route exact path="/Project"
-            render={() => <Create userInfo={userInfo} />} />
-          <Route exact path="/EditProfile" component={EditProfile}/>
+          <Route
+            exact
+            path="/main"
+            render={() => <Profile userInfo={userInfo} />}
+          />
+          <Route
+            exact
+            path="/Chat"
+            render={() => <Chat userInfo={userInfo} />}
+          />
+          <Route
+            exact
+            path="/FileList"
+            render={() => <FileList userInfo={userInfo} />}
+          />
+          <Route
+            exact
+            path="/Calendar"
+            render={() => <Calendar userInfo={userInfo} />}
+          />
+          <Route
+            exact
+            path="/editEventCalendar"
+            render={() => <editEvent userInfo={userInfo} />}
+          />
+          <Route
+            exact
+            path="/Project"
+            render={() => <Create userInfo={userInfo} />}
+          />
+          <Route exact path="/EditProfile" component={EditProfile} />
         </BrowserRouter>
       </div>
     </div>
-
   );
 }
 function getCookie(name) {
   var nameOfCookie = name + "=";
   var x = 0;
   while (x <= document.cookie.length) {
-    var y = (x + nameOfCookie.length);
+    var y = x + nameOfCookie.length;
     if (document.cookie.substring(x, y) == nameOfCookie) {
       var endOfCookie = document.cookie.indexOf(";", y);
       if (endOfCookie == -1) {
@@ -82,9 +97,6 @@ function getCookie(name) {
   }
 
   return "";
-
 }
-
-
 
 export default Main;
