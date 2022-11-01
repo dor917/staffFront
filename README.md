@@ -2,7 +2,7 @@
 
 2022학년도 청주대학교 인공지능 소프트웨어전공 롲업작품전 17조 STP(Staff-Project)
 
-## Back-=end 바로가기
+## Staff-Project(Back-end) 바로가기
 [Staff-Project(Back-end 바로가기](https://github.com/dor917/staffBackend).
 
 ## 목차
@@ -37,16 +37,16 @@ Github의 번거로운 세팅과 복잡한 로직을 미니 프로젝트를 하�
 <br>
 
 ### 2.1환경설정
-  #### 1.Spring tool Suite
-  다운로드(https://spring.io/tools)<br>
-  #### 1-1.Import->Existing Maven Projects<br>
-  ![image](https://user-images.githubusercontent.com/91938525/199014216-3c7a9634-9dc5-4e02-9d17-30b01c364d75.png)
-  #### 1-2.Lombok후 Sts폴더에 저장
-  다운로드(https://projectlombok.org/download)<br>
-  #### 1-3.Lombok 설정
-  실행->Specify location->Spting tool Suite지정->Install/Update
-  #### 1-4. Maven 업데이트
-  프로젝트 우클릭->Maven->Maven Update Project
+  #### 2-1Spring tool Suite
+  
+  #### 2-2.Import->Existing Maven Projects<br>
+  
+  #### 2-3.Lombok후 Sts폴더에 저장
+  
+  #### 2-4.Lombok 설정
+  
+  #### 2-5. Maven 업데이트
+  
 
 
 ## 3.구현 기능
