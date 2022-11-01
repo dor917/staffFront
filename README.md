@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# Staff-Project(Front-end)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+2022학년도 청주대학교 인공지능 소프트웨어전공 롲업작품전 17조 STP(Staff-Project)
 
-## Available Scripts
+## Back-=end 바로가기
+[Staff-Project(Back-end 바로가기](https://github.com/dor917/staffBackend).
 
-In the project directory, you can run:
+## 목차
+- [1.프로젝트 소개](#-프로젝트-소개)
+   * [1.1.팀원 소개](#-팀원-소개)
+- [2.기술 스택](#-2.기술-스택)
+- * [2.1 환경설정](###-31기능-1)
+- [3.구현 기능](#-구현-기능)
+   * [3.1기능 1](###-3.1기능-1)
+   * [3.2기능 2](###-3.2기능-2)
+   * [3.3기능 3](###-3.3기능-3)
+   * [3.4기능 4](###-3.4기능-4)
+- [4.모델링, 알고리즘](##-4.모델링,-알고리즘)
+   * [4.1DB 모델링](###-4.1-DB모델링)
+   * [4.2파일에디터](###-4.2-파일에디터)
+- [5.사용한 라이브러리](#사용한-라이브러리)  
 
-### `npm start`
+## 1.프로젝트 소개
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Stp-Project는 GitHub의 어려운 복잡한 이론과 세팅을 해야 한다는 단점을 보완을 하기위해 구상한  웹사이트 입니다. 
+Github의 번거로운 세팅과 복잡한 로직을 미니 프로젝트를 하는 
+초보개발자들에게 맞게 간소화 하였으며 팀원들 간의 협동을 중심으로 일정을 조율하거나 프로젝트 코드의 변경사항을 알 수 있는 기능도 추가하였습니다.
+### 1.1팀원 소개
+<br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 2.기술 스택
 
-### `npm test`
+<a href="https://spring.io/" target="_blank">                                          <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"/></a>
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=black"/></a>                                                 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black"/></a>
+<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=black"/></a> 
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2.1환경설정
+  #### 1.Spring tool Suite
+  다운로드(https://spring.io/tools)<br>
+  #### 1-1.Import->Existing Maven Projects<br>
+  ![image](https://user-images.githubusercontent.com/91938525/199014216-3c7a9634-9dc5-4e02-9d17-30b01c364d75.png)
+  #### 1-2.Lombok후 Sts폴더에 저장
+  다운로드(https://projectlombok.org/download)<br>
+  #### 1-3.Lombok 설정
+  실행->Specify location->Spting tool Suite지정->Install/Update
+  #### 1-4. Maven 업데이트
+  프로젝트 우클릭->Maven->Maven Update Project
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 3.구현 기능
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### 3.1기능 1
+#### 메인화면
+![image](https://user-images.githubusercontent.com/91938525/199019683-cfa7008d-528e-42d8-86b5-64774d7ef346.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 3.2기능 2
+#### 파일에디터
+이미지 첨부예정
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 3.3기능 3
+#### 캘린더
+![image](https://user-images.githubusercontent.com/91938525/199019907-8565a791-d850-49d0-a38f-a645198e13e3.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 3.4기능 4
+#### 채팅
+이미지 첨부예정
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3.5 기타 기능
+#### (로그인, 회원가입, 프로젝트수정, 프로젝트 생성 4분활로 넣을 예정)
+<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 4.모델링, 알고리즘
+### 4.1 DB모델링
+![image](https://user-images.githubusercontent.com/91938525/199028954-90e56d8b-fee3-429c-908b-466a08e5e947.png)
+### 4.2 파일 에디터
+![image](https://user-images.githubusercontent.com/91938525/199029742-cf7ad7a1-343d-4a2f-a180-948763eee559.png)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+# 5.사용한 라이브러리
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
