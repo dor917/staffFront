@@ -3,7 +3,7 @@
 2022학년도 청주대학교 인공지능 소프트웨어전공 롲업작품전 17조 STP(Staff-Project)
 
 ## Staff-Project(Back-end) 바로가기
-[Staff-Project(Back-end 바로가기](https://github.com/dor917/staffBackend).
+[Staff-Project(Back-end 바로가기)](https://github.com/dor917/staffBackend).
 
 ## 목차
 - [1.프로젝트 소개](#-프로젝트-소개)
@@ -37,15 +37,17 @@ Github의 번거로운 세팅과 복잡한 로직을 미니 프로젝트를 하�
 <br>
 
 ### 2.1환경설정
-  #### 2-1Spring tool Suite
+  #### 2-1Node.js 설치(18.12.0.LTS 이상 다운로드)
+   ![image](https://user-images.githubusercontent.com/91938525/199252944-66e0d576-03be-4a51-a39c-e56c6fdcbef9.png)
+
   
-  #### 2-2.Import->Existing Maven Projects<br>
+  #### 2-2.React 설치
   
-  #### 2-3.Lombok후 Sts폴더에 저장
+  #### 2-3.
   
-  #### 2-4.Lombok 설정
+  #### 2-4.
   
-  #### 2-5. Maven 업데이트
+  #### 2-5.
   
 
 
