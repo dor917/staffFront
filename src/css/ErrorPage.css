@@ -1,0 +1,104 @@
+body {
+  background-color: #eee;
+}
+.w-btn {
+  position: relative;
+  border: none;
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 15px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-weight: 800;
+  transition: 0.25s;
+}
+
+.w-btn-outline {
+  position: relative;
+  padding: 15px 30px;
+  border-radius: 15px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.w-btn-indigo {
+  background-color: #0f4c81;
+  color: aliceblue;
+}
+
+.w-btn-indigo-outline {
+  border: 3px solid aliceblue;
+  color: #0f4c81;
+}
+
+.w-btn-indigo-outline:hover {
+  color: aliceblue;
+  background: #0f4c81;
+}
+
+.error-page {
+  text-align: center;
+  background: #f9fafb;
+  border-top: 1px solid #eee;
+}
+.error-page .error-inner {
+  display: inline-block;
+}
+.error-page .error-inner h1 {
+  font-size: 140px;
+  text-shadow: 3px 5px 2px #3333;
+  color: #006dfe;
+  font-weight: 700;
+}
+.error-page .error-inner h1 span {
+  display: block;
+  font-size: 25px;
+  color: #333;
+  font-weight: 600;
+  text-shadow: none;
+}
+.error-page .error-inner p {
+  padding: 20px 15px;
+}
+.error-page .search-form {
+  width: 100%;
+  position: relative;
+}
+.error-page .search-form input {
+  width: 400px;
+  height: 50px;
+  padding: 0px 78px 0 30px;
+  border: none;
+  background: #f6f6f6;
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: 400;
+  font-size: 14px;
+}
+.error-page .search-form input:hover {
+  padding-left: 35px;
+}
+.error-page .search-form .btn {
+  width: 80px;
+  height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #006dfe;
+  display: inline-block;
+  position: relative;
+  top: -2px;
+}
+.error-page .search-form .btn i {
+  font-size: 16px;
+}
+.error-page .search-form .btn:hover {
+  background: #333;
+}
+.offset-lg-3 {
+  margin-left: 0px;
+}
