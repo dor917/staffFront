@@ -26,13 +26,25 @@ Stp-Project는 GitHub의 어려운 복잡한 이론과 세팅을 해야 한다�
 Github의 번거로운 세팅과 복잡한 로직을 미니 프로젝트를 하는 
 초보개발자들에게 맞게 간소화 하였으며 팀원들 간의 협동을 중심으로 일정을 조율하거나 프로젝트 코드의 변경사항을 알 수 있는 기능도 추가하였습니다.
 ### 1.1팀원 소개
+#### 1.1.1 [정지영(팀장)](https://github.com/waitzero)
+Aws(Ec2), Aws(Rds), Spring(User Repository)
+#### 1.1.2 [조재현(팀원)](https://github.com/twghy)
+Spring(Calendar, Filelist), DB(Oracle)
+#### 1.1.3 [나호연(팀원)](https://github.com/nahoyeon)
+React(Caleandar, Filelist, Repository)
 <br>
 
 ## 2.기술 스택
 
-<a href="https://spring.io/" target="_blank">                                          <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"/></a>
+<a href="https://ko.reactjs.org/">                                          
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"/></a>
+<a href="https://ko.reactjs.org/">
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"/></a>
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=black"/></a>                                                 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black"/></a>
+<a href="https://ko.reactjs.org/">
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=black"/></a>
+<a href="https://ko.reactjs.org/">
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black"/></a>
+<a href="https://nodejs.org/ko/">
 <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=black"/></a> 
 <br>
 
@@ -40,7 +52,6 @@ Github의 번거로운 세팅과 복잡한 로직을 미니 프로젝트를 하�
   #### 2-1Node.js 설치(18.12.0.LTS 이상 다운로드)
    ![image](https://user-images.githubusercontent.com/91938525/199252944-66e0d576-03be-4a51-a39c-e56c6fdcbef9.png)
 
-  
   #### 2-2.React 설치
   
   #### 2-3.
@@ -52,8 +63,6 @@ Github의 번거로운 세팅과 복잡한 로직을 미니 프로젝트를 하�
 
 
 ## 3.구현 기능
-
-
 
 ### 3.1기능 1
 #### 메인화면
