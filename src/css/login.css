@@ -4,8 +4,12 @@ body {
 }
 .login-body-back {
     height: 100%;
-    background-image: url("../img/loginmainimg.jpg");
+    background-image: url("../img/projectImg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     
+    
+  
 }
 .login-body {
  height: 100%;
@@ -13,18 +17,19 @@ body {
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color:rgba(0, 0, 0, 0.5);
+  background-color:rgba(0, 0, 0, 0.2);
 
  
 }
 
 .form-signin {
-background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.2);
 border-radius: 25;
   width: 100%;
-  max-width: 330px;
+  max-width: 430px;
   padding: 15px;
   margin: auto;
+  border: 1px solid black;
 }
 
 .form-signin .checkbox {

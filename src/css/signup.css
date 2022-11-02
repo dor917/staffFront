@@ -3,10 +3,13 @@ body {
   height: 100%;
 
 }
+
+
 .signup-body-back {
     height: 100%;
-    background-image: url("../img/loginmainimg.jpg");
-    
+    background-image: url("../img/projectImg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .signup-body {
  height: 100%;
@@ -14,18 +17,19 @@ body {
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color:rgba(0, 0, 0, 0.5);
+  background-color:rgba(0, 0, 0, 0.2);
 
  
 }
 
 .form-signup {
-background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.2);
 border-radius: 25;
   width: 100%;
-  max-width: 330px;
+  max-width: 430px;
   padding: 15px;
   margin: auto;
+  border: 1px solid black;
 }
 
 .form-signup .checkbox {
@@ -52,18 +56,25 @@ border-radius: 25;
 }
 .form-floating{
     margin-top: 1rem;
+    
+}
+.success{
+  color:blue;
+}
+.error{
+  color:red;
 }
 .signup-cancel-button{
     color: #fff;
     background-color: #007bff;
     border-color: #007bff;
-    width: 80%;
-    margin-top: 0.3rem;
+    width: 100%;
+    margin-top: 1.0rem;
     padding: 0.5rem 1rem;
     font-size: 1.6rem;
     line-height: 1.5rem;
     border-radius: 0.3rem;    
-    margin-left:2rem;
+    
 }
 .w-100.btn.btn-lg.btn-primary{
     margin-top:1rem;

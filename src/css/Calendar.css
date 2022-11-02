@@ -2,9 +2,9 @@
   margin-left:90px;
 }
 .typeTemplate{
-  width: 1761px;
+  width: 1800px;
   height: 500px;
-  
+  background-color: #f9fafb;
   display:flex;
 }
 .typeExplain{
