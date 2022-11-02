@@ -2,8 +2,8 @@
 
 2022학년도 청주대학교 인공지능 소프트웨어전공 롲업작품전 17조 STP(Staff-Project)
 
-## Back-=end 바로가기
-[Staff-Project(Back-end 바로가기](https://github.com/dor917/staffBackend).
+## Staff-Project(Back-end) 바로가기
+[Staff-Project(Back-end 바로가기)](https://github.com/dor917/staffBackend).
 
 ## 목차
 - [1.프로젝트 소개](#-프로젝트-소개)
@@ -26,32 +26,43 @@ Stp-Project는 GitHub의 어려운 복잡한 이론과 세팅을 해야 한다�
 Github의 번거로운 세팅과 복잡한 로직을 미니 프로젝트를 하는 
 초보개발자들에게 맞게 간소화 하였으며 팀원들 간의 협동을 중심으로 일정을 조율하거나 프로젝트 코드의 변경사항을 알 수 있는 기능도 추가하였습니다.
 ### 1.1팀원 소개
+#### 1.1.1 [정지영(팀장)](https://github.com/waitzero)
+Aws(Ec2), Aws(Rds), Spring(User Repository, Chat)
+#### 1.1.2 [조재현(팀원)](https://github.com/twghy)
+Spring(Calendar, Filelist, Chat), DB(Oracle)
+#### 1.1.3 [나호연(팀원)](https://github.com/nahoyeon)
+React(Caleandar, Filelist, Repository, Chat)
 <br>
 
 ## 2.기술 스택
 
-<a href="https://spring.io/" target="_blank">                                          <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"/></a>
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"/></a>
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=black"/></a>                                                 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black"/></a>
+<a href="https://ko.reactjs.org/">                                          
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"/>
+
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=black"/>
+
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black"/></a>
+<a href="https://nodejs.org/ko/">
 <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=black"/></a> 
 <br>
 
 ### 2.1환경설정
-  #### 1.Spring tool Suite
-  다운로드(https://spring.io/tools)<br>
-  #### 1-1.Import->Existing Maven Projects<br>
-  ![image](https://user-images.githubusercontent.com/91938525/199014216-3c7a9634-9dc5-4e02-9d17-30b01c364d75.png)
-  #### 1-2.Lombok후 Sts폴더에 저장
-  다운로드(https://projectlombok.org/download)<br>
-  #### 1-3.Lombok 설정
-  실행->Specify location->Spting tool Suite지정->Install/Update
-  #### 1-4. Maven 업데이트
-  프로젝트 우클릭->Maven->Maven Update Project
+  #### 2-1Node.js 설치(18.12.0.LTS 이상 다운로드)
+   ![image](https://user-images.githubusercontent.com/91938525/199252944-66e0d576-03be-4a51-a39c-e56c6fdcbef9.png)
+
+  #### 2-2.React 설치
+  
+  #### 2-3.
+  
+  #### 2-4.
+  
+  #### 2-5.
+  
 
 
 ## 3.구현 기능
-
-
 
 ### 3.1기능 1
 #### 메인화면
