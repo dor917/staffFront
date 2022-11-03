@@ -103,26 +103,29 @@ function Header(props) {
     //     $('.onClicked').css('display','none');
     // }
     return (
-        <div>
-            <div className="page-header" style={Header}>
-                <Link className = "logoArea" to="/Main" style={{textDecoration: 'none', color:'#fff'}}>
-                    <h1 style={header_title}>Staff</h1>
-                </Link>    
-                {/* <span >{props.userInfo.mbr_nm}</span> */}
-                <ul className = "header-user-id">            
-                    <div className = "log">
-                        <span>{userInfo.mbr_nm}</span>&nbsp;&nbsp;&nbsp;
-                        <div className="onClicked" onClick={changeAlarm}>
-                            <FontAwesomeIcon icon = {faBell}/>
-                        </div>
-                            <Link to = "/Login">
-                                <li className = "logout" onClick={logout}>로그아웃</li>
-                            </Link>
-                    </div>
-                </ul>    
+      <div>
+      <div className="page-header" style={Header}>
+        <a href="/Main" style={{ textDecoration: "none", color: "#fff" }}>
+          <h1 style={header_title}>Staff</h1>
+        </a>
+        {/* <span >{props.userInfo.mbr_nm}</span> */}
+        <ul className="header-user-id">
+          <div className="log">
+            <span>{userInfo.mbr_nm}</span>&nbsp;&nbsp;&nbsp;
+            <div className="onClicked" onClick={changeAlarm}>
+              <FontAwesomeIcon icon={faBell} />
             </div>
-            {Portals()}
-        </div>
+            <Link to="/Login">
+              <li className="logout" onClick={logout}>
+                로그아웃
+              </li>
+            </Link>
+          </div>
+        </ul>
+      </div>
+      {Portals()}
+    </div>
+
     );
 }
 function getCookie(name) {

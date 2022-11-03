@@ -1,86 +1,77 @@
 .page-header {
     position: relative;
     height: 48px;
-}
-.header-user-id{
+  }
+  .header-user-id {
     position: absolute;
     top: 12px;
-    left:-10rem;
+    left: -10rem;
     list-style-type: none;
-    position:left;
-}
-.header-user-li{
-    float:left;
+    width: 500px;
+    left: 70%;
+  }
+  .header-user-li {
+    float: left;
     margin: 0 15px 0 0;
-}
-.log{
-    float:right;
-    margin-left:80rem;
-    margin-top:-1.5rem;
-}
-.logout{
-    margin-right:-7rem;
-    margin-top:0rem; 
+  }
+  .log {
     float: right;
-    color:white;
-    font-size:15.5px;
-}
-.log{
+    margin-left: 80rem;
+    margin-top: -1.5rem;
+  }
+  .logout {
+    margin-right: -7rem;
+    margin-top: 0rem;
+    float: right;
+    color: white;
+    font-size: 15.5px;
+  }
+  .log {
     display: flex;
-    float:right;
-    margin-left:112rem;
-    margin-top:0rem;
-}
-/* .login{
-    margin-left:-3.5rem;
-    margin-top: 1.5rem;
-} */
-.alarm{
-    float:right;
-    display:flex;
-    width:340px;
-    height:913px;
-    background-color: #F5F5F5;
+    float: right;
+    margin-left: 112rem;
+    margin-top: 0rem;
+  }
+  /* .login{
+      margin-left:-3.5rem;
+      margin-top: 1.5rem;
+  } */
+  .alarm {
+    float: right;
+    display: flex;
+    width: 340px;
+    height: 913px;
+    background-color: #f5f5f5;
     border-radius: 20px;
     border: 1px solid gray;
     text-align: left;
     justify-content: center;
-    padding:10px;
-    
-}
-.alarmContent{
+    padding: 10px;
+  }
+  .alarmContent {
     font-size: 22px;
-}
-.alarmList{
-    padding:4px;
-}
-
-.onClicked{
+  }
+  .alarmList {
+    padding: 4px;
+  }
+  
+  .onClicked {
     cursor: pointer;
-}
-.alarmBlock{
+  }
+  .alarmBlock {
     z-index: 999;
     display: block;
-}
-.alarmNone{
+  }
+  .alarmNone {
     z-index: 999;
     display: none;
-}   
-.aria-label{
-    float:right;
-    border:white;
+  }
+  .aria-label {
+    float: right;
+    border: white;
     justify-content: center;
     text-align: center;
-    font-size:5px;
-    font-weight:10px;
-    
-}
-.logoArea{
-    
-};
-
-.logoArea h1{
-    width: 300px;
-    height: 100%;
-    
-};
+    font-size: 5px;
+    font-weight: 10px;
+  }
+  
