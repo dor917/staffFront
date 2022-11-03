@@ -53,12 +53,11 @@ React(Caleandar, Filelist, Repository, Chat)
    ![image](https://user-images.githubusercontent.com/91938525/199252944-66e0d576-03be-4a51-a39c-e56c6fdcbef9.png)
 
   #### 2-2.React 설치
+  ![image](https://user-images.githubusercontent.com/91938525/199670732-6b7950dc-3234-460f-8061-c13866def0fe.png)
+
   
-  #### 2-3.
-  
-  #### 2-4.
-  
-  #### 2-5.
+  #### 2-3.실행
+  터미널->npm start입력
   
 
 
