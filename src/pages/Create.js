@@ -265,7 +265,7 @@ function Create(props) {
   $("#root").on("click", ".userSearchListItem", function (e) {
     var checkArr = userArr.join();
     if (!checkArr.includes(e.target.dataset.mbr_no)) {
-      checkArr.push(e.target.dataset.mbr_no);
+      userArr.push(e.target.dataset.mbr_no);
       $("#addMbrBox").append(
         "<div class='createProfile'>" +
           "<img class='avatar' src='https://img.icons8.com/color/36/000000/administrator-male.png' alt='...'/>" +
