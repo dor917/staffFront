@@ -96,7 +96,7 @@ function Chat(props) {
       increment.current = setInterval(() => {
       getchatHist(prj_no, userInfo);
       console.log("채팅서버가 돌아가고있습니다!")
-   }, 1000)};
+   }, 5000)};
 
    const handleEnd = () => { 
       clearInterval(increment.current)
