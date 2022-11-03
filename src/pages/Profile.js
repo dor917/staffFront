@@ -21,24 +21,31 @@ function Profile(props) {
       $(".reposity .reposityBox").empty();
       var todayDate = new Date();
       var year = todayDate.getFullYear() * 365; // 년도
-      var month = (todayDate.getMonth() + 1) * 30; // 월
-      var date = todayDate.getDate(); // 날짜
+      var month = (todayDate.getMonth()+1)*30; // 월
+      var date = todayDate.getDate()-1; // 날짜
       // alert(today.getFullYear() * 30)
       var today = year + month + date;
+      
       for (var a = 0; a < response.data.length; a++) {
         var startDate =
-          Number(response.data[a].prj_start_date.substring(0, 4) * 365) +
-          Number(response.data[a].prj_start_date.substring(5, 7) * 30) +
-          Number(response.data[a].prj_start_date.substring(8, 10) + 0);
+          Number(response.data[a].prj_start_date.substring(0, 4)* 365) +
+          Number(response.data[a].prj_start_date.substring(5, 7)* 30) +
+          Number(response.data[a].prj_start_date.substring(8, 10)*0);
         var endtDate =
-          Number(response.data[a].prj_end_date.substring(0, 4) * 365) +
-          Number(response.data[a].prj_end_date.substring(5, 7) * 30) +
+          Number(response.data[a].prj_end_date.substring(0, 4)* 365) +
+          Number(response.data[a].prj_end_date.substring(5, 7)* 30) +
           Number(response.data[a].prj_end_date.substring(8, 10) + 0);
-        var prog = ((today - startDate) / (endtDate - startDate)) * 100;
+        var prog = ((today - startDate) / (endtDate - startDate)* 100);
 
         if (prog < 0) {
           prog *= -1;
         }
+        alert(
+          "StartDate:" + startDate + "enddate:" + endtDate + "today:" + today+"prog:"+prog
+        );
+        // alert("startdate"+response.data[a].prj_start_date+"enddate"+response.data[a].prj_end_date);
+        alert("year:"+todayDate.getFullYear()+"month:"+month+"day:"+date
+        )
 
         $(".reposity .reposityBox").append(
           "<div class='prj-info-box'>" +
@@ -46,7 +53,7 @@ function Profile(props) {
             response.data[a].prj_no +
             "'>" +
             "<div class='col-5 profileBox'>" +
-            "<div class='card h-100' style='height:150px;'>" +
+            "<div class='card h-100'>" +
             "<div class='card-body'>" +
             "<h6 class='d-flex align-items-center mb-3'><i class='material-icons text-info mr-2'>" +
             response.data[a].prj_nm +
@@ -71,7 +78,6 @@ function Profile(props) {
             "</div>" +
             "</div>" +
             "</div>" +
-            "</a>" +
             "<a class ='delButton'  href='http://localhost:8080/deleteProjectInfo.staff?prj_no=" +
             response.data[a].prj_no +
             "'>삭제</a>" +
