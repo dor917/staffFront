@@ -60,3 +60,7 @@ border-radius: 25;
   float:right;
   margin-right:1rem;
 }
+.form-floating>label {
+
+  padding: 0rem 0.5rem;
+}
