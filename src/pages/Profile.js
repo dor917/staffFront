@@ -40,12 +40,11 @@ function Profile(props) {
         if (prog < 0) {
           prog *= -1;
         }
+        // alert(prog);
         // alert(
         //   "StartDate:" + startDate + "enddate:" + endtDate + "today:" + today+"prog:"+prog
         // );
-        // // alert("startdate"+response.data[a].prj_start_date+"enddate"+response.data[a].prj_end_date);
-        // alert("year:"+todayDate.getFullYear()+"month:"+month+"day:"+date
-        // )
+        // alert("startdate"+response.data[a].prj_start_date+"enddate"+response.data[a].prj_end_date);
 
         $(".reposity .reposityBox").append(
           "<div class='prj-info-box'>" +

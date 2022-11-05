@@ -111,7 +111,7 @@ function Header(props) {
         {/* <span >{props.userInfo.mbr_nm}</span> */}
         <ul className="header-user-id">
           <div className="log">
-            <span>{userInfo.mbr_nm}</span>&nbsp;&nbsp;&nbsp;
+            <span style={{width:80}}>{userInfo.mbr_nm}</span>&nbsp;&nbsp;&nbsp;
             <div className="onClicked" onClick={changeAlarm}>
               <FontAwesomeIcon icon={faBell} />
             </div>
