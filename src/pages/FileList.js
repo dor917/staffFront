@@ -8,100 +8,125 @@ import CodeView from './CodeView.js';
 import { Link } from 'react-router-dom';
 import '../js/sidebar.event.js';
 import Header from "./Header.js";
-import Sidebar from './Sidebar.js';
-import Revision from './Revision.js';
 import ProjectFileList from './ProjectFileList.js';
 import { Cookie } from "react-cookie";
 import $ from 'jquery';
-
-
+import axios from "axios";
+import '../css/revision.css'
+import Sidebar from "./Sidebar.js";
 
 
 function FileList(props) {
+   axios({
+      method: "post",
+      url: "/getProjectSvnInfo.staff",
+      params: { prj_no: getCookie("prj_no") },
+    })
+   .then((response) => {
+      $("#revisionList").empty();
+      for (var a = 0; a < response.data.length; a++) { 
+         $("#revisionList").append("<li class='list-group-item d-flex justify-content-between align-items-center' >"+
+                                       "<span class='badge txt1'>"+response.data[a].revision_no+"</span>"+
+                                       "<span class='badge txt2'>"+response.data[a].sys_reg_date_str+"</span>"+
+                                       "<span class='badge txt3'>"+response.data[a].rev_comment+"</span>"+
+                                    "</li>"
+                                    );
+         
+      }
+      console.log(response.data);
+   
+   })
+   .catch(function (error) {
+      console.log("error================>" + error);
+   });
+
    useEffect(() => {
       function DropFile(dropAreaId, fileListId) {
          let dropArea = document.getElementById(dropAreaId);
          let fileList = document.getElementById(fileListId);
-       
+         let inputfile = document.getElementById("chooseFile");
+      
+      
          function preventDefaults(e) {
-           e.preventDefault();
-           e.stopPropagation();
+         e.preventDefault();
+         e.stopPropagation();
          }
-       
+      
          function highlight(e) {
-           preventDefaults(e);
-           dropArea.classList.add("highlight");
+         preventDefaults(e);
+         dropArea.classList.add("highlight");
          }
-       
+      
          function unhighlight(e) {
-           preventDefaults(e);
-           dropArea.classList.remove("highlight");
+         preventDefaults(e);
+         dropArea.classList.remove("highlight");
          }
-       
+      
          function handleDrop(e) {
-           unhighlight(e);
-           let dt = e.dataTransfer;
-           let files = dt.files;
-       
-           handleFiles(files);
-       
-           const fileList = document.getElementById(fileListId);
-           if (fileList) {
-             fileList.scrollTo({ top: fileList.scrollHeight });
-           }
+         unhighlight(e);
+         let dt = e.dataTransfer;
+         let files = dt.files;
+      
+         handleFiles(files);
+      
+         const fileList = document.getElementById(fileListId);
+         if (fileList) {
+            fileList.scrollTo({ top: fileList.scrollHeight });
          }
-       
+         }
+      
          function handleFiles(files) {
-           files = [...files];
-           files.forEach(previewFile);
+         files = [...files];
+         files.forEach(previewFile);
          }
-       
+      
          function previewFile(file) {
-           console.log(file);
-           fileList.appendChild(renderFile(file));
+         console.log(file);
+         fileList.appendChild(renderFile(file));
          }
-       
+
          function renderFile(file) {
-           let fileDOM = document.createElement("div");
-           fileDOM.className = "file";
-           fileDOM.innerHTML = `
-             <div class="thumbnail">
+         let fileDOM = document.createElement("div");
+         fileDOM.className = "file";
+         fileDOM.innerHTML = `
+            <div class="thumbnail">
                <img src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일타입 이미지" class="image">
-             </div>
-             <div class="details">
+            </div>
+            <div class="details">
                <header class="header">
-                 <span class="name">${file.name}</span>
-                 <span class="size">${file.size}</span>
+               <span class="name">${file.name}</span>
+               <span class="size">${file.size}</span>
                </header>
                <div class="progress">
-                 <div class="bar"></div>
+               <div class="bar"></div>
                </div>
                <div class="status">
-                 <span class="percent">100% done</span>
-                 <span class="speed">90KB/sec</span>
+               <span class="percent">100% done</span>
+               <span class="speed">90KB/sec</span>
                </div>
-             </div>
-           `;
-           return fileDOM;
+            </div>
+         `;
+         return fileDOM;
          }
-       
+
+      
          dropArea.addEventListener("dragenter", highlight, false);
          dropArea.addEventListener("dragover", highlight, false);
          dropArea.addEventListener("dragleave", unhighlight, false);
          dropArea.addEventListener("drop", handleDrop, false);
-       
+
          return {
-           handleFiles
+         handleFiles
          };
-       }
-       
-       const dropFile = new DropFile("drop-file", "files");
-    }, [])
-    
+      }
+      const dropFile = new DropFile("drop-file", "files");
+   }, [])
+
+   
+ 
    let getParameter = (key) => {
       return new URLSearchParams(window.location.search).get(key);
    };
-
    var prj_no = '';
    if( getParameter("prj_no") == null) {
       if (getCookie("prj_no") != '' && getCookie("prj_no") != null) {
@@ -132,43 +157,48 @@ function FileList(props) {
                <li className='item1'><ProjectFileList /></li>
                <li className='item2'><CodeView readCode={readCode} /></li>
                <li className='item3'><br />
-                  <Revision /></li>
+                  <div className="revision-flex-contain">
+                     <ul className="list-group list-group-fileList" id='revisionList'>
+                       
+                     </ul>
+                  </div>
+               </li>
             </ul>
             <div className="openFileUploadFormBtn-box"> 
                <button id='openFileUploadFormBtn' onClick={() => openFileUploadForm()}>open</button>
             </div> 
-            <div className="file-upload-box">
-               <div className="upload-form-box">
-                  <form>
+            <form  action="/uploadPrjFileList.staff" method="post" enctype="multipart/form-data">
+               <div className="file-upload-box">
+                  <div className="upload-form-box">
+                     <input type='hidden' name='prj_no' value={getCookie("prj_no")}/>
                      <div className="mb-3">
                         <label for="exampleFormControlInput1" className="form-label">파일 경로</label>
-                        <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="/com/staff/controller/" />
+                        <input className="form-control" id="exampleFormControlInput1" placeholder="/com/staff/controller/" name='filePath'/>
                      </div>
                      <div className="mb-3">
                         <label for="exampleFormControlTextarea1" className="form-label">Commit Message</label>
-                        <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" name='commitMessage'></textarea>
                      </div>
-                  </form>
-               </div>
-               <div id= 'uploadBox' className="upload-box">
                   
-                  <div className="upload-box2">
-                     <div id="drop-file" className="drag-file">
-                        <img src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일 아이콘" className="image" />
-                        <p className="message">Drag files to upload</p>
-                     </div>
                   </div>
-                  <div id="files" className="files">
-                     <div className="file">
+                  <div id= 'uploadBox' className="upload-box">
+                     
+                     <div className="upload-box2">
+                        <div id="drop-file" className="drag-file">
+                           <img src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일 아이콘" className="image" />
+                           <p className="message">Drag files to upload</p>
+                        </div>
                      </div>
-                  </div>
-                  <div className='upload-box-btn-box'>
-                        <label className="file-label" for="chooseFile">Choose File</label>
-                        <input className="file" id="chooseFile" type="file" multiple onchange="dropFile.handleFiles(this.files)" />
-                        <label className="file-label">Upload File</label>
+                     <div id="files" className="files">
+                     </div>
+                     <div className='upload-box-btn-box'>
+                           <label className="file-label" for="chooseFile">Choose File</label>
+                           <input className="file" id="chooseFile" type="file"onChange="dropFile.handleFiles(this.files)" multiple name='uploadFiles'/>
+                           <button className="file-label">Upload File</button>
+                     </div>onchange="dropFile.handleFiles(this.files)"
                   </div>
                </div>
-            </div>
+            </form>
          </div>
       </div>
 
