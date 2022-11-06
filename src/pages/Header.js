@@ -112,9 +112,9 @@ function Header(props) {
         <ul className="header-user-id">
           <div className="log">
             <span style={{width:80}}>{userInfo.mbr_nm}</span>&nbsp;&nbsp;&nbsp;
-            <div className="onClicked" onClick={changeAlarm}>
+            {/* <div className="onClicked" onClick={changeAlarm}>
               <FontAwesomeIcon icon={faBell} />
-            </div>
+            </div> */}
             <Link to="/Login">
               <li className="logout" onClick={logout}>
                 로그아웃
