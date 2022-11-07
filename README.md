@@ -86,7 +86,8 @@ React(Caleandar, Filelist, Repository, Chat)
 
 
 ### 3.5 기타 기능
-#### (로그인, 회원가입, 프로젝트수정, 프로젝트 생성 4분활로 넣을 예정)
+#### 시계방향으로 (로그인->회원가임->프로젝트생성,수정->프로필 편집)
+![4분활](https://user-images.githubusercontent.com/91938525/200349338-f22d3170-bb6b-4872-9411-f37cca04e177.png)
 <br>
 
 ## 4.모델링, 알고리즘
