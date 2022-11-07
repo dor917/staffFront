@@ -8,14 +8,12 @@ import CodeView from './CodeView.js';
 import { Link } from 'react-router-dom';
 import '../js/sidebar.event.js';
 import Header from "./Header.js";
-import ProjectFileList from './ProjectFileList.js';
 import { Cookie } from "react-cookie";
 import $ from 'jquery';
 import axios from "axios";
 import '../css/revision.css'
 import Sidebar from "./Sidebar.js";
-
-
+import '../css/fileList.css';
 function FileList(props) {
    axios({
       method: "post",
@@ -29,17 +27,66 @@ function FileList(props) {
                                        "<span class='badge txt1'>"+response.data[a].revision_no+"</span>"+
                                        "<span class='badge txt2'>"+response.data[a].sys_reg_date_str+"</span>"+
                                        "<span class='badge txt3'>"+response.data[a].rev_comment+"</span>"+
+                                       "<span class='badge txt3'>"+response.data[a].rev_file_name+"</span>"+
                                     "</li>"
                                     );
          
       }
-      console.log(response.data);
-   
    })
    .catch(function (error) {
       console.log("error================>" + error);
    });
 
+   axios({
+      method: "post",
+      url: "/getProjectSvnFileInfo.staff",
+      params: { prj_no: getCookie("prj_no") },
+    })
+   .then((response) => {
+      $("#fileList").empty();
+      for (var a = 0; a < response.data.length; a++) { 
+         $("#fileList").append(
+            "<li class='list-group-item d-flex justify-content-between align-items-center filelistitemcursor' data-name="+response.data[a]+">"+
+               "<span class='list-group-item-name' data-name="+response.data[a]+">"+
+                  "<svg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='file' class='svg-inline--fa fa-file fa-w-12 ' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'>"+
+                     "<path fill='currentColor' d='M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm160-14.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z'></path>"+
+                  "</svg> "+
+                  "<span class='CodeName' data-name="+response.data[a]+">"+response.data[a]+"</span>"+
+               "</span>"+
+            "</li>"
+                                    );
+         
+      }
+   
+   })
+   .catch(function (error) {
+      console.log("error================>" + error);
+   });
+   $(document).on("click", ".filelistitemcursor", function(e) {
+      axios({
+         method: "post",
+         url: "/getProjectSvnInfoByName.staff",
+         params: { prj_no: getCookie("prj_no"),
+         rev_file_name : e.target.dataset.name
+       },
+       })
+      .then((response) => {
+         $("#revisionList").empty();
+         for (var a = 0; a < response.data.length; a++) { 
+            $("#revisionList").append("<li class='list-group-item d-flex justify-content-between align-items-center' >"+
+                                          "<span class='badge txt1'>"+response.data[a].revision_no+"</span>"+
+                                          "<span class='badge txt2'>"+response.data[a].sys_reg_date_str+"</span>"+
+                                          "<span class='badge txt3'>"+response.data[a].rev_comment+"</span>"+
+                                          "<span class='badge txt3'>"+response.data[a].rev_file_name+"</span>"+
+                                       "</li>"
+                                       );
+            
+         }
+      })
+      .catch(function (error) {
+         console.log("error================>" + error);
+      });
+  });
    useEffect(() => {
       function DropFile(dropAreaId, fileListId) {
          let dropArea = document.getElementById(dropAreaId);
@@ -122,7 +169,6 @@ function FileList(props) {
       const dropFile = new DropFile("drop-file", "files");
    }, [])
 
-   
  
    let getParameter = (key) => {
       return new URLSearchParams(window.location.search).get(key);
@@ -154,7 +200,16 @@ function FileList(props) {
          <div className="fileList-container">
             
             <ul className='fileList-container-ul'>
-               <li className='item1'><ProjectFileList /></li>
+               <li className='item1'>
+                  <ul className="list-group list-group-fileList" id='fileList'>
+                     <li className="list-group-item d-flex justify-content-between align-items-center" onClick={() => { setReadCode("src") }}>
+                        <span className="list-group-item-name">
+                           <FontAwesomeIcon icon={faFile}></FontAwesomeIcon>
+                           <span className="CodeName"> Src</span>
+                        </span>
+                     </li>
+                  </ul>   
+               </li>
                <li className='item2'><CodeView readCode={readCode} /></li>
                <li className='item3'><br />
                   <div className="revision-flex-contain">

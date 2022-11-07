@@ -264,3 +264,6 @@
   .files .file .status .speed {
     margin-left: auto;
   }
+  .filelistitemcursor {
+    cursor: pointer;
+  }
