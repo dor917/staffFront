@@ -70,7 +70,11 @@ React(Caleandar, Filelist, Repository, Chat)
 
 ### 3.2기능 2
 #### 파일에디터
-이미지 첨부예정
+#### Open 전
+![image](https://user-images.githubusercontent.com/91938525/200346323-cb2cd5f3-01d7-4408-bd8f-daa58f8a39c8.png)
+#### Open 후
+![image](https://user-images.githubusercontent.com/91938525/200346364-130cf149-e6e2-460c-955e-4ece5d561769.png)
+
 
 ### 3.3기능 3
 #### 캘린더
@@ -78,7 +82,7 @@ React(Caleandar, Filelist, Repository, Chat)
 
 ### 3.4기능 4
 #### 채팅
-이미지 첨부예정
+![image](https://user-images.githubusercontent.com/91938525/200346233-a2bc2963-852a-4cf5-93fc-d401aac796e9.png)
 
 
 ### 3.5 기타 기능
