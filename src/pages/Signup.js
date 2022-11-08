@@ -19,14 +19,17 @@ function Signup() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [phone, setPhone] = useState('');
 
   const [isName, setIsName] = useState(false)
   const [isEmail, setIsEmail] = useState(false)
   const [isPassword, setIsPassword] = useState(false)
+  const [isPhone, setIsPhone] = useState(false);
 
   const [nameMessage, setNameMessage] = useState('')
   const [emailMessage, setEmailMessage] = useState('')
   const [passwordMessage, setPasswordMessage] = useState('')
+  const [phoneMessage, setPhoneMessage] = useState();
   const [color, setColor] = useState({color: "blue"})
 
  
@@ -74,6 +77,19 @@ function Signup() {
     }
   },[])
 
+  const onChangePhone = useCallback(e => {
+    setPhone(e.target.value)
+    if (e.target.value.length < 11 || e.target.value.length >= 12) {
+      setPhoneMessage('전화번호 11자리를 입력해주세요!')
+      setColor({color: "red"})
+      setIsPhone(false)
+    } else {
+      setPhoneMessage('올바른 전화번호 형식입니다 :)')
+      setIsPhone(true)
+      setColor({color: "blue"})
+    }
+  },[])
+
   return (
     <div className="signup-body-back">
       <div className="signup-body">
@@ -89,7 +105,7 @@ function Signup() {
                 type="text"
                 className="form-control UpdateSignUp_mbr_nm"
                 id="floatingInput"
-                placeholder="text"
+                placeholder="Username"
                 typeName="name" 
                 value = {name}
                 onChange = {onChangeName}
@@ -137,15 +153,18 @@ function Signup() {
               />
               <label for="floatingInput"></label>
             </div>
-            <div className="form-floating" id="email">
+            <div className="form-floating" id="phone">
               <input
                 name="mbr_phone"
                 type="text"
                 className="form-control UpdateSignUp_mbr_email"
-                id="floatingemail"
-                placeholder="email"
+                id="floatingphone"
+                placeholder="Phone"
+                onChange = {onChangePhone}
               />
+              
               <label for="floatingInput">Phone</label>
+              {phone.length > 0 && <span className={`message ${isPhone ? 'success' : 'error'}`}>{phoneMessage}</span>}
             </div>
             <button className="w-100 btn btn-lg btn-primary" type="submit">
               Sign up
