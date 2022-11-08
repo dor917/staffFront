@@ -277,6 +277,7 @@ function Create(props) {
           e.target.dataset.mbr_email +
           ")" +
           "</div>" +
+          "<div class='delMbrBtn'>X</div>" +
           "</div>"
       );
     }

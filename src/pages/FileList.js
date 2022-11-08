@@ -250,7 +250,7 @@ function FileList(props) {
                            <label className="file-label" for="chooseFile">Choose File</label>
                            <input className="file" id="chooseFile" type="file"onChange="dropFile.handleFiles(this.files)" multiple name='uploadFiles'/>
                            <button className="file-label">Upload File</button>
-                     </div>onchange="dropFile.handleFiles(this.files)"
+                     </div>
                   </div>
                </div>
             </form>
