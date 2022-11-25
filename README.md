@@ -1,6 +1,6 @@
 # Staff-Project(Front-end)
 
-2022학년도 청주대학교 인공지능 소프트웨어전공 롲업작품전 17조 STP(Staff-Project)
+2022학년도 청주대학교 인공지능 소프트웨어전공 졸업작품전 17조 STP(Staff-Project)
 
 ## Staff-Project(Back-end) 바로가기
 [Staff-Project(Back-end 바로가기)](https://github.com/dor917/staffBackend).
